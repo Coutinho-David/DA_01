@@ -2,7 +2,7 @@
 #include "readDistances.h"
 #include "data_structures/Graph.h"
 
-Graph<std::string>  populateDriving() {
+Graph<std::string>  populate() {
     
     std::vector<distance> distances = readDistances("Distances.csv");
     std::vector<location> locations = readLocations("Locations.csv");
@@ -10,17 +10,13 @@ Graph<std::string>  populateDriving() {
     Graph<std::string> graph;
     
     for (location element : locations) {
-        if (graph.addVertex(element.CODE)) std::cout << "Added Vertex : " << element.CODE << "\n";
+        if (graph.addVertex(element.CODE)) {}
     }
 
     for (distance element : distances) {
-       if (graph.addEdge(element.CODE1, element.CODE2, element.Driving)) {
-            std::cout << "Added path : " << element.CODE1 << " ---> " << element.CODE2 << "\n";
-       }
+       if (graph.addEdge(element.CODE1, element.CODE2, element.Driving, element.Walking)) {}
     }
 
-
     return graph;
-
 }
 
