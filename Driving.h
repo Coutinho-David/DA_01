@@ -2,8 +2,8 @@
 #include "readDistances.h"
 #include "data_structures/Graph.h"
 
-int main() {
-
+Graph<std::string>  populateDriving() {
+    
     std::vector<distance> distances = readDistances("Distances.csv");
     std::vector<location> locations = readLocations("Locations.csv");
 
@@ -19,6 +19,8 @@ int main() {
        }
     }
 
-    return 0;
+
+    return graph;
+
 }
 
