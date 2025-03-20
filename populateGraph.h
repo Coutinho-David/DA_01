@@ -10,7 +10,10 @@ Graph<std::string>  populate() {
     Graph<std::string> graph;
     
     for (location element : locations) {
-        if (graph.addVertex(element.CODE)) {}
+        if (graph.addVertex(element.CODE)) {
+            auto v = graph.getVertexSet();
+            v[element.Id - 1]->setParking(element.parking);
+        }
     }
 
     for (distance element : distances) {
