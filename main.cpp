@@ -22,6 +22,6 @@ int run() {
     cout << "Calling init" << endl;
     init(input, mode, source, destination, maxWalkTime, avoidNodes, avoidSegments);
     cout << "creating graph" << endl;
-    Graph<string> graph = populate();
+    Graph<string> graph = populate(avoidNodes, avoidSegments);
     return 1;
 }

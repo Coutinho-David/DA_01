@@ -1,13 +1,19 @@
-#include "readLocations.h"
-#include "readDistances.h"
+#include "CSV/readLocations.h"
+#include "CSV/readDistances.h"
 #include "data_structures/Graph.h"
 
-Graph<std::string>  populate() {
-    
+Graph<std::string>  populate(std::vector<int> avoidNodes, std::vector<std::pair<int, int>> avoidSegments) {
+
     std::vector<distance> distances = readDistances("Distances.csv");
     std::vector<location> locations = readLocations("Locations.csv");
 
     Graph<std::string> graph;
+
+    int i = 1;
+    for (int id : avoidNodes) {
+        distances.erase(distances.begin() + id - i);
+        i++;
+    }
     
     for (location element : locations) {
         if (graph.addVertex(element.CODE)) {
