@@ -58,5 +58,3 @@ static std::vector<T> getPath(Graph<T> * g, const int &origin, const int &dest) 
     }
     return res;
 }
-
-

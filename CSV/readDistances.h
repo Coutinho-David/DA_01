@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <cctype>
+#include <climits>
 
 struct distance {
     std::string CODE1;
@@ -35,7 +36,7 @@ std::vector<distance> readDistances(const std::string &filename) {
         std::string driving;
         std::getline(stream, driving, ',');
         if (isdigit(driving[0])) row.Driving = std::stoi(driving);
-        else row.Driving = -1;
+        else row.Driving = INT_MAX;
         stream >> row.Walking;
     
         data.push_back(row);
