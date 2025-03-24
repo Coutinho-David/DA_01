@@ -11,7 +11,7 @@ Graph<std::string>  populate(std::vector<int> avoidNodes, std::vector<std::pair<
 
     int i = 1;
     for (int id : avoidNodes) {
-        distances.erase(distances.begin() + id - i);
+        locations.erase(distances.begin() + id - i);
         i++;
     }
     
@@ -22,8 +22,29 @@ Graph<std::string>  populate(std::vector<int> avoidNodes, std::vector<std::pair<
         }
     }
 
+    std::vector<std::pair<std::string, std::string>> codes;
+    for (std::pair<int, int> element : avoidSegments) {
+        std::string code_first = locations[element.first - i];
+        i++;
+        std::string code_second = locations[element.second - i];
+        i++;
+        codes.emplace_back(code_first, code_second);
+    }
+
     for (distance element : distances) {
-       if (graph.addEdge(element.CODE1, element.CODE2, element.Driving, element.Walking)) {}
+       bool shouldSkip = false;
+       for (const auto& avoidEdge : avoidSegmentCodes) {
+            if ((avoidEdge.first == element.CODE1 && avoidEdge.second == element.CODE2) ||
+                (avoidEdge.first == element.CODE2 && avoidEdge.second == element.CODE1)) {
+                shouldSkip = true;
+                break;
+            }
+        }
+
+        if (!shouldSkip) {
+            graph.addEdge(element.CODE1, element.CODE2, element.Driving, element.Walking);
+        }
+
     }
 
     return graph;
