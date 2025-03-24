@@ -1,11 +1,17 @@
-#include "csv/readLocations.h"
-#include "csv/readDistances.h"
+// In populateGraph.h
+#ifndef POPULATE_GRAPH_H
+#define POPULATE_GRAPH_H
+
+
+
+#include "readLocations.h"
+#include "readDistances.h"
 
 #include "data_structures/Graph.h"
 
 Graph<std::string>  populate() {
     
-    std::vector<distance> distances = readDistances("Distances.csv");
+    std::vector<DistanceData> distances = readDistances("Distances.csv");
     std::vector<location> locations = readLocations("Locations.csv");
 
     Graph<std::string> graph;
@@ -17,10 +23,12 @@ Graph<std::string>  populate() {
         }
     }
 
-    for (distance element : distances) {
+    for (DistanceData element : distances) {
        if (graph.addEdge(element.CODE1, element.CODE2, element.Driving, element.Walking)) {}
     }
 
     return graph;
 }
 
+
+#endif // POPULATE_GRAPH_H
