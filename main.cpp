@@ -12,15 +12,15 @@ int main() {
 }
 
 int run() {
-    int input;
     int mode;
     int source;
     int destination;
     int maxWalkTime = 0;
     vector<int> avoidNodes = {};
     vector<pair<int, int>> avoidSegments = {};
+    int includeNode = -1;
     cout << "Calling init" << endl;
-    init(input, mode, source, destination, maxWalkTime, avoidNodes, avoidSegments);
+    init(mode, source, destination, maxWalkTime, avoidNodes, avoidSegments, includeNode);
     cout << "creating graph" << endl;
     Graph<string> graph = populate();
     return 1;
