@@ -1,5 +1,5 @@
-#include "readLocations.h"
-#include "readDistances.h"
+#include "csv/readLocations.h"
+#include "csv/readDistances.h"
 #include "data_structures/Graph.h"
 
 Graph<std::string>  populate() {
