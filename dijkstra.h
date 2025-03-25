@@ -95,4 +95,55 @@ std::string bestDrivingRoute(Graph<T> *g, int s, int t) {
     return result.str();
 }
 
+template <class T>
+std::string alternativeDrivingRoute(Graph<T> *g, int s, int t) {
+    // Find the best route first
+    dijkstra_driving(g, s);
+    std::vector<T> bestPath = getPath(g, s, t);
+    if (bestPath.empty()) {
+        return "Yo, no route found!";
+    }
+    
+    int bestDist = g->findVertex(t)->getDist();
+    
+    // Remove edges that were part of the best path
+    for (size_t i = 0; i < bestPath.size() - 1; i++) {
+        auto v = g->findVertex(bestPath[i]);
+        if (v) {
+            v->removeEdge(bestPath[i + 1]);
+        }
+    }
+    
+    // Find an alternative route
+    dijkstra_driving(g, s);
+    std::vector<T> altPath = getPath(g, s, t);
+    
+    if (altPath.empty() || g->findVertex(t)->getDist() < bestDist) {
+        return "Yo, no alternative route found!";
+    }
+
+    std::ostringstream result;
+    result << "AlternativeDrivingRoute:";
+    
+    for (size_t i = 0; i < altPath.size(); i++) {
+        result << altPath[i];
+        if (i != altPath.size() - 1) {
+            result << ",";
+        }
+    }
+
+    // Append total distance
+    result << "(" << g->findVertex(t)->getDist() << ")";
+    
+    return result.str();
+}
+
+template <class T>
+std::string bestAndAlternativeDrivingRoute(Graph<T> *g, int s, int t) {
+    std::string best = bestDrivingRoute(g, s, t);
+    std::string alternative = alternativeDrivingRoute(g, s, t);
+    
+    return best + "\n" + alternative;
+}
+
 #endif // DIJKSTRA_H
