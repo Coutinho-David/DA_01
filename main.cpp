@@ -1,5 +1,6 @@
 #include "populateGraph.h"
 #include "cl_menu.h"
+#include "dijkstra.h"
 
 using namespace std;
 
@@ -12,6 +13,8 @@ int main() {
 }
 
 int run() {
+    Graph<int> graph = populate();
+    std::cout << bestDrivingRoute(&graph, 2 , 420) << std::endl;
     int input;
     int mode;
     int source;
@@ -22,6 +25,5 @@ int run() {
     cout << "Calling init" << endl;
     init(input, mode, source, destination, maxWalkTime, avoidNodes, avoidSegments);
     cout << "creating graph" << endl;
-    Graph<string> graph = populate();
     return 1;
 }
