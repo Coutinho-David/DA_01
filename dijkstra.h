@@ -23,26 +23,27 @@ bool relax_driving(Edge<T> *edge) { // d[u] + w(u,v) < d[v]
 }
 
 template <class T>
-void dijkstra_driving(Graph<T> * g, const std::string &origin) {
+void dijkstra_driving(Graph<T> *g, int origin) {
     // Initialize the vertices
-    for(auto v : g->getVertexSet()) {
+    for (auto v : g->getVertexSet()) {
         v->setDist(INF);
         v->setPath(nullptr);
     }
+
     auto s = g->findVertex(origin);
+    if (!s) return;  // Safety check in case the origin is not found
     s->setDist(0);
 
     MutablePriorityQueue<Vertex<T>> q;
     q.insert(s);
-    while( ! q.empty() ) {
+    while (!q.empty()) {
         auto v = q.extractMin();
-        for(auto e : v->getAdj()) {
+        for (auto e : v->getAdj()) {
             auto oldDist = e->getDest()->getDist();
             if (relax_driving(e)) {
                 if (oldDist == INF) {
                     q.insert(e->getDest());
-                }
-                else {
+                } else {
                     q.decreaseKey(e->getDest());
                 }
             }
@@ -51,26 +52,26 @@ void dijkstra_driving(Graph<T> * g, const std::string &origin) {
 }
 
 template <class T>
-static std::vector<T> getPath(Graph<T> * g, const std::string &origin, const std::string &dest) {
+static std::vector<T> getPath(Graph<T> *g, int origin, int dest) {
     std::vector<T> res;
     auto v = g->findVertex(dest);
     if (v == nullptr || v->getDist() == INF) { // missing or disconnected
         return res;
     }
     res.push_back(v->getInfo());
-    while(v->getPath() != nullptr) {
+    while (v->getPath() != nullptr) {
         v = v->getPath()->getOrig();
         res.push_back(v->getInfo());
     }
     reverse(res.begin(), res.end());
-    if(res.empty() || res[0] != origin) {
+    if (res.empty() || res[0] != origin) {
         std::cout << "Origin not found!!" << std::endl;
     }
     return res;
 }
 
 template <class T>
-std::string bestDrivingRoute(Graph<T> *g, const std::string &s, const std::string &t) {
+std::string bestDrivingRoute(Graph<T> *g, int s, int t) {
     dijkstra_driving(g, s);  // Run Dijkstra from source `s`
     
     std::vector<T> path = getPath(g, s, t);
@@ -94,4 +95,4 @@ std::string bestDrivingRoute(Graph<T> *g, const std::string &s, const std::strin
     return result.str();
 }
 
-#endif
+#endif // DIJKSTRA_H

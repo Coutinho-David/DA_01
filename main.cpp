@@ -13,8 +13,8 @@ int main() {
 }
 
 int run() {
-    Graph<string> graph = populate();
-    std::cout << bestDrivingRoute(&graph, "LD3372","RA1873") << std::endl;
+    Graph<int> graph = populate();
+    std::cout << bestDrivingRoute(&graph, 2 , 420) << std::endl;
     int input;
     int mode;
     int source;
