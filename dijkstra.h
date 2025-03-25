@@ -70,13 +70,15 @@ static std::vector<T> getPath(Graph<T> *g, int origin, int dest) {
     return res;
 }
 
+// function to call to BestDrivingRoute
+
 template <class T>
 std::string bestDrivingRoute(Graph<T> *g, int s, int t) {
     dijkstra_driving(g, s);  // Run Dijkstra from source `s`
     
     std::vector<T> path = getPath(g, s, t);
     if (path.empty()) {
-        return "Yo, no route found!";
+        return "BestDrivingRoute:none";
     }
 
     std::ostringstream result;
@@ -94,6 +96,8 @@ std::string bestDrivingRoute(Graph<T> *g, int s, int t) {
     
     return result.str();
 }
+
+// function to call to AlternativeDrivingRoute
 
 template <class T>
 std::string alternativeDrivingRoute(Graph<T> *g, int s, int t) {
@@ -119,7 +123,7 @@ std::string alternativeDrivingRoute(Graph<T> *g, int s, int t) {
     std::vector<T> altPath = getPath(g, s, t);
     
     if (altPath.empty() || g->findVertex(t)->getDist() < bestDist) {
-        return "Yo, no alternative route found!";
+        return "AlternativeDrivingRoute:none";
     }
 
     std::ostringstream result;
@@ -138,6 +142,8 @@ std::string alternativeDrivingRoute(Graph<T> *g, int s, int t) {
     return result.str();
 }
 
+// function to call to BestAndAlternativeDrivingRoute
+
 template <class T>
 std::string bestAndAlternativeDrivingRoute(Graph<T> *g, int s, int t) {
     std::string best = bestDrivingRoute(g, s, t);
@@ -145,5 +151,83 @@ std::string bestAndAlternativeDrivingRoute(Graph<T> *g, int s, int t) {
     
     return best + "\n" + alternative;
 }
+
+// function to call to RestrictedDrivingRoute
+
+template <class T>
+std::string restrictedDrivingRoute(Graph<T> *g, int s, int t, vector<int> avoidNodes, vector<pair<int, int>> avoidSegments, int includeNode) {
+    if (!g) return "Graph not found!";
+    
+    // Backup removed edges
+    std::vector<std::tuple<int, int, int, int>> removedEdges;
+
+    // Temporarily remove specified nodes
+    for (int node : avoidNodes) {
+        auto v = g->findVertex(node);
+        if (v) {
+            for (auto &e : v->getAdj()) {
+                removedEdges.emplace_back(node, e->getDest()->getInfo(), e->getWeight()[0],e->getWeight()[1]); // Store removed edges
+            }
+            g->removeVertex(node); // Remove the vertex
+        }
+    }
+
+    // Temporarily remove specified segments
+    for (auto &[u, v] : avoidSegments) {
+        auto src = g->findVertex(u);
+        if (src) {
+            for (auto &e : src->getAdj()) {
+                if (e->getDest()->getInfo() == v) {
+                    removedEdges.emplace_back(u, v, e->getWeight()[0], e->getWeight()[1]); // Store removed edges
+                    g->removeEdge(u, v);
+                    break;
+                }
+            }
+        }
+    }
+
+    // If an inclusion node is required, compute two paths: s -> includeNode -> t
+    std::vector<T> path;
+    int totalDistance = INF;
+    if (includeNode != -1) {
+        dijkstra_driving(g, s);
+        auto firstHalf = getPath(g, s, includeNode);
+        int firstDist = g->findVertex(includeNode)->getDist();
+
+        dijkstra_driving(g, includeNode);
+        auto secondHalf = getPath(g, includeNode, t);
+        int secondDist = g->findVertex(t)->getDist();
+
+        if (!firstHalf.empty() && !secondHalf.empty()) {
+            totalDistance = firstDist + secondDist;
+            firstHalf.pop_back(); // Avoid duplicate inclusion node
+            path.insert(path.end(), firstHalf.begin(), firstHalf.end());
+            path.insert(path.end(), secondHalf.begin(), secondHalf.end());
+        }
+    } else {
+        dijkstra_driving(g, s);
+        path = getPath(g, s, t);
+        totalDistance = g->findVertex(t)->getDist();
+    }
+
+    // Restore removed nodes and segments
+    for (auto &[u, v, w1, w2] : removedEdges) {
+        g->addEdge(u, v, w1, w2);
+    }
+
+    // Format output
+    if (path.empty()) return "RestrictedDrivingRoute:none";
+    std::ostringstream result;
+    result << "RestrictedDrivingRoute:";
+    for (size_t i = 0; i < path.size(); i++) {
+        result << path[i];
+        if (i != path.size() - 1) result << ",";
+    }
+    result << "(" << totalDistance << ")";
+
+    return result.str();
+}
+
+
 
 #endif // DIJKSTRA_H
