@@ -1,3 +1,8 @@
+#ifndef READ_LOCATIONS_H
+#define READ_LOCATIONS_H
+
+
+
 #include <iostream>
 #include <fstream> 
 #include <sstream>
@@ -40,3 +45,7 @@ std::vector<location> readLocations(const std::string &filename) {
     file.close();
     return data;   
 }
+
+
+
+#endif // READ_LOCATIONS_H

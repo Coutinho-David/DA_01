@@ -1,6 +1,9 @@
-#include "populateGraph.h"
+//#include "populateGraph.h"
 #include "cl_menu.h"
+#include "dijkstra.h"
+#include "test.h"
 
+#include <vector>
 using namespace std;
 
 
@@ -12,6 +15,27 @@ int main() {
 }
 
 int run() {
+   // Graph<int> graph = populate();
+
+    Graph<int> graph = test();
+        //test bestAndAlternativeDrivingRoute
+
+    //cout << bestAndAlternativeDrivingRoute(&graph, 1, 45) << endl;
+
+        //test restrictedDrivingRoute
+
+    /*
+    std::vector<int> avoidNodes = {3, 7};  
+    std::vector<pair<int, int>> avoidSegments = {{1, 4}, {2, 5}};  
+    int includeNode = 6;  
+    cout << restrictedDrivingRoute(&graph, 1, 45, avoidNodes, avoidSegments, includeNode) << endl;
+    */
+
+        //test DrivingAndWalkingRoute
+
+    /*
+
+    */
     int input;
     int mode;
     int source;
@@ -22,6 +46,8 @@ int run() {
     cout << "Calling init" << endl;
     init(input, mode, source, destination, maxWalkTime, avoidNodes, avoidSegments);
     cout << "creating graph" << endl;
-    Graph<string> graph = populate();
+    
+    cout << bestAndAlternativeDrivingRoute(&graph, source, destination);
+    
     return 1;
 }
