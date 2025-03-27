@@ -3,6 +3,7 @@
 #include "dijkstra.h"
 #include "test.h"
 #include "drivingAndWalking.h"
+#include "outputGen.h"
 
 #include <vector>
 using namespace std;
@@ -47,11 +48,16 @@ int run() {
     
     Graph<int> graph = test(avoidNodes, avoidSegments);
 
-    if (mode == 1 || mode == 2) {
-        cout << bestAndAlternativeDrivingRoute(&graph, source, destination) << "\n";
+    string res;
+    if (mode == 1) {
+        res = bestAndAlternativeDrivingRoute(&graph, source, destination);
     }
-   // cout << restrictedDrivingRoute(&graph, source, destination, avoidNodes, avoidSegments, 4) << endl;
-    
-    cout << drivingAndWalkingRoute(graph, source, destination, maxWalkTime, avoidNodes, avoidSegments) << "\n";
+	else {
+    res = drivingAndWalkingRoute(graph, source, destination, maxWalkTime, avoidNodes, avoidSegments);
+    }
+
+    outputGen(source, destination, res);
+
+
     return 1;
 }

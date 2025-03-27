@@ -55,9 +55,9 @@ void cl_points(int &source, int &destination) {
 void cl_mode(int &mode) {
     cout << "How would you like to get there?" << endl;
     cout << "We recommend choosing one of the sustained modes!" << endl;
-    cout << "Please pick one of the options bellow: \n 1 - Driving; \n 2 - Walking; \n 3 - Both." << endl << "Option: ";
+    cout << "Please pick one of the options bellow: \n 1 - Driving; \n 2 - Both." << endl << "Option: ";
     cin >> mode;
-    if (!(mode == 1 || mode == 2 || mode == 3)) {
+    if (!(mode == 1 || mode == 2)) {
         cout << "Invalid mode!" << endl;
         cl_mode(mode);
     }
@@ -134,8 +134,7 @@ void file_handler(int &mode, int &source, int &destination, int &maxWalkTime, ve
         if (value == "") {continue;}
         if (var == "Mode") {
             if (value == "driving") {mode = 1;}
-            else if (value == "walking") {mode = 2;}
-            else if (value == "driving-walking") {mode = 3;}
+            else {mode = 2;}
         }
         if (var == "Source") source = stoi(value);
         if (var == "Destination") destination = stoi(value);
