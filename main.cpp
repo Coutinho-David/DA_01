@@ -17,7 +17,6 @@ int main() {
 int run() {
    // Graph<int> graph = populate();
 
-    Graph<int> graph = test();
         //test bestAndAlternativeDrivingRoute
 
     //cout << bestAndAlternativeDrivingRoute(&graph, 1, 45) << endl;
@@ -32,9 +31,6 @@ int run() {
     */
         //test DrivingAndWalkingRoute
 
-    /*
-
-    */
     int input;
     int mode;
     int source;
@@ -43,11 +39,14 @@ int run() {
     vector<int> avoidNodes = {};
     vector<pair<int, int>> avoidSegments = {};
     int includeNode;
+    
     cout << "Calling init" << endl;
     init(input, mode, source, destination, maxWalkTime, avoidNodes, avoidSegments, includeNode);
     cout << "creating graph" << endl;
     
-    //cout << bestAndAlternativeDrivingRoute(&graph, source, destination);
-    cout << restrictedDrivingRoute(&graph, source, destination, avoidNodes, avoidSegments, includeNode) << endl;
+    Graph<int> graph = test(avoidNodes, avoidSegments);
+
+    cout << bestAndAlternativeDrivingRoute(&graph, source, destination);
+   // cout << restrictedDrivingRoute(&graph, source, destination, avoidNodes, avoidSegments, 4) << endl;
     return 1;
 }

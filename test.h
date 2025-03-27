@@ -45,24 +45,42 @@ location location8 = {"Clerigos", 8, "CL", 0};
 
 std::unordered_map<std::string, int> codeToId;
 
-Graph<int> test() {
+Graph<int> test(std::vector<int> &avoidNodes, std::vector<std::pair<int, int>> &avoidSegments) {
     std::vector<DistanceData> distances = {distance1, distance2, distance3, distance4, distance5, distance6, distance7, distance8, distance9, distance10, distance11, distance12};
     std::vector<location> locations = {location1, location2, location3, location4, location5, location6, location7, location8};
 
     Graph<int> graph;
+    
+    int i = 1;
+    for (int id : avoidNodes) {
+        locations.erase(locations.begin() + id - i);
+        i++;
+    }
 
+    int j = 0; 
     for (location element : locations) {
-        codeToId[element.CODE] = element.Id;  // Store CODE -> ID mapping
+        codeToId[element.CODE] = element.Id;
         if (graph.addVertex(element.Id)) {
             auto v = graph.getVertexSet();
-            v[element.Id - 1]->setParking(element.parking);
+            v[j]->setParking(element.parking);
+            j++;
         }
     }
 
     for (DistanceData element : distances) {
-        int id1 = codeToId[element.CODE1];
-        int id2 = codeToId[element.CODE2];
-        graph.addBidirectionalEdge(id1, id2, element.Driving, element.Walking);
+       bool shouldSkip = false;
+       for (const auto& avoidEdge : avoidSegments) {
+            if ((avoidEdge.first == codeToId[element.CODE1] && avoidEdge.second == codeToId[element.CODE2]) || (avoidEdge.first == codeToId[element.CODE2] && avoidEdge.second == codeToId[element.CODE1])) {
+                shouldSkip = true;
+                break;
+            }
+
+        if (!shouldSkip) {
+            int id1 = codeToId[element.CODE1];
+            int id2 = codeToId[element.CODE2];
+            graph.addBidirectionalEdge(id1, id2, element.Driving, element.Walking);
+            }
+        }
     }
 
     return graph;
