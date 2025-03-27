@@ -131,6 +131,7 @@ void file_handler(int &mode, int &source, int &destination, int &maxWalkTime, ve
         string split = "";
         string var = parse.substr(0, parse.find(":"));
         string value = parse.substr(parse.find(":")+1);
+        if (value == "") {continue;}
         if (var == "Mode") {
             if (value == "driving") {mode = 1;}
             else if (value == "walking") {mode = 2;}
