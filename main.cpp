@@ -47,7 +47,9 @@ int run() {
     
     Graph<int> graph = test(avoidNodes, avoidSegments);
 
-    //cout << bestAndAlternativeDrivingRoute(&graph, source, destination);
+    if (mode == 1 || mode == 2) {
+        cout << bestAndAlternativeDrivingRoute(&graph, source, destination) << "\n";
+    }
    // cout << restrictedDrivingRoute(&graph, source, destination, avoidNodes, avoidSegments, 4) << endl;
     
     cout << drivingAndWalkingRoute(graph, source, destination, maxWalkTime, avoidNodes, avoidSegments) << "\n";
