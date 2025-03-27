@@ -87,44 +87,22 @@ void cl_avoid_nodes(vector<int> &avoidNodes,int source, int destination) {
 
 void cl_avoid_routes(vector<pair<int,int>> &avoidSegments, int source, int destination) {
     string input;
+    string _first;
+    string _second;
     pair<int,int> avoidSegment;
     int control = 1;
     int flag = 1;
-    cout << "Is there any routes you would like to avoid?" << endl << "Submit the pairs of locations one by one." << endl << "(Press enter on a new pair to finish)." << endl;
-    while (flag) {
-        input = "";
-        if (control == 1) {
-            cout << "Avoid route:" << endl;
-            cout << "From: ";
-            getline(cin, input);
-            if (input == "") {
-                flag = 0;
-            }
-            else if (stoi(input) == source || stoi(input) == destination) {
-            	cout << "Can not avoid source nor destination." << endl;
-                cout << "Must indicate a valid location!" << endl;
-            }
-            else {
-            	avoidSegment.first = stoi(input);
-            	control = 2;
-            }
-        }
-        else {
-            cout << "To: ";
-            getline(cin, input);
-            if (input == "") {
-                cout << "Must indicate a location!" << endl;
-            }
-            else if (stoi(input) == source || stoi(input) == destination) {
-            	cout << "Can not avoid source nor destination." << endl;
-                cout << "Must indicate a valid location!" << endl;
-            }
-            else {
-            	avoidSegment.second = stoi(input);
-                avoidSegments.push_back(avoidSegment);
-                control = 1;
-            }
-        }
+    cout << "Is there any routes you would like to avoid?" << endl << "Submit the pair of locations comma separated, one by one." << endl << "(Press enter on a new pair to finish)." << endl;
+    while (1) {
+        cout << " > ";
+        getline(cin, input);
+        if (input == "") break;
+        stringstream ss(input);
+        getline(ss,_first,',');
+        getline(ss, _second);
+        avoidSegment.first = stoi(_first);
+        avoidSegment.second = stoi(_second);
+        avoidSegments.push_back(avoidSegment);
     }
 }
 

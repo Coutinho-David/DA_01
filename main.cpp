@@ -30,7 +30,6 @@ int run() {
     int includeNode = 6;  
     cout << restrictedDrivingRoute(&graph, 1, 45, avoidNodes, avoidSegments, includeNode) << endl;
     */
-
         //test DrivingAndWalkingRoute
 
     /*
@@ -47,7 +46,7 @@ int run() {
     init(input, mode, source, destination, maxWalkTime, avoidNodes, avoidSegments);
     cout << "creating graph" << endl;
     
-    cout << bestAndAlternativeDrivingRoute(&graph, source, destination);
-    
+    //cout << bestAndAlternativeDrivingRoute(&graph, source, destination);
+    cout << restrictedDrivingRoute(&graph, source, destination, avoidNodes, avoidSegments, 5) << endl;
     return 1;
 }
