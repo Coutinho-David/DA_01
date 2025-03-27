@@ -2,8 +2,9 @@
 #include "cl_menu.h"
 #include "dijkstra.h"
 #include "test.h"
-
+#include "outputGen.h"
 #include <vector>
+
 using namespace std;
 
 
@@ -39,14 +40,19 @@ int run() {
     vector<int> avoidNodes = {};
     vector<pair<int, int>> avoidSegments = {};
     int includeNode;
-    
+
     cout << "Calling init" << endl;
     init(input, mode, source, destination, maxWalkTime, avoidNodes, avoidSegments, includeNode);
     cout << "creating graph" << endl;
     
     Graph<int> graph = test(avoidNodes, avoidSegments);
 
-    cout << bestAndAlternativeDrivingRoute(&graph, source, destination);
-   // cout << restrictedDrivingRoute(&graph, source, destination, avoidNodes, avoidSegments, 4) << endl;
+    string res = bestAndAlternativeDrivingRoute(&graph, source, destination);
+
+
+    //restrictedDrivingRoute(&graph, source, destination, avoidNodes, avoidSegments, includeNode);
+
+    outputGen(source, destination,  res);
     return 1;
+
 }
