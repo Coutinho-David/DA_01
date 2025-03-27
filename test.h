@@ -74,13 +74,13 @@ Graph<int> test(std::vector<int> &avoidNodes, std::vector<std::pair<int, int>> &
                 shouldSkip = true;
                 break;
             }
-
+       }
         if (!shouldSkip) {
             int id1 = codeToId[element.CODE1];
             int id2 = codeToId[element.CODE2];
             graph.addBidirectionalEdge(id1, id2, element.Driving, element.Walking);
             }
-        }
+                
     }
 
     return graph;

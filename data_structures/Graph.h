@@ -38,6 +38,8 @@ public:
     void setProcessing(bool processing);
     void setParking(bool parking);
 
+
+    bool isParking() const;
     int getLow() const;
     void setLow(int value);
     int getNum() const;
@@ -52,14 +54,15 @@ public:
 
     friend class MutablePriorityQueue<Vertex>;
 
+
 protected:
     T info;                // info node
     std::vector<Edge<T> *> adj;  // outgoing edges
 
+    bool parking = false;
     // auxiliary fields
     bool visited = false; // used by DFS, BFS, Prim ...
     bool processing = false; // used by isDAG (in addition to the visited attribute)
-    bool parking = false;
     int low = -1, num = -1; // used by SCC Tarjan
     unsigned int indegree; // used by topsort
     double dist = 0;
@@ -215,6 +218,11 @@ bool Vertex<T>::operator<(Vertex<T> & vertex) const {
 template <class T>
 T Vertex<T>::getInfo() const {
     return this->info;
+}
+
+template <class T>
+bool Vertex<T>::isParking() const {
+    return this->parking;
 }
 
 template <class T>

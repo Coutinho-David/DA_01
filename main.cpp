@@ -2,6 +2,7 @@
 #include "cl_menu.h"
 #include "dijkstra.h"
 #include "test.h"
+#include "drivingAndWalking.h"
 
 #include <vector>
 using namespace std;
@@ -10,7 +11,7 @@ using namespace std;
 int run();
 
 int main() {
-    if (run()) cout << "Successful run" << endl;
+    if (run()) cout << "\nSUCCESSFUL RUN" << endl;
     return 0;
 }
 
@@ -46,7 +47,9 @@ int run() {
     
     Graph<int> graph = test(avoidNodes, avoidSegments);
 
-    cout << bestAndAlternativeDrivingRoute(&graph, source, destination);
+    //cout << bestAndAlternativeDrivingRoute(&graph, source, destination);
    // cout << restrictedDrivingRoute(&graph, source, destination, avoidNodes, avoidSegments, 4) << endl;
+    
+    cout << drivingAndWalkingRoute(graph, source, destination, maxWalkTime, avoidNodes, avoidSegments) << "\n";
     return 1;
 }
