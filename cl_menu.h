@@ -13,19 +13,20 @@ void cl_mode(int &mode); //Mode of transportation selection
 void cl_max_walk(int &maxWalkTime);
 void cl_avoid_nodes(vector<int> &avoidNodes, int start_point, int destination);
 void cl_avoid_routes(vector<pair<int,int>> &avoidSegments, int source, int destination);
-void file_handler(int &mode, int &source, int &destination, int &maxWalkTime, vector<int> &avoidNodes, vector<pair<int, int>> &avoidSegments);
+void cl_include_node(int &includeNode, int source, int destination);
+void file_handler(int &mode, int &source, int &destination, int &maxWalkTime, vector<int> &avoidNodes, vector<pair<int, int>> &avoidSegments, int &includeNode);
 
-void init(int &input, int &mode, int &source, int &destination, int &maxWalkTime, vector<int> &avoidNodes, vector<pair<int, int>> &avoidSegments) {
+void init(int &input, int &mode, int &source, int &destination, int &maxWalkTime, vector<int> &avoidNodes, vector<pair<int, int>> &avoidSegments, int &includeNode) {
     cout << "Welcome to the individual route planning tool!\n" << endl;
     cout << "Would you like to submit a file or type your preferences?\n1 - \"File\"\n2 - \"Type\"" << endl << "Option: ";
     cin >> input;
 
     if (!(input == 1 || input == 2)) {
         cout << "Wrong input!" << endl;
-        init(input, mode, source, destination, maxWalkTime, avoidNodes, avoidSegments);
+        init(input, mode, source, destination, maxWalkTime, avoidNodes, avoidSegments, includeNode);
     }
 
-    if (input == 1) file_handler(mode, source, destination, maxWalkTime, avoidNodes, avoidSegments);
+    if (input == 1) file_handler(mode, source, destination, maxWalkTime, avoidNodes, avoidSegments, includeNode);
 
     else {
         cl_points(source, destination);
@@ -33,6 +34,7 @@ void init(int &input, int &mode, int &source, int &destination, int &maxWalkTime
         if (mode == 3) cl_max_walk(maxWalkTime);
         cl_avoid_nodes(avoidNodes, source, destination);
         cl_avoid_routes(avoidSegments, source, destination);
+        cl_include_node(includeNode, source, destination);
         return;
     }
 }
@@ -106,8 +108,16 @@ void cl_avoid_routes(vector<pair<int,int>> &avoidSegments, int source, int desti
     }
 }
 
+void cl_include_node(int &includeNode, int source, int destination) {
+        string input = "";
+        cout << "Is there any stop you need to make?" << endl << "(Press enter to skip.)" << endl << "Place: ";
+        getline(cin, input);
+        if (input != "") {
+            includeNode = stoi(input);
+        }
+    }
 
-void file_handler(int &mode, int &source, int &destination, int &maxWalkTime, vector<int> &avoidNodes, vector<pair<int,int>> &avoidSegments) {
+void file_handler(int &mode, int &source, int &destination, int &maxWalkTime, vector<int> &avoidNodes, vector<pair<int,int>> &avoidSegments, int &includeNode) {
     string file_name;
     string parse;
     cout << "Please submit the name of the file" << endl;
@@ -115,7 +125,7 @@ void file_handler(int &mode, int &source, int &destination, int &maxWalkTime, ve
     ifstream file(file_name);
     if (!file) {
         cerr << "File does not exist" << endl;
-        file_handler(mode, source, destination, maxWalkTime, avoidNodes, avoidSegments);
+        file_handler(mode, source, destination, maxWalkTime, avoidNodes, avoidSegments, includeNode);
     }
     while (getline(file, parse)) {
         string split = "";
@@ -141,6 +151,9 @@ void file_handler(int &mode, int &source, int &destination, int &maxWalkTime, ve
             while (getline(ss, split, ')')) {
                 avoidSegments.push_back({stoi(split.substr(1, split.find(","))),stoi(split.substr(split.find(",")+1))});
             }
+        }
+        if (var == "IncludeNode") {
+                includeNode = stoi(value);
         }
     }
 }

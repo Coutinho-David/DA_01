@@ -42,11 +42,12 @@ int run() {
     int maxWalkTime = 0;
     vector<int> avoidNodes = {};
     vector<pair<int, int>> avoidSegments = {};
+    int includeNode;
     cout << "Calling init" << endl;
-    init(input, mode, source, destination, maxWalkTime, avoidNodes, avoidSegments);
+    init(input, mode, source, destination, maxWalkTime, avoidNodes, avoidSegments, includeNode);
     cout << "creating graph" << endl;
     
     //cout << bestAndAlternativeDrivingRoute(&graph, source, destination);
-    cout << restrictedDrivingRoute(&graph, source, destination, avoidNodes, avoidSegments, 5) << endl;
+    cout << restrictedDrivingRoute(&graph, source, destination, avoidNodes, avoidSegments, includeNode) << endl;
     return 1;
 }
