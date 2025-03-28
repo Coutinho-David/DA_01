@@ -8,14 +8,71 @@
 
 using namespace std;
 
-void cl_points(int &source, int &destination); //Source and destination selection
-void cl_mode(int &mode); //Mode of transportation selection
+/**
+ * @brief Selects source and destination points.
+ * @param source Reference to the starting location.
+ * @param destination Reference to the destination location.
+ */
+void cl_points(int &source, int &destination);
+
+/**
+ * @brief Selects the transportation mode.
+ * @param mode Reference to the transportation method.
+ */
+void cl_mode(int &mode);
+
+/**
+ * @brief Selects the maximum acceptable walking time.
+ * @param maxWalkTime Reference to the maximum acceptable walking time.
+ */
 void cl_max_walk(int &maxWalkTime);
-void cl_avoid_nodes(vector<int> &avoidNodes, int start_point, int destination);
+
+/**
+ * @brief Selects nodes that are to be avoided.
+ * @param avoidNodes Reference to the vector where the nodes to be avoided must be.
+ * @param source Copy of the source for verification purposes.
+ * @param destination Copy of the destination for verification purposes.
+ * @details This function allows the user to define a list of nodes that must be excluded
+ * from the calculated route. It ensures that the path-finding algorithm avoids
+ * these nodes when generating the best possible route.
+ * It also ensures that the input is correct and that neither the source nor the destination is to be avoided, as that would be infeasible
+ */
+void cl_avoid_nodes(vector<int> &avoidNodes, int source, int destination);
+
+/**
+ * @brief Selects routes that are to be avoided.
+ * @param avoidSegments Reference to the vector where the nodes to be avoided must be.
+ * @param source Copy of the source for verification purposes.
+ * @param destination Copy of the destination for verification purposes.
+ * @details This function allows the user to define a list of segments that must be excluded
+ * from the calculated route. It ensures that the path-finding algorithm avoids
+ * these segments when generating the best possible route.
+ * It also ensures that the input is correct and that neither the source nor the destination is to be avoided, as that would be infeasible
+ */
 void cl_avoid_routes(vector<pair<int,int>> &avoidSegments, int source, int destination);
+
+/**
+ * @brief Selects a node that must be included.
+ * @param includeNode Reference to the node that must be included.
+ * @param source Copy of the source for verification purposes.
+ * @param destination Copy of the destination for verification purposes.
+ * @details This function allows the user to define a node that must be included in the
+the calculated route. It ensures that the path-finding algorithm goes through this node when generating the best possible route.
+ * It also ensures that the input is correct and that neither the source nor the destination is a stop, as that would be irrelevant
+ */
 void cl_include_node(int &includeNode, int source, int destination);
+
+/**
+ * @brief Input the data via a text file.
+ * @details This function allows the user to input the name of the file containing the information and stores it in the correct reference.
+ * The formating of the file must be correct in order for it to be read properly.
+ */
 void file_handler(int &mode, int &source, int &destination, int &maxWalkTime, vector<int> &avoidNodes, vector<pair<int, int>> &avoidSegments, int &includeNode);
 
+/**
+ * @brief Starter function for the interface.
+ * @details THis function receives all the parameters requiered for performing the path search and ensures that they are handled by the correct funtion depending on desired input method.
+*/
 void init(int &input, int &mode, int &source, int &destination, int &maxWalkTime, vector<int> &avoidNodes, vector<pair<int, int>> &avoidSegments, int &includeNode) {
     cout << "Welcome to the individual route planning tool!\n" << endl;
     cout << "Would you like to submit a file or type your preferences?\n1 - \"File\"\n2 - \"Type\"" << endl << "Option: ";
@@ -31,7 +88,7 @@ void init(int &input, int &mode, int &source, int &destination, int &maxWalkTime
     else {
         cl_points(source, destination);
         cl_mode(mode);
-        if (mode == 3) cl_max_walk(maxWalkTime);
+        if (mode == 2) cl_max_walk(maxWalkTime);
         cl_avoid_nodes(avoidNodes, source, destination);
         cl_avoid_routes(avoidSegments, source, destination);
         cl_include_node(includeNode, source, destination);

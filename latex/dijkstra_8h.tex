@@ -1,0 +1,88 @@
+\doxysection{dijkstra.\+h File Reference}
+\hypertarget{dijkstra_8h}{}\label{dijkstra_8h}\index{dijkstra.h@{dijkstra.h}}
+{\ttfamily \#include "{}data\+\_\+structures/\+Graph.\+h"{}}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}data\+\_\+structures/\+Mutable\+Priority\+Queue.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T$>$ }\\bool \mbox{\hyperlink{dijkstra_8h_ac6c9b9be80fd9b3831e06e4ebdf1d0e0}{relax\+\_\+driving}} (\mbox{\hyperlink{classEdge}{Edge}}$<$ T $>$ \texorpdfstring{$\ast$}{*}edge)
+\item 
+{\footnotesize template$<$class T$>$ }\\void \mbox{\hyperlink{dijkstra_8h_a9d799af5f93fc7ff08f75e65b9df75f6}{dijkstra\+\_\+driving}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}g, int origin)
+\item 
+{\footnotesize template$<$class T$>$ }\\std\+::string \mbox{\hyperlink{dijkstra_8h_aa10bd97713670c3bf2f6f14f19b2ac57}{best\+Driving\+Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}g, int s, int t)
+\item 
+{\footnotesize template$<$class T$>$ }\\std\+::string \mbox{\hyperlink{dijkstra_8h_a5869c5befc93a78ad396fe03fd68c053}{alternative\+Driving\+Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}g, int s, int t)
+\item 
+{\footnotesize template$<$class T$>$ }\\std\+::string \mbox{\hyperlink{dijkstra_8h_aa8d589d949494404b355e005e9e78812}{best\+And\+Alternative\+Driving\+Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}g, int s, int t)
+\item 
+{\footnotesize template$<$class T$>$ }\\std\+::string \mbox{\hyperlink{dijkstra_8h_a24bcedbd0c6163860251115767cb54d0}{restricted\+Driving\+Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}g, int s, int t, vector$<$ int $>$ avoid\+Nodes, vector$<$ pair$<$ int, int $>$ $>$ avoid\+Segments, int include\+Node)
+\item 
+{\footnotesize template$<$class T$>$ }\\bool \mbox{\hyperlink{dijkstra_8h_aa1dab36a3833b3f0b1e578bdef35a1e0}{relax\+\_\+walking}} (\mbox{\hyperlink{classEdge}{Edge}}$<$ T $>$ \texorpdfstring{$\ast$}{*}edge)
+\item 
+{\footnotesize template$<$class T$>$ }\\void \mbox{\hyperlink{dijkstra_8h_a56a6f3cff304c83a461eff536d8f91b8}{dijkstra\+\_\+walking}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}g, int origin)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dijkstra_8h_a5869c5befc93a78ad396fe03fd68c053}\index{dijkstra.h@{dijkstra.h}!alternativeDrivingRoute@{alternativeDrivingRoute}}
+\index{alternativeDrivingRoute@{alternativeDrivingRoute}!dijkstra.h@{dijkstra.h}}
+\doxysubsubsection{\texorpdfstring{alternativeDrivingRoute()}{alternativeDrivingRoute()}}
+{\footnotesize\ttfamily \label{dijkstra_8h_a5869c5befc93a78ad396fe03fd68c053} 
+template$<$class T$>$ \\
+std\+::string alternative\+Driving\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{s}{, }\item[{int}]{t}{}\end{DoxyParamCaption})}
+
+\Hypertarget{dijkstra_8h_aa8d589d949494404b355e005e9e78812}\index{dijkstra.h@{dijkstra.h}!bestAndAlternativeDrivingRoute@{bestAndAlternativeDrivingRoute}}
+\index{bestAndAlternativeDrivingRoute@{bestAndAlternativeDrivingRoute}!dijkstra.h@{dijkstra.h}}
+\doxysubsubsection{\texorpdfstring{bestAndAlternativeDrivingRoute()}{bestAndAlternativeDrivingRoute()}}
+{\footnotesize\ttfamily \label{dijkstra_8h_aa8d589d949494404b355e005e9e78812} 
+template$<$class T$>$ \\
+std\+::string best\+And\+Alternative\+Driving\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{s}{, }\item[{int}]{t}{}\end{DoxyParamCaption})}
+
+\Hypertarget{dijkstra_8h_aa10bd97713670c3bf2f6f14f19b2ac57}\index{dijkstra.h@{dijkstra.h}!bestDrivingRoute@{bestDrivingRoute}}
+\index{bestDrivingRoute@{bestDrivingRoute}!dijkstra.h@{dijkstra.h}}
+\doxysubsubsection{\texorpdfstring{bestDrivingRoute()}{bestDrivingRoute()}}
+{\footnotesize\ttfamily \label{dijkstra_8h_aa10bd97713670c3bf2f6f14f19b2ac57} 
+template$<$class T$>$ \\
+std\+::string best\+Driving\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{s}{, }\item[{int}]{t}{}\end{DoxyParamCaption})}
+
+\Hypertarget{dijkstra_8h_a9d799af5f93fc7ff08f75e65b9df75f6}\index{dijkstra.h@{dijkstra.h}!dijkstra\_driving@{dijkstra\_driving}}
+\index{dijkstra\_driving@{dijkstra\_driving}!dijkstra.h@{dijkstra.h}}
+\doxysubsubsection{\texorpdfstring{dijkstra\_driving()}{dijkstra\_driving()}}
+{\footnotesize\ttfamily \label{dijkstra_8h_a9d799af5f93fc7ff08f75e65b9df75f6} 
+template$<$class T$>$ \\
+void dijkstra\+\_\+driving (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{origin}{}\end{DoxyParamCaption})}
+
+\Hypertarget{dijkstra_8h_a56a6f3cff304c83a461eff536d8f91b8}\index{dijkstra.h@{dijkstra.h}!dijkstra\_walking@{dijkstra\_walking}}
+\index{dijkstra\_walking@{dijkstra\_walking}!dijkstra.h@{dijkstra.h}}
+\doxysubsubsection{\texorpdfstring{dijkstra\_walking()}{dijkstra\_walking()}}
+{\footnotesize\ttfamily \label{dijkstra_8h_a56a6f3cff304c83a461eff536d8f91b8} 
+template$<$class T$>$ \\
+void dijkstra\+\_\+walking (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{origin}{}\end{DoxyParamCaption})}
+
+\Hypertarget{dijkstra_8h_ac6c9b9be80fd9b3831e06e4ebdf1d0e0}\index{dijkstra.h@{dijkstra.h}!relax\_driving@{relax\_driving}}
+\index{relax\_driving@{relax\_driving}!dijkstra.h@{dijkstra.h}}
+\doxysubsubsection{\texorpdfstring{relax\_driving()}{relax\_driving()}}
+{\footnotesize\ttfamily \label{dijkstra_8h_ac6c9b9be80fd9b3831e06e4ebdf1d0e0} 
+template$<$class T$>$ \\
+bool relax\+\_\+driving (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{Edge}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{edge}{}\end{DoxyParamCaption})}
+
+\Hypertarget{dijkstra_8h_aa1dab36a3833b3f0b1e578bdef35a1e0}\index{dijkstra.h@{dijkstra.h}!relax\_walking@{relax\_walking}}
+\index{relax\_walking@{relax\_walking}!dijkstra.h@{dijkstra.h}}
+\doxysubsubsection{\texorpdfstring{relax\_walking()}{relax\_walking()}}
+{\footnotesize\ttfamily \label{dijkstra_8h_aa1dab36a3833b3f0b1e578bdef35a1e0} 
+template$<$class T$>$ \\
+bool relax\+\_\+walking (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{Edge}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{edge}{}\end{DoxyParamCaption})}
+
+\Hypertarget{dijkstra_8h_a24bcedbd0c6163860251115767cb54d0}\index{dijkstra.h@{dijkstra.h}!restrictedDrivingRoute@{restrictedDrivingRoute}}
+\index{restrictedDrivingRoute@{restrictedDrivingRoute}!dijkstra.h@{dijkstra.h}}
+\doxysubsubsection{\texorpdfstring{restrictedDrivingRoute()}{restrictedDrivingRoute()}}
+{\footnotesize\ttfamily \label{dijkstra_8h_a24bcedbd0c6163860251115767cb54d0} 
+template$<$class T$>$ \\
+std\+::string restricted\+Driving\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{s}{, }\item[{int}]{t}{, }\item[{vector$<$ int $>$}]{avoid\+Nodes}{, }\item[{vector$<$ pair$<$ int, int $>$ $>$}]{avoid\+Segments}{, }\item[{int}]{include\+Node}{}\end{DoxyParamCaption})}
+

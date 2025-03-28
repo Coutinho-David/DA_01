@@ -17,22 +17,6 @@ int main() {
 }
 
 int run() {
-   // Graph<int> graph = populate();
-
-        //test bestAndAlternativeDrivingRoute
-
-    //cout << bestAndAlternativeDrivingRoute(&graph, 1, 45) << endl;
-
-        //test restrictedDrivingRoute
-
-    /*
-    std::vector<int> avoidNodes = {3, 7};  
-    std::vector<pair<int, int>> avoidSegments = {{1, 4}, {2, 5}};  
-    int includeNode = 6;  
-    cout << restrictedDrivingRoute(&graph, 1, 45, avoidNodes, avoidSegments, includeNode) << endl;
-    */
-        //test DrivingAndWalkingRoute
-
     int input;
     int mode;
     int source;
@@ -57,7 +41,6 @@ int run() {
     }
 
     outputGen(source, destination, res);
-
 
     return 1;
 }
