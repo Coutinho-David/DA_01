@@ -18,7 +18,7 @@ void file_handler(int &mode, int &source, int &destination, int &maxWalkTime, ve
 
 void init(int &input, int &mode, int &source, int &destination, int &maxWalkTime, vector<int> &avoidNodes, vector<pair<int, int>> &avoidSegments, int &includeNode) {
     cout << "Welcome to the individual route planning tool!\n" << endl;
-    cout << "Would you like to submit a file or type your preferences?\n1 - \"File\"\n2 - \"Type\"" << endl << "Option: ";
+    cout << "Would you like to submit a file or type your preferences?\n\n 1 - \"File\"\n 2 - \"Type\"" << endl << endl << "Option: ";
     cin >> input;
 
     if (!(input == 1 || input == 2)) {
@@ -41,9 +41,10 @@ void init(int &input, int &mode, int &source, int &destination, int &maxWalkTime
 
 
 void cl_points(int &source, int &destination) {
-    cout << "Where are you starting your trip?" << endl << "Location: ";
+    cout << endl << "-----------------------------------------------------------------------------" << endl;
+    cout << endl << "Where are you starting your trip?" << endl << endl << "Location: ";
     cin >> source;
-    cout << "Where would you like to go?" << endl << "Location: ";
+    cout << endl << "Where would you like to go?" << endl << endl << "Location: ";
     cin >>  destination;
 
     if (source == destination) {
@@ -53,9 +54,10 @@ void cl_points(int &source, int &destination) {
 }
 
 void cl_mode(int &mode) {
-    cout << "How would you like to get there?" << endl;
-    cout << "We recommend choosing one of the sustained modes!" << endl;
-    cout << "Please pick one of the options bellow: \n 1 - Driving; \n 2 - Both." << endl << "Option: ";
+    cout << endl << "-----------------------------------------------------------------------------" << endl;
+    cout << endl << "How would you like to get there?" << endl;
+    cout << "We recommend choosing the most Environmentally-Friendly mode!" << endl;
+    cout << "Please pick one of the options bellow: \n\n 1 - Driving; \n 2 - Driving and Walking." << endl << endl << "Option: ";
     cin >> mode;
     if (!(mode == 1 || mode == 2)) {
         cout << "Invalid mode!" << endl;
@@ -64,14 +66,17 @@ void cl_mode(int &mode) {
 }
 
 void cl_max_walk(int &maxWalkTime) {
-    cout << "What is the maximum acceptable walking time in minutes?" << endl;
+    cout << endl << "-----------------------------------------------------------------------------" << endl;
+    cout << "\nWhat is the maximum acceptable walking time in minutes?" << endl;
+    cout << "\nTime: ";
     cin >> maxWalkTime;
 }
 
 void cl_avoid_nodes(vector<int> &avoidNodes,int source, int destination) {
     string input;
     int flag = 1;
-    cout << "Is there any places you would like to avoid?" << endl << "Input them one by one." << endl << "(Press enter to finish): " << endl;
+    cout << endl << "-----------------------------------------------------------------------------" << endl;
+    cout << "\nIs there any places you would like to avoid?" << endl << "Input them one by one and press enter to finish: " << endl << endl;
     cin.ignore();
     while (flag) {
         input = "";
@@ -81,7 +86,7 @@ void cl_avoid_nodes(vector<int> &avoidNodes,int source, int destination) {
             flag = 0;
         }
         else if (stoi(input) == source || stoi(input) == destination) {
-            cout << "Can not avoid source nor destination." << endl;
+            cout << " -> Can not avoid source nor destination." << endl;
         }
         else avoidNodes.push_back(stoi(input));
     }
@@ -91,30 +96,36 @@ void cl_avoid_routes(vector<pair<int,int>> &avoidSegments, int source, int desti
     string input;
     string _first;
     string _second;
-    pair<int,int> avoidSegment;
+    pair<int,int> avoidSegment = {};
     int control = 1;
     int flag = 1;
-    cout << "Is there any routes you would like to avoid?" << endl << "Submit the pair of locations comma separated, one by one." << endl << "(Press enter on a new pair to finish)." << endl;
+    cout << endl << "-----------------------------------------------------------------------------" << endl;
+    cout << "\nIs there any routes you would like to avoid?" << endl << "Submit the pair of locations, comma separated, one by one." << endl << "Press enter on a new pair to finish." << endl << endl;
     while (1) {
-        cout << " > ";
+        cout << "Pair: ";
         getline(cin, input);
-        if (input == "") break;
-        stringstream ss(input);
-        getline(ss,_first,',');
-        getline(ss, _second);
-        avoidSegment.first = stoi(_first);
-        avoidSegment.second = stoi(_second);
-        avoidSegments.push_back(avoidSegment);
+        if (input == "")    {
+            break;
+        }else{
+            stringstream ss(input);
+            getline(ss,_first,',');
+            getline(ss, _second);
+            avoidSegment.first = stoi(_first);
+            avoidSegment.second = stoi(_second);
+            avoidSegments.push_back(avoidSegment);
+        }
     }
 }
 
 void cl_include_node(int &includeNode, int source, int destination) {
         string input = "";
-        cout << "Is there any stop you need to make?" << endl << "(Press enter to skip.)" << endl << "Place: ";
+        cout << endl << "-----------------------------------------------------------------------------" << endl;
+        cout << "\nIs there any stop you need to make?" << endl << "Press enter to skip." << endl << endl << "Place: ";
         getline(cin, input);
         if (input != "") {
             includeNode = stoi(input);
         }
+        cout << endl << "-----------------------------------------------------------------------------" << endl << endl;
     }
 
 void file_handler(int &mode, int &source, int &destination, int &maxWalkTime, vector<int> &avoidNodes, vector<pair<int,int>> &avoidSegments, int &includeNode) {
