@@ -132,16 +132,15 @@ void cl_max_walk(int &maxWalkTime) {
 
 void cl_avoid_nodes(vector<int> &avoidNodes,int source, int destination) {
     string input;
-    int flag = 1;
     cout << endl << "-----------------------------------------------------------------------------" << endl;
     cout << "\nIs there any places you would like to avoid?" << endl << "Input them one by one and press enter to finish: " << endl << endl;
     cin.ignore();
-    while (flag) {
+    while (1) {
         input = "";
         cout << "Place: ";
         getline(cin, input);
         if (input == "") {
-            flag = 0;
+            break;
         }
         else if (stoi(input) == source || stoi(input) == destination) {
             cout << " -> Can not avoid source nor destination." << endl;
@@ -168,6 +167,8 @@ void cl_avoid_routes(vector<pair<int,int>> &avoidSegments, int source, int desti
             stringstream ss(input);
             getline(ss,_first,',');
             getline(ss, _second);
+            int val1 = stoi(_first);
+            int val2 = stoi(_second);
             avoidSegment.first = stoi(_first);
             avoidSegment.second = stoi(_second);
             avoidSegments.push_back(avoidSegment);
@@ -178,18 +179,30 @@ void cl_avoid_routes(vector<pair<int,int>> &avoidSegments, int source, int desti
 void cl_include_node(int &includeNode, int source, int destination) {
         string input = "";
         cout << endl << "-----------------------------------------------------------------------------" << endl;
-        cout << "\nIs there any stop you need to make?" << endl << "Press enter to skip." << endl << endl << "Place: ";
-        getline(cin, input);
-        if (input != "") {
-            includeNode = stoi(input);
-        }
+        cout << "\nIs there any stop you need to make?" << endl << "Press enter to skip." << endl << endl;
+        while (1) {
+        	input = "";
+        	cout << "Place: ";
+        	getline(cin, input);
+        	if (input == "") {
+            	break;
+        	}
+        	else if (stoi(input) == source || stoi(input) == destination) {
+            	cout << " -> Stopping node can not be the source nor the destination." << endl;
+        	}
+            else {
+                  includeNode = stoi(input);
+                  break;
+            }
+    	}
         cout << endl << "-----------------------------------------------------------------------------" << endl << endl;
-    }
+}
 
 void file_handler(int &mode, int &source, int &destination, int &maxWalkTime, vector<int> &avoidNodes, vector<pair<int,int>> &avoidSegments, int &includeNode) {
     string file_name;
-    string parse;
-    cout << "Please submit the name of the file" << endl;
+	string parse;
+    cout << endl << "-----------------------------------------------------------------------------" << endl;
+    cout << "Please submit the name of the file" << endl << "> ";
     cin >> file_name;
     ifstream file(file_name);
     if (!file) {
