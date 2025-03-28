@@ -66,7 +66,9 @@ void cl_mode(int &mode) {
 }
 
 void cl_max_walk(int &maxWalkTime) {
+    cout << endl << "-----------------------------------------------------------------------------" << endl;
     cout << "\nWhat is the maximum acceptable walking time in minutes?" << endl;
+    cout << "\nTime: ";
     cin >> maxWalkTime;
 }
 
@@ -84,7 +86,7 @@ void cl_avoid_nodes(vector<int> &avoidNodes,int source, int destination) {
             flag = 0;
         }
         else if (stoi(input) == source || stoi(input) == destination) {
-            cout << "Can not avoid source nor destination." << endl;
+            cout << " -> Can not avoid source nor destination." << endl;
         }
         else avoidNodes.push_back(stoi(input));
     }
@@ -100,7 +102,7 @@ void cl_avoid_routes(vector<pair<int,int>> &avoidSegments, int source, int desti
     cout << endl << "-----------------------------------------------------------------------------" << endl;
     cout << "\nIs there any routes you would like to avoid?" << endl << "Submit the pair of locations, comma separated, one by one." << endl << "Press enter on a new pair to finish." << endl;
     while (1) {
-        cout << " > ";
+        cout << "Pair: ";
         getline(cin, input);
         if (input == "") break;
         stringstream ss(input);
