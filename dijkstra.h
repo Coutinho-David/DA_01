@@ -12,11 +12,116 @@
 
 using namespace std;
 
+/**
+ * @brief Relaxation function for driving distances.
+ * @tparam T Type of vertex information.
+ * @param edge Pointer to the edge being relaxed.
+ * @return True if the edge was relaxed, false otherwise.
+ * Applies the edge relaxation principles taught in the course.
+ */
 template <class T>
-bool relax_driving(Edge<T> *edge) { // d[u] + w(u,v) < d[v]
-    if (edge->getOrig()->getDist() + edge->getWeight()[0] < edge->getDest()->getDist()) { // we have found a better way to reach v
-        edge->getDest()->setDist(edge->getOrig()->getDist() + edge->getWeight()[0]); // d[v] = d[u] + w(u,v)
-        edge->getDest()->setPath(edge); // set the predecessor of v to u; in this case the edge from u to v
+bool relax_driving(Edge<T> *edge);
+
+/**
+ * @brief Dijkstra's algorithm to compute shortest paths when driving.
+ * @tparam T Type of vertex information.
+ * @param g Pointer to the graph.
+ * @param origin Source vertex.
+ * @return Shortest paths, when found.
+ * @complexity O((V + E) log V), where V is the number of vertices and E is the number of edges.
+ */
+template <class T>
+void dijkstra_driving(Graph<T> *g, int origin);
+
+/**
+ * @brief Retrieves the shortest path from origin to destination.
+ * @tparam T Type of vertex information.
+ * @param g Pointer to the graph.
+ * @param origin Source vertex.
+ * @param dest Destination vertex.
+ * @return Vector containing the path sequence.
+ * @complexity O(V), as the path is traced back from the destination to the source.
+ */
+template <class T>
+static std::vector<T> getPath(Graph<T> *g, int origin, int dest);
+
+/**
+ * @brief Computes the best driving route from source to destination.
+ * @tparam T Type of vertex information.
+ * @param g Pointer to the graph.
+ * @param s Source vertex.
+ * @param t Destination vertex.
+ * @return String representation of the best driving route.
+ * @complexity O((V + E) log V), due to Dijkstra's algorithm.
+ */
+template <class T>
+std::string bestDrivingRoute(Graph<T> *g, int s, int t);
+
+/**
+ * @brief Computes an alternative driving route avoiding the best route's edges.
+ * @tparam T Type of vertex information.
+ * @param g Pointer to the graph.
+ * @param s Source vertex.
+ * @param t Destination vertex.
+ * @return String representation of the alternative driving route.
+ * @complexity O((V + E) log V) for the first Dijkstra call + O(E) for edge removal + O((V + E) log V) for the second Dijkstra call.
+ */
+template <class T>
+std::string alternativeDrivingRoute(Graph<T> *g, int s, int t);
+
+/**
+ * @brief Computes the best and second best driving routes.
+ * @tparam T Type of vertex information.
+ * @param g Pointer to the graph.
+ * @param s Source vertex.
+ * @param t Destination vertex.
+ * @param avoidNodes Nodes to avoid.
+ * @param avoidSegments Edges to avoid.
+ * @param includeNode Mandatory node to include in the path.
+ * @return String representation of the routes.
+ * @complexity O((V + E) log V) for Dijkstra plus additional overhead for avoidance logic.
+ */
+template <class T>
+std::string bestAndAlternativeDrivingRoute(Graph<T> *g, int s, int t, vector<int> avoidNodes, vector<pair<int, int>> avoidSegments, int includeNode);
+
+/**
+ * @brief Computes a restricted driving route considering specific nodes.
+ * @tparam T Type of vertex information.
+ * @param g Pointer to the graph.
+ * @param s Source vertex.
+ * @param t Destination vertex.
+ * @param includeNode Mandatory node to include.
+ * @return String representation of the restricted driving route.
+ * @complexity O((V + E) log V) for each Dijkstra execution (up to 2 times if includeNode is used).
+ */
+template <class T>
+std::string restrictedDrivingRoute(Graph<T> *g, int s, int t, int includeNode);
+
+/**
+ * @brief Relaxation function for walking distances.
+ * @tparam T Type of vertex information.
+ * @param edge Pointer to the edge being relaxed.
+ * @return True if the edge was relaxed, false otherwise.
+ * Applies the edge relaxation principles taught in the course.
+ */
+template <class T>
+bool relax_walking(Edge<T> *edge);
+
+/**
+ * @brief Runs Dijkstra's algorithm to compute shortest paths for walking.
+ * @tparam T Type of vertex information.
+ * @param g Pointer to the graph.
+ * @param origin Source vertex.
+ * @complexity O((V + E) log V), as it is based on Dijkstra's algorithm.
+ */
+template <class T>
+void dijkstra_walking(Graph<T> *g, int origin);
+
+template <class T>
+bool relax_driving(Edge<T> *edge) {
+    if (edge->getOrig()->getDist() + edge->getWeight()[0] < edge->getDest()->getDist()) {
+        edge->getDest()->setDist(edge->getOrig()->getDist() + edge->getWeight()[0]);
+        edge->getDest()->setPath(edge);
         return true;
     }
     return false;
@@ -24,14 +129,13 @@ bool relax_driving(Edge<T> *edge) { // d[u] + w(u,v) < d[v]
 
 template <class T>
 void dijkstra_driving(Graph<T> *g, int origin) {
-    // Initialize the vertices
     for (auto v : g->getVertexSet()) {
         v->setDist(INF);
         v->setPath(nullptr);
     }
 
     auto s = g->findVertex(origin);
-    if (!s) return;  // Safety check in case the origin is not found
+    if (!s) return;
     s->setDist(0);
 
     MutablePriorityQueue<Vertex<T>> q;
@@ -55,7 +159,7 @@ template <class T>
 static std::vector<T> getPath(Graph<T> *g, int origin, int dest) {
     std::vector<T> res;
     auto v = g->findVertex(dest);
-    if (v == nullptr || v->getDist() == INF) { // missing or disconnected
+    if (v == nullptr || v->getDist() == INF) {
         return res;
     }
     res.push_back(v->getInfo());
@@ -70,11 +174,9 @@ static std::vector<T> getPath(Graph<T> *g, int origin, int dest) {
     return res;
 }
 
-// function to call to BestDrivingRoute
-
 template <class T>
 std::string bestDrivingRoute(Graph<T> *g, int s, int t) {
-    dijkstra_driving(g, s);  // Run Dijkstra from source `s`
+    dijkstra_driving(g, s);
     
     std::vector<T> path = getPath(g, s, t);
     if (path.empty()) {
@@ -91,17 +193,14 @@ std::string bestDrivingRoute(Graph<T> *g, int s, int t) {
         }
     }
 
-    // Append total distance
     result << "(" << g->findVertex(t)->getDist() << ")";
     
     return result.str();
 }
 
-// function to call to AlternativeDrivingRoute
 
 template <class T>
 std::string alternativeDrivingRoute(Graph<T> *g, int s, int t) {
-    // Find the best route first
     dijkstra_driving(g, s);
     std::vector<T> bestPath = getPath(g, s, t);
     if (bestPath.empty()) {
@@ -110,7 +209,6 @@ std::string alternativeDrivingRoute(Graph<T> *g, int s, int t) {
     
     int bestDist = g->findVertex(t)->getDist();
     
-    // Remove edges that were part of the best path
     for (size_t i = 0; i < bestPath.size() - 1; i++) {
         auto v = g->findVertex(bestPath[i]);
         if (v) {
@@ -118,7 +216,6 @@ std::string alternativeDrivingRoute(Graph<T> *g, int s, int t) {
         }
     }
     
-    // Find an alternative route
     dijkstra_driving(g, s);
     std::vector<T> altPath = getPath(g, s, t);
     
@@ -136,13 +233,11 @@ std::string alternativeDrivingRoute(Graph<T> *g, int s, int t) {
         }
     }
 
-    // Append total distance
     result << "(" << g->findVertex(t)->getDist() << ")";
     
     return result.str();
 }
 
-// function to call to BestAndAlternativeDrivingRoute
 
 template <class T>
 std::string bestAndAlternativeDrivingRoute(Graph<T> *g, int s, int t, vector<int> avoidNodes, vector<pair<int, int>> avoidSegments, int includeNode ) {
@@ -154,7 +249,6 @@ std::string bestAndAlternativeDrivingRoute(Graph<T> *g, int s, int t, vector<int
     return restrictedDrivingRoute(g, s, t, includeNode);
 }
 
-// function to call to RestrictedDrivingRoute
 
 template <class T>
 std::string restrictedDrivingRoute(Graph<T> *g, int s, int t, int includeNode) {
@@ -194,10 +288,10 @@ std::string restrictedDrivingRoute(Graph<T> *g, int s, int t, int includeNode) {
 }
 
     template <class T>
-bool relax_walking(Edge<T> *edge) { // d[u] + w(u,v) < d[v]
-    if (edge->getOrig()->getDist() + edge->getWeight()[1] < edge->getDest()->getDist()) { // we have found a better way to reach v
-        edge->getDest()->setDist(edge->getOrig()->getDist() + edge->getWeight()[1]); // d[v] = d[u] + w(u,v)
-        edge->getDest()->setPath(edge); // set the predecessor of v to u; in this case the edge from u to v
+bool relax_walking(Edge<T> *edge) {
+    if (edge->getOrig()->getDist() + edge->getWeight()[1] < edge->getDest()->getDist()) {
+        edge->getDest()->setDist(edge->getOrig()->getDist() + edge->getWeight()[1]);
+        edge->getDest()->setPath(edge);
         return true;
     }
     return false;
