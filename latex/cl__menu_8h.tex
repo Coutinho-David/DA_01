@@ -1,0 +1,156 @@
+\doxysection{cl\+\_\+menu.\+h File Reference}
+\hypertarget{cl__menu_8h}{}\label{cl__menu_8h}\index{cl\_menu.h@{cl\_menu.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{cl__menu_8h_a8eb6daad73831f6e14853e4b1d132aaa}{cl\+\_\+points}} (int \&source, int \&destination)
+\begin{DoxyCompactList}\small\item\em Selects source and destination points. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cl__menu_8h_a749ea8de6b1b31ae0832009af0a2fd5a}{cl\+\_\+mode}} (int \&mode)
+\begin{DoxyCompactList}\small\item\em Selects the transportation mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cl__menu_8h_a5bf4ef83ab164316484c8340bdadfb68}{cl\+\_\+max\+\_\+walk}} (int \&max\+Walk\+Time)
+\begin{DoxyCompactList}\small\item\em Selects the maximum acceptable walking time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cl__menu_8h_a98e2a5537160aea06635cf4f039dfbf2}{cl\+\_\+avoid\+\_\+nodes}} (vector$<$ int $>$ \&avoid\+Nodes, int source, int destination)
+\begin{DoxyCompactList}\small\item\em Selects nodes that are to be avoided. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cl__menu_8h_a0e94e364243130fad3d3cd274f41b9ac}{cl\+\_\+avoid\+\_\+routes}} (vector$<$ pair$<$ int, int $>$ $>$ \&avoid\+Segments, int source, int destination)
+\begin{DoxyCompactList}\small\item\em Selects routes that are to be avoided. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cl__menu_8h_ac5ebdac6a01701473162ce94771bd4d0}{cl\+\_\+include\+\_\+node}} (int \&include\+Node, int source, int destination)
+\begin{DoxyCompactList}\small\item\em Selects a node that must be included. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cl__menu_8h_a57046a479c94d05742601327b5410947}{file\+\_\+handler}} (int \&mode, int \&source, int \&destination, int \&max\+Walk\+Time, vector$<$ int $>$ \&avoid\+Nodes, vector$<$ pair$<$ int, int $>$ $>$ \&avoid\+Segments, int \&include\+Node)
+\begin{DoxyCompactList}\small\item\em Input the data via a text file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cl__menu_8h_a9ecebe277b407d2e8bf42d593f60183d}{init}} (int \&input, int \&mode, int \&source, int \&destination, int \&max\+Walk\+Time, vector$<$ int $>$ \&avoid\+Nodes, vector$<$ pair$<$ int, int $>$ $>$ \&avoid\+Segments, int \&include\+Node)
+\begin{DoxyCompactList}\small\item\em Starter function for the interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{cl__menu_8h_a98e2a5537160aea06635cf4f039dfbf2}\index{cl\_menu.h@{cl\_menu.h}!cl\_avoid\_nodes@{cl\_avoid\_nodes}}
+\index{cl\_avoid\_nodes@{cl\_avoid\_nodes}!cl\_menu.h@{cl\_menu.h}}
+\doxysubsubsection{\texorpdfstring{cl\_avoid\_nodes()}{cl\_avoid\_nodes()}}
+{\footnotesize\ttfamily \label{cl__menu_8h_a98e2a5537160aea06635cf4f039dfbf2} 
+void cl\+\_\+avoid\+\_\+nodes (\begin{DoxyParamCaption}\item[{vector$<$ int $>$ \&}]{avoid\+Nodes}{, }\item[{int}]{source}{, }\item[{int}]{destination}{}\end{DoxyParamCaption})}
+
+
+
+Selects nodes that are to be avoided. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em avoid\+Nodes} & Reference to the vector where the nodes to be avoided must be. \\
+\hline
+{\em source} & Copy of the source for verification purposes. \\
+\hline
+{\em destination} & Copy of the destination for verification purposes.\\
+\hline
+\end{DoxyParams}
+This function allows the user to define a list of nodes that must be excluded from the calculated route. It ensures that the path-\/finding algorithm avoids these nodes when generating the best possible route. It also ensures that the input is correct and that neither the source nor the destination is to be avoided, as that would be infeasible \Hypertarget{cl__menu_8h_a0e94e364243130fad3d3cd274f41b9ac}\index{cl\_menu.h@{cl\_menu.h}!cl\_avoid\_routes@{cl\_avoid\_routes}}
+\index{cl\_avoid\_routes@{cl\_avoid\_routes}!cl\_menu.h@{cl\_menu.h}}
+\doxysubsubsection{\texorpdfstring{cl\_avoid\_routes()}{cl\_avoid\_routes()}}
+{\footnotesize\ttfamily \label{cl__menu_8h_a0e94e364243130fad3d3cd274f41b9ac} 
+void cl\+\_\+avoid\+\_\+routes (\begin{DoxyParamCaption}\item[{vector$<$ pair$<$ int, int $>$ $>$ \&}]{avoid\+Segments}{, }\item[{int}]{source}{, }\item[{int}]{destination}{}\end{DoxyParamCaption})}
+
+
+
+Selects routes that are to be avoided. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em avoid\+Segments} & Reference to the vector where the nodes to be avoided must be. \\
+\hline
+{\em source} & Copy of the source for verification purposes. \\
+\hline
+{\em destination} & Copy of the destination for verification purposes.\\
+\hline
+\end{DoxyParams}
+This function allows the user to define a list of segments that must be excluded from the calculated route. It ensures that the path-\/finding algorithm avoids these segments when generating the best possible route. It also ensures that the input is correct and that neither the source nor the destination is to be avoided, as that would be infeasible \Hypertarget{cl__menu_8h_ac5ebdac6a01701473162ce94771bd4d0}\index{cl\_menu.h@{cl\_menu.h}!cl\_include\_node@{cl\_include\_node}}
+\index{cl\_include\_node@{cl\_include\_node}!cl\_menu.h@{cl\_menu.h}}
+\doxysubsubsection{\texorpdfstring{cl\_include\_node()}{cl\_include\_node()}}
+{\footnotesize\ttfamily \label{cl__menu_8h_ac5ebdac6a01701473162ce94771bd4d0} 
+void cl\+\_\+include\+\_\+node (\begin{DoxyParamCaption}\item[{int \&}]{include\+Node}{, }\item[{int}]{source}{, }\item[{int}]{destination}{}\end{DoxyParamCaption})}
+
+
+
+Selects a node that must be included. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em include\+Node} & Reference to the node that must be included. \\
+\hline
+{\em source} & Copy of the source for verification purposes. \\
+\hline
+{\em destination} & Copy of the destination for verification purposes.\\
+\hline
+\end{DoxyParams}
+This function allows the user to define a node that must be included in the the calculated route. It ensures that the path-\/finding algorithm goes through this node when generating the best possible route. It also ensures that the input is correct and that neither the source nor the destination is a stop, as that would be irrelevant \Hypertarget{cl__menu_8h_a5bf4ef83ab164316484c8340bdadfb68}\index{cl\_menu.h@{cl\_menu.h}!cl\_max\_walk@{cl\_max\_walk}}
+\index{cl\_max\_walk@{cl\_max\_walk}!cl\_menu.h@{cl\_menu.h}}
+\doxysubsubsection{\texorpdfstring{cl\_max\_walk()}{cl\_max\_walk()}}
+{\footnotesize\ttfamily \label{cl__menu_8h_a5bf4ef83ab164316484c8340bdadfb68} 
+void cl\+\_\+max\+\_\+walk (\begin{DoxyParamCaption}\item[{int \&}]{max\+Walk\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Selects the maximum acceptable walking time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Walk\+Time} & Reference to the maximum acceptable walking time. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cl__menu_8h_a749ea8de6b1b31ae0832009af0a2fd5a}\index{cl\_menu.h@{cl\_menu.h}!cl\_mode@{cl\_mode}}
+\index{cl\_mode@{cl\_mode}!cl\_menu.h@{cl\_menu.h}}
+\doxysubsubsection{\texorpdfstring{cl\_mode()}{cl\_mode()}}
+{\footnotesize\ttfamily \label{cl__menu_8h_a749ea8de6b1b31ae0832009af0a2fd5a} 
+void cl\+\_\+mode (\begin{DoxyParamCaption}\item[{int \&}]{mode}{}\end{DoxyParamCaption})}
+
+
+
+Selects the transportation mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & Reference to the transportation method. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cl__menu_8h_a8eb6daad73831f6e14853e4b1d132aaa}\index{cl\_menu.h@{cl\_menu.h}!cl\_points@{cl\_points}}
+\index{cl\_points@{cl\_points}!cl\_menu.h@{cl\_menu.h}}
+\doxysubsubsection{\texorpdfstring{cl\_points()}{cl\_points()}}
+{\footnotesize\ttfamily \label{cl__menu_8h_a8eb6daad73831f6e14853e4b1d132aaa} 
+void cl\+\_\+points (\begin{DoxyParamCaption}\item[{int \&}]{source}{, }\item[{int \&}]{destination}{}\end{DoxyParamCaption})}
+
+
+
+Selects source and destination points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & Reference to the starting location. \\
+\hline
+{\em destination} & Reference to the destination location. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cl__menu_8h_a57046a479c94d05742601327b5410947}\index{cl\_menu.h@{cl\_menu.h}!file\_handler@{file\_handler}}
+\index{file\_handler@{file\_handler}!cl\_menu.h@{cl\_menu.h}}
+\doxysubsubsection{\texorpdfstring{file\_handler()}{file\_handler()}}
+{\footnotesize\ttfamily \label{cl__menu_8h_a57046a479c94d05742601327b5410947} 
+void file\+\_\+handler (\begin{DoxyParamCaption}\item[{int \&}]{mode}{, }\item[{int \&}]{source}{, }\item[{int \&}]{destination}{, }\item[{int \&}]{max\+Walk\+Time}{, }\item[{vector$<$ int $>$ \&}]{avoid\+Nodes}{, }\item[{vector$<$ pair$<$ int, int $>$ $>$ \&}]{avoid\+Segments}{, }\item[{int \&}]{include\+Node}{}\end{DoxyParamCaption})}
+
+
+
+Input the data via a text file. 
+
+This function allows the user to input the name of the file containing the information and stores it in the correct reference. The formating of the file must be correct in order for it to be read properly. \Hypertarget{cl__menu_8h_a9ecebe277b407d2e8bf42d593f60183d}\index{cl\_menu.h@{cl\_menu.h}!init@{init}}
+\index{init@{init}!cl\_menu.h@{cl\_menu.h}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{cl__menu_8h_a9ecebe277b407d2e8bf42d593f60183d} 
+void init (\begin{DoxyParamCaption}\item[{int \&}]{input}{, }\item[{int \&}]{mode}{, }\item[{int \&}]{source}{, }\item[{int \&}]{destination}{, }\item[{int \&}]{max\+Walk\+Time}{, }\item[{vector$<$ int $>$ \&}]{avoid\+Nodes}{, }\item[{vector$<$ pair$<$ int, int $>$ $>$ \&}]{avoid\+Segments}{, }\item[{int \&}]{include\+Node}{}\end{DoxyParamCaption})}
+
+
+
+Starter function for the interface. 
+
+THis function receives all the parameters requiered for performing the path search and ensures that they are handled by the correct funtion depending on desired input method. 
