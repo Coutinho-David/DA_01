@@ -29,9 +29,9 @@ void init(int &input, int &mode, int &source, int &destination, int &maxWalkTime
     if (input == 1) file_handler(mode, source, destination, maxWalkTime, avoidNodes, avoidSegments, includeNode);
 
     else {
-        cl_points(source, destination);
         cl_mode(mode);
-        if (mode == 3) cl_max_walk(maxWalkTime);
+        cl_points(source, destination);  
+        if (mode == 2) cl_max_walk(maxWalkTime);
         cl_avoid_nodes(avoidNodes, source, destination);
         cl_avoid_routes(avoidSegments, source, destination);
         cl_include_node(includeNode, source, destination);

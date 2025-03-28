@@ -8,31 +8,8 @@
 #include <vector>
 using namespace std;
 
-
-int run();
-
 int main() {
-    if (run()) cout << "\nSUCCESSFUL RUN" << endl;
-    return 0;
-}
-
-int run() {
-   // Graph<int> graph = populate();
-
-        //test bestAndAlternativeDrivingRoute
-
-    //cout << bestAndAlternativeDrivingRoute(&graph, 1, 45) << endl;
-
-        //test restrictedDrivingRoute
-
-    /*
-    std::vector<int> avoidNodes = {3, 7};  
-    std::vector<pair<int, int>> avoidSegments = {{1, 4}, {2, 5}};  
-    int includeNode = 6;  
-    cout << restrictedDrivingRoute(&graph, 1, 45, avoidNodes, avoidSegments, includeNode) << endl;
-    */
-        //test DrivingAndWalkingRoute
-
+  
     int input;
     int mode;
     int source;
@@ -49,15 +26,10 @@ int run() {
     Graph<int> graph = test(avoidNodes, avoidSegments);
 
     string res;
-    if (mode == 1) {
-        res = bestAndAlternativeDrivingRoute(&graph, source, destination);
-    }
-	else {
-    res = drivingAndWalkingRoute(graph, source, destination, maxWalkTime, avoidNodes, avoidSegments);
-    }
-
+    
+    mode == 1 ? res = bestAndAlternativeDrivingRoute(&graph, source, destination) : res = drivingAndWalkingRoute(graph, source, destination, maxWalkTime);
+     
     outputGen(source, destination, res);
 
-
-    return 1;
+    return 0;
 }

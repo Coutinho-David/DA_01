@@ -7,12 +7,8 @@
 #include <string>
 #include <sstream>
 
-std::string drivingAndWalkingRoute(Graph<int> g, int s, int t, int maxWalkTime, 
-                                   std::vector<int> avoidNodes = {}, 
-                                   std::vector<std::pair<int, int>> avoidSegments = {}) {
+std::string drivingAndWalkingRoute(Graph<int> &g, int s, int t, int maxWalkTime) {
     
-    std::vector<std::tuple<int, int, int, int>> removedEdges;
-
     int bestParkNode = -1;
     std::vector<int> bestDrivingRoute;
     std::vector<int> bestWalkingRoute;
@@ -21,10 +17,9 @@ std::string drivingAndWalkingRoute(Graph<int> g, int s, int t, int maxWalkTime,
     int bestTotalTime = std::numeric_limits<int>::max();
 
     for (auto parkVertex : g.getVertexSet()) {
-        // Skip if not a parking node
         if (!parkVertex->isParking()) continue;
         
-        // Find driving route to parking node (using weight1 - driving time)
+        // Find driving route to parking node \(using weight1 - driving time)
         dijkstra_driving(&g, s);
         auto drivingPath = getPath(&g, s, parkVertex->getInfo());
         int drivingTime = parkVertex->getDist();
@@ -57,12 +52,7 @@ std::string drivingAndWalkingRoute(Graph<int> g, int s, int t, int maxWalkTime,
             bestWalkingRoute = walkingPath;
         }
     }
-
-    // Restore removed nodes and segments
-    for (auto &[u, v, w1, w2] : removedEdges) {
-        g.addEdge(u, v, w1, w2);
-    }
-
+ 
     // Format output
     if (bestParkNode == -1) {
         return "DrivingAndWalkingRoute:none";
