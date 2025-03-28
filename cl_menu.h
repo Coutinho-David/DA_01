@@ -158,9 +158,14 @@ void file_handler(int &mode, int &source, int &destination, int &maxWalkTime, ve
             }
         }
         if (var == "AvoidSegments") {
+            value.erase(remove_if(value.begin(), value.end(), [](char c) {return isspace(c) || c == '(' || c == ')';}), value.end());
             stringstream ss(value);
-            while (getline(ss, split, ')')) {
-                avoidSegments.push_back({stoi(split.substr(1, split.find(","))),stoi(split.substr(split.find(",")+1))});
+            while (getline(ss, split, ',')) {
+                int first, second;
+                first = stoi(split);
+                getline(ss, split, ',');
+                second = stoi(split);
+                avoidSegments.push_back({first, second});
             }
         }
         if (var == "IncludeNode") {
