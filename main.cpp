@@ -17,15 +17,15 @@ int main() {
     int maxWalkTime = 0;
     vector<int> avoidNodes = {};
     vector<pair<int, int>> avoidSegments = {};
-    int includeNode;
+    int includeNode = -1;
     
     init(input, mode, source, destination, maxWalkTime, avoidNodes, avoidSegments, includeNode);
     
     Graph<int> graph = test(avoidNodes, avoidSegments);
 
     string res;
-    
-    mode == 1 ? res = bestAndAlternativeDrivingRoute(&graph, source, destination) : res = drivingAndWalkingRoute(graph, source, destination, maxWalkTime);
+
+    mode == 1 ? res = bestAndAlternativeDrivingRoute(&graph, source, destination, avoidNodes,avoidSegments, includeNode) : res = drivingAndWalkingRoute(graph, source, destination, maxWalkTime);
      
     outputGen(source, destination, res);
 

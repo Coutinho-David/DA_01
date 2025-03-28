@@ -96,25 +96,24 @@ void cl_avoid_routes(vector<pair<int,int>> &avoidSegments, int source, int desti
     string input;
     string _first;
     string _second;
-    pair<int,int> avoidSegment;
+    pair<int,int> avoidSegment = {};
     int control = 1;
     int flag = 1;
     cout << endl << "-----------------------------------------------------------------------------" << endl;
-    cout << "\nIs there any routes you would like to avoid?" << endl << "Submit the pair of locations, comma separated, one by one." << endl << "Press enter on a new pair to finish." << endl;
+    cout << "\nIs there any routes you would like to avoid?" << endl << "Submit the pair of locations, comma separated, one by one." << endl << "Press enter on a new pair to finish." << endl << endl;
     while (1) {
         cout << "Pair: ";
         getline(cin, input);
-        if (input == "") break;
-        if (input.find(",") == string::npos) {
-            cout << " -> Invalid input." << endl;
-            continue;
+        if (input == "")    {
+            break;
+        }else{
+            stringstream ss(input);
+            getline(ss,_first,',');
+            getline(ss, _second);
+            avoidSegment.first = stoi(_first);
+            avoidSegment.second = stoi(_second);
+            avoidSegments.push_back(avoidSegment);
         }
-        stringstream ss(input);
-        getline(ss,_first,',');
-        getline(ss, _second);
-        avoidSegment.first = stoi(_first);
-        avoidSegment.second = stoi(_second);
-        avoidSegments.push_back(avoidSegment);
     }
 }
 
