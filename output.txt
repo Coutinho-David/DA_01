@@ -1,3 +1,6 @@
-Source:5
-Destination:4
-RestrictedDrivingRoute:5,3,7,4(62)
+Source:1
+Destination:10
+DrivingRoute:1,1219,1255,5,951,496,279,272,239,566,564,544,594,858,1059,517,899,871,1060,10(69)
+ParkingNode:10
+WalkingRoute:10(0)
+TotalTime:69

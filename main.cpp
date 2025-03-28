@@ -1,7 +1,6 @@
-//#include "populateGraph.h"
+#include "populateGraph.h"
 #include "cl_menu.h"
 #include "dijkstra.h"
-#include "test.h"
 #include "drivingAndWalking.h"
 #include "outputGen.h"
 
@@ -21,7 +20,7 @@ int main() {
     
     init(input, mode, source, destination, maxWalkTime, avoidNodes, avoidSegments, includeNode);
     
-    Graph<int> graph = test(avoidNodes, avoidSegments);
+    Graph<int> graph = populate(avoidNodes, avoidSegments);
 
     string res;
 
