@@ -105,7 +105,7 @@ std::string alternativeDrivingRoute(Graph<T> *g, int s, int t) {
     dijkstra_driving(g, s);
     std::vector<T> bestPath = getPath(g, s, t);
     if (bestPath.empty()) {
-        return "Yo, no route found!";
+        return "AlternativeDrivingRoute:none";
     }
     
     int bestDist = g->findVertex(t)->getDist();

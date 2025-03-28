@@ -19,9 +19,7 @@ int main() {
     vector<pair<int, int>> avoidSegments = {};
     int includeNode;
     
-    cout << "Calling init" << endl;
     init(input, mode, source, destination, maxWalkTime, avoidNodes, avoidSegments, includeNode);
-    cout << "creating graph" << endl;
     
     Graph<int> graph = test(avoidNodes, avoidSegments);
 
