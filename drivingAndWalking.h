@@ -31,13 +31,13 @@ std::string drivingAndWalkingRoute(Graph<int> &graph, int s, int t, int maxWalkT
         if (!parkVertex->isParking()) continue;
         
         dijkstra_driving(&graph, s);
-        auto drivingPath = getPath(&g, s, parkVertex->getInfo());
+        auto drivingPath = getPath(&graph, s, parkVertex->getInfo());
         int drivingTime = parkVertex->getDist();
         if (drivingPath.empty()) continue;
 
-        dijkstra_walking(&g, parkVertex->getInfo());
-        auto walkingPath = getPath(&g, parkVertex->getInfo(), t);
-        int walkingTime = g.findVertex(t)->getDist();
+        dijkstra_walking(&graph, parkVertex->getInfo());
+        auto walkingPath = getPath(&graph, parkVertex->getInfo(), t);
+        int walkingTime = graph.findVertex(t)->getDist();
         if (walkingPath.empty()) continue;
 
         if (walkingTime > maxWalkTime) continue;
@@ -57,17 +57,17 @@ std::string drivingAndWalkingRoute(Graph<int> &graph, int s, int t, int maxWalkT
     if (bestParkNode == -1) {
         std::vector<route> alternatives;
 
-        for (auto parkVertex : g.getVertexSet()) {
+        for (auto parkVertex : graph.getVertexSet()) {
             if (!parkVertex->isParking()) continue;
 
-            dijkstra_driving(&g, s);
-            auto drivingPath = getPath(&g, s, parkVertex->getInfo());
+            dijkstra_driving(&graph, s);
+            auto drivingPath = getPath(&graph, s, parkVertex->getInfo());
             int drivingTime = parkVertex->getDist();
             if (drivingPath.empty()) continue;
 
-            dijkstra_walking(&g, parkVertex->getInfo());
-            auto walkingPath = getPath(&g, parkVertex->getInfo(), t);
-            int walkingTime = g.findVertex(t)->getDist();
+            dijkstra_walking(&graph, parkVertex->getInfo());
+            auto walkingPath = getPath(&graph, parkVertex->getInfo(), t);
+            int walkingTime = graph.findVertex(t)->getDist();
             if (walkingPath.empty()) continue;
 
             route option;
