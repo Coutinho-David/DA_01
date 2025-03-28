@@ -8,15 +8,8 @@
 #include <vector>
 using namespace std;
 
-
-int run();
-
 int main() {
-    if (run()) cout << "\nSUCCESSFUL RUN" << endl;
-    return 0;
-}
-
-int run() {
+  
     int input;
     int mode;
     int source;
@@ -24,23 +17,17 @@ int run() {
     int maxWalkTime = 0;
     vector<int> avoidNodes = {};
     vector<pair<int, int>> avoidSegments = {};
-    int includeNode;
+    int includeNode = -1;
     
-    cout << "Calling init" << endl;
     init(input, mode, source, destination, maxWalkTime, avoidNodes, avoidSegments, includeNode);
-    cout << "creating graph" << endl;
     
     Graph<int> graph = test(avoidNodes, avoidSegments);
 
     string res;
-    if (mode == 1) {
-        res = bestAndAlternativeDrivingRoute(&graph, source, destination);
-    }
-	else {
-    res = drivingAndWalkingRoute(graph, source, destination, maxWalkTime, avoidNodes, avoidSegments);
-    }
 
+    mode == 1 ? res = bestAndAlternativeDrivingRoute(&graph, source, destination, avoidNodes,avoidSegments, includeNode) : res = drivingAndWalkingRoute(graph, source, destination, maxWalkTime);
+     
     outputGen(source, destination, res);
 
-    return 1;
+    return 0;
 }
