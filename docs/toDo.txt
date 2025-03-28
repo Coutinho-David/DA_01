@@ -2,3 +2,4 @@
 implemented code using Doxygen. This should indicate the time complexity for each of the most relevant
 implemented algorithms
 
+dealing with mistakes when putting a pair in the terminal

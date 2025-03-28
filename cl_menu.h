@@ -105,6 +105,10 @@ void cl_avoid_routes(vector<pair<int,int>> &avoidSegments, int source, int desti
         cout << "Pair: ";
         getline(cin, input);
         if (input == "") break;
+        if (input.find(",") == string::npos) {
+            cout << " -> Invalid input." << endl;
+            continue;
+        }
         stringstream ss(input);
         getline(ss,_first,',');
         getline(ss, _second);
