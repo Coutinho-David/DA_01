@@ -8,6 +8,7 @@
 using namespace std;
 
 void outputGen(int source, int destination, string res) {
+    cout << "\n\n";
     cout << "Source:" << source << endl;
     cout << "Destination:" << destination << endl;
     cout << res << endl;
