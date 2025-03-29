@@ -25,146 +25,176 @@
 \DoxyCodeLine{00064\ }
 \DoxyCodeLine{00070\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cl__menu_8h_a57046a479c94d05742601327b5410947}{file\_handler}}(\textcolor{keywordtype}{int}\ \&mode,\ \textcolor{keywordtype}{int}\ \&source,\ \textcolor{keywordtype}{int}\ \&destination,\ \textcolor{keywordtype}{int}\ \&maxWalkTime,\ vector<int>\ \&avoidNodes,\ vector<pair<int,\ int>>\ \&avoidSegments,\ \textcolor{keywordtype}{int}\ \&includeNode);}
 \DoxyCodeLine{00071\ }
-\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cl__menu_8h_a9ecebe277b407d2e8bf42d593f60183d}{init}}(\textcolor{keywordtype}{int}\ \&input,\ \textcolor{keywordtype}{int}\ \&mode,\ \textcolor{keywordtype}{int}\ \&source,\ \textcolor{keywordtype}{int}\ \&destination,\ \textcolor{keywordtype}{int}\ \&maxWalkTime,\ vector<int>\ \&avoidNodes,\ vector<pair<int,\ int>>\ \&avoidSegments,\ \textcolor{keywordtype}{int}\ \&includeNode)\ \{}
-\DoxyCodeLine{00077\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Welcome\ to\ the\ individual\ route\ planning\ tool!\(\backslash\)n"{}}\ <<\ endl;}
-\DoxyCodeLine{00078\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Would\ you\ like\ to\ submit\ a\ file\ or\ type\ your\ preferences?\(\backslash\)n1\ -\/\ \(\backslash\)"{}File\(\backslash\)"{}\(\backslash\)n2\ -\/\ \(\backslash\)"{}Type\(\backslash\)"{}"{}}\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}Option:\ "{}};}
-\DoxyCodeLine{00079\ \ \ \ \ cin\ >>\ input;}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(input\ ==\ 1\ ||\ input\ ==\ 2))\ \{}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Wrong\ input!"{}}\ <<\ endl;}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cl__menu_8h_a9ecebe277b407d2e8bf42d593f60183d}{init}}(input,\ mode,\ source,\ destination,\ maxWalkTime,\ avoidNodes,\ avoidSegments,\ includeNode);}
-\DoxyCodeLine{00084\ \ \ \ \ \}}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ ==\ 1)\ \mbox{\hyperlink{cl__menu_8h_a57046a479c94d05742601327b5410947}{file\_handler}}(mode,\ source,\ destination,\ maxWalkTime,\ avoidNodes,\ avoidSegments,\ includeNode);}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cl__menu_8h_a8eb6daad73831f6e14853e4b1d132aaa}{cl\_points}}(source,\ destination);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cl__menu_8h_a9ecebe277b407d2e8bf42d593f60183d}{init}}(\textcolor{keywordtype}{int}\ \&input,\ \textcolor{keywordtype}{int}\ \&mode,\ \textcolor{keywordtype}{int}\ \&source,\ \textcolor{keywordtype}{int}\ \&destination,\ \textcolor{keywordtype}{int}\ \&maxWalkTime,\ vector<int>\ \&avoidNodes,\ vector<pair<int,\ int>>\ \&avoidSegments,\ \textcolor{keywordtype}{int}\ \&includeNode)\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Welcome\ to\ the\ individual\ route\ planning\ tool!\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00079\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Would\ you\ like\ to\ submit\ a\ file\ or\ type\ your\ preferences?\(\backslash\)n\(\backslash\)n\ 1\ -\/\ \(\backslash\)"{}File\(\backslash\)"{}\(\backslash\)n\ 2\ -\/\ \(\backslash\)"{}Type\(\backslash\)"{}"{}}\ <<\ endl\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}Option:\ "{}};}
+\DoxyCodeLine{00080\ \ \ \ \ cin\ >>\ input;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(input\ ==\ 1\ ||\ input\ ==\ 2))\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Wrong\ input!"{}}\ <<\ endl;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cl__menu_8h_a9ecebe277b407d2e8bf42d593f60183d}{init}}(input,\ mode,\ source,\ destination,\ maxWalkTime,\ avoidNodes,\ avoidSegments,\ includeNode);}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ ==\ 1)\ \mbox{\hyperlink{cl__menu_8h_a57046a479c94d05742601327b5410947}{file\_handler}}(mode,\ source,\ destination,\ maxWalkTime,\ avoidNodes,\ avoidSegments,\ includeNode);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
 \DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cl__menu_8h_a749ea8de6b1b31ae0832009af0a2fd5a}{cl\_mode}}(mode);}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mode\ ==\ 2)\ \mbox{\hyperlink{cl__menu_8h_a5bf4ef83ab164316484c8340bdadfb68}{cl\_max\_walk}}(maxWalkTime);}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cl__menu_8h_a98e2a5537160aea06635cf4f039dfbf2}{cl\_avoid\_nodes}}(avoidNodes,\ source,\ destination);}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cl__menu_8h_a0e94e364243130fad3d3cd274f41b9ac}{cl\_avoid\_routes}}(avoidSegments,\ source,\ destination);}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cl__menu_8h_ac5ebdac6a01701473162ce94771bd4d0}{cl\_include\_node}}(includeNode,\ source,\ destination);}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00096\ \ \ \ \ \}}
-\DoxyCodeLine{00097\ \}}
-\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cl__menu_8h_a8eb6daad73831f6e14853e4b1d132aaa}{cl\_points}}(source,\ destination);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mode\ ==\ 2)\ \mbox{\hyperlink{cl__menu_8h_a5bf4ef83ab164316484c8340bdadfb68}{cl\_max\_walk}}(maxWalkTime);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cl__menu_8h_a98e2a5537160aea06635cf4f039dfbf2}{cl\_avoid\_nodes}}(avoidNodes,\ source,\ destination);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cl__menu_8h_a0e94e364243130fad3d3cd274f41b9ac}{cl\_avoid\_routes}}(avoidSegments,\ source,\ destination);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cl__menu_8h_ac5ebdac6a01701473162ce94771bd4d0}{cl\_include\_node}}(includeNode,\ source,\ destination);}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \}}
 \DoxyCodeLine{00099\ }
-\DoxyCodeLine{00100\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cl__menu_8h_a8eb6daad73831f6e14853e4b1d132aaa}{cl\_points}}(\textcolor{keywordtype}{int}\ \&source,\ \textcolor{keywordtype}{int}\ \&destination)\ \{}
-\DoxyCodeLine{00101\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Where\ are\ you\ starting\ your\ trip?"{}}\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}Location:\ "{}};}
-\DoxyCodeLine{00102\ \ \ \ \ cin\ >>\ source;}
-\DoxyCodeLine{00103\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Where\ would\ you\ like\ to\ go?"{}}\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}Location:\ "{}};}
-\DoxyCodeLine{00104\ \ \ \ \ cin\ >>\ \ destination;}
-\DoxyCodeLine{00105\ }
-\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{if}\ (source\ ==\ destination)\ \{}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Start\ and\ end\ point\ must\ not\ be\ the\ same!\(\backslash\)n"{}}\ <<\ endl;}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cl__menu_8h_a8eb6daad73831f6e14853e4b1d132aaa}{cl\_points}}(source,\ destination);}
-\DoxyCodeLine{00109\ \ \ \ \ \}}
-\DoxyCodeLine{00110\ \}}
-\DoxyCodeLine{00111\ }
-\DoxyCodeLine{00112\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cl__menu_8h_a749ea8de6b1b31ae0832009af0a2fd5a}{cl\_mode}}(\textcolor{keywordtype}{int}\ \&mode)\ \{}
-\DoxyCodeLine{00113\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}How\ would\ you\ like\ to\ get\ there?"{}}\ <<\ endl;}
-\DoxyCodeLine{00114\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}We\ recommend\ choosing\ one\ of\ the\ sustained\ modes!"{}}\ <<\ endl;}
-\DoxyCodeLine{00115\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Please\ pick\ one\ of\ the\ options\ bellow:\ \(\backslash\)n\ 1\ -\/\ Driving;\ \(\backslash\)n\ 2\ -\/\ Both."{}}\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}Option:\ "{}};}
-\DoxyCodeLine{00116\ \ \ \ \ cin\ >>\ mode;}
-\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(mode\ ==\ 1\ ||\ mode\ ==\ 2))\ \{}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ mode!"{}}\ <<\ endl;}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cl__menu_8h_a749ea8de6b1b31ae0832009af0a2fd5a}{cl\_mode}}(mode);}
-\DoxyCodeLine{00120\ \ \ \ \ \}}
-\DoxyCodeLine{00121\ \}}
-\DoxyCodeLine{00122\ }
-\DoxyCodeLine{00123\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cl__menu_8h_a5bf4ef83ab164316484c8340bdadfb68}{cl\_max\_walk}}(\textcolor{keywordtype}{int}\ \&maxWalkTime)\ \{}
-\DoxyCodeLine{00124\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}What\ is\ the\ maximum\ acceptable\ walking\ time\ in\ minutes?"{}}\ <<\ endl;}
-\DoxyCodeLine{00125\ \ \ \ \ cin\ >>\ maxWalkTime;}
-\DoxyCodeLine{00126\ \}}
-\DoxyCodeLine{00127\ }
-\DoxyCodeLine{00128\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cl__menu_8h_a98e2a5537160aea06635cf4f039dfbf2}{cl\_avoid\_nodes}}(vector<int>\ \&avoidNodes,\textcolor{keywordtype}{int}\ source,\ \textcolor{keywordtype}{int}\ destination)\ \{}
-\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{string}\ input;}
-\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{int}\ flag\ =\ 1;}
-\DoxyCodeLine{00131\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Is\ there\ any\ places\ you\ would\ like\ to\ avoid?"{}}\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}Input\ them\ one\ by\ one."{}}\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}(Press\ enter\ to\ finish):\ "{}}\ <<\ endl;}
-\DoxyCodeLine{00132\ \ \ \ \ cin.ignore();}
-\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordflow}{while}\ (flag)\ \{}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ input\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Place:\ "{}};}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ getline(cin,\ input);}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ ==\ \textcolor{stringliteral}{"{}"{}})\ \{}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ flag\ =\ 0;}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (stoi(input)\ ==\ source\ ||\ stoi(input)\ ==\ destination)\ \{}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Can\ not\ avoid\ source\ nor\ destination."{}}\ <<\ endl;}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ avoidNodes.push\_back(stoi(input));}
-\DoxyCodeLine{00144\ \ \ \ \ \}}
-\DoxyCodeLine{00145\ \}}
-\DoxyCodeLine{00146\ }
-\DoxyCodeLine{00147\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cl__menu_8h_a0e94e364243130fad3d3cd274f41b9ac}{cl\_avoid\_routes}}(vector<pair<int,int>>\ \&avoidSegments,\ \textcolor{keywordtype}{int}\ source,\ \textcolor{keywordtype}{int}\ destination)\ \{}
-\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{string}\ input;}
-\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{string}\ \_first;}
-\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{string}\ \_second;}
-\DoxyCodeLine{00151\ \ \ \ \ pair<int,int>\ avoidSegment;}
-\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{int}\ control\ =\ 1;}
-\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{int}\ flag\ =\ 1;}
-\DoxyCodeLine{00154\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Is\ there\ any\ routes\ you\ would\ like\ to\ avoid?"{}}\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}Submit\ the\ pair\ of\ locations\ comma\ separated,\ one\ by\ one."{}}\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}(Press\ enter\ on\ a\ new\ pair\ to\ finish)."{}}\ <<\ endl;}
-\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\ >\ "{}};}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ getline(cin,\ input);}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ ==\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ stringstream\ ss(input);}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ getline(ss,\_first,\textcolor{charliteral}{','});}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ getline(ss,\ \_second);}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ avoidSegment.first\ =\ stoi(\_first);}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ avoidSegment.second\ =\ stoi(\_second);}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ avoidSegments.push\_back(avoidSegment);}
-\DoxyCodeLine{00165\ \ \ \ \ \}}
-\DoxyCodeLine{00166\ \}}
-\DoxyCodeLine{00167\ }
-\DoxyCodeLine{00168\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cl__menu_8h_ac5ebdac6a01701473162ce94771bd4d0}{cl\_include\_node}}(\textcolor{keywordtype}{int}\ \&includeNode,\ \textcolor{keywordtype}{int}\ source,\ \textcolor{keywordtype}{int}\ destination)\ \{}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ input\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Is\ there\ any\ stop\ you\ need\ to\ make?"{}}\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}(Press\ enter\ to\ skip.)"{}}\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}Place:\ "{}};}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ getline(cin,\ input);}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ !=\ \textcolor{stringliteral}{"{}"{}})\ \{}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ includeNode\ =\ stoi(input);}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00175\ \ \ \ \ \}}
-\DoxyCodeLine{00176\ }
-\DoxyCodeLine{00177\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cl__menu_8h_a57046a479c94d05742601327b5410947}{file\_handler}}(\textcolor{keywordtype}{int}\ \&mode,\ \textcolor{keywordtype}{int}\ \&source,\ \textcolor{keywordtype}{int}\ \&destination,\ \textcolor{keywordtype}{int}\ \&maxWalkTime,\ vector<int>\ \&avoidNodes,\ vector<pair<int,int>>\ \&avoidSegments,\ \textcolor{keywordtype}{int}\ \&includeNode)\ \{}
-\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{string}\ file\_name;}
-\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{string}\ parse;}
-\DoxyCodeLine{00180\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Please\ submit\ the\ name\ of\ the\ file"{}}\ <<\ endl;}
-\DoxyCodeLine{00181\ \ \ \ \ cin\ >>\ file\_name;}
-\DoxyCodeLine{00182\ \ \ \ \ ifstream\ file(file\_name);}
-\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)\ \{}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}File\ does\ not\ exist"{}}\ <<\ endl;}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cl__menu_8h_a57046a479c94d05742601327b5410947}{file\_handler}}(mode,\ source,\ destination,\ maxWalkTime,\ avoidNodes,\ avoidSegments,\ includeNode);}
-\DoxyCodeLine{00186\ \ \ \ \ \}}
-\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(file,\ parse))\ \{}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ split\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ var\ =\ parse.substr(0,\ parse.find(\textcolor{stringliteral}{"{}:"{}}));}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ value\ =\ parse.substr(parse.find(\textcolor{stringliteral}{"{}:"{}})+1);}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ ==\ \textcolor{stringliteral}{"{}"{}})\ \{\textcolor{keywordflow}{continue};\}}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (var\ ==\ \textcolor{stringliteral}{"{}Mode"{}})\ \{}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ ==\ \textcolor{stringliteral}{"{}driving"{}})\ \{mode\ =\ 1;\}}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{mode\ =\ 2;\}}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (var\ ==\ \textcolor{stringliteral}{"{}Source"{}})\ source\ =\ stoi(value);}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (var\ ==\ \textcolor{stringliteral}{"{}Destination"{}})\ destination\ =\ stoi(value);}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (var\ ==\ \textcolor{stringliteral}{"{}MaxWalkTime"{}})\ maxWalkTime\ =\ stoi(value);}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (var\ ==\ \textcolor{stringliteral}{"{}AvoidNodes"{}})\ \{}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ value\ +=\ \textcolor{charliteral}{','};}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ stringstream\ ss(value);}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(ss,\ split,\ \textcolor{charliteral}{','}))\ \{}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ avoidNodes.push\_back(stoi(split));}
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (var\ ==\ \textcolor{stringliteral}{"{}AvoidSegments"{}})\ \{}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ stringstream\ ss(value);}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(ss,\ split,\ \textcolor{charliteral}{')'}))\ \{}
-\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ avoidSegments.push\_back(\{stoi(split.substr(1,\ split.find(\textcolor{stringliteral}{"{},"{}}))),stoi(split.substr(split.find(\textcolor{stringliteral}{"{},"{}})+1))\});}
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (var\ ==\ \textcolor{stringliteral}{"{}IncludeNode"{}})\ \{}
-\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ includeNode\ =\ stoi(value);}
-\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00215\ \ \ \ \ \}}
-\DoxyCodeLine{00216\ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cl__menu_8h_a8eb6daad73831f6e14853e4b1d132aaa}{cl\_points}}(\textcolor{keywordtype}{int}\ \&source,\ \textcolor{keywordtype}{int}\ \&destination)\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ cout\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ endl;}
+\DoxyCodeLine{00103\ \ \ \ \ cout\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}Where\ are\ you\ starting\ your\ trip?"{}}\ <<\ endl\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}Location:\ "{}};}
+\DoxyCodeLine{00104\ \ \ \ \ cin\ >>\ source;}
+\DoxyCodeLine{00105\ \ \ \ \ cout\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}Where\ would\ you\ like\ to\ go?"{}}\ <<\ endl\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}Location:\ "{}};}
+\DoxyCodeLine{00106\ \ \ \ \ cin\ >>\ \ destination;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordflow}{if}\ (source\ ==\ destination)\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Start\ and\ end\ point\ must\ not\ be\ the\ same!\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cl__menu_8h_a8eb6daad73831f6e14853e4b1d132aaa}{cl\_points}}(source,\ destination);}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cl__menu_8h_a749ea8de6b1b31ae0832009af0a2fd5a}{cl\_mode}}(\textcolor{keywordtype}{int}\ \&mode)\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ cout\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ endl;}
+\DoxyCodeLine{00116\ \ \ \ \ cout\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}How\ would\ you\ like\ to\ get\ there?"{}}\ <<\ endl;}
+\DoxyCodeLine{00117\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}We\ recommend\ choosing\ the\ most\ Environmentally-\/Friendly\ mode!"{}}\ <<\ endl;}
+\DoxyCodeLine{00118\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Please\ pick\ one\ of\ the\ options\ bellow:\ \(\backslash\)n\(\backslash\)n\ 1\ -\/\ Driving;\ \(\backslash\)n\ 2\ -\/\ Driving\ and\ Walking."{}}\ <<\ endl\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}Option:\ "{}};}
+\DoxyCodeLine{00119\ \ \ \ \ cin\ >>\ mode;}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(mode\ ==\ 1\ ||\ mode\ ==\ 2))\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ mode!"{}}\ <<\ endl;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cl__menu_8h_a749ea8de6b1b31ae0832009af0a2fd5a}{cl\_mode}}(mode);}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cl__menu_8h_a5bf4ef83ab164316484c8340bdadfb68}{cl\_max\_walk}}(\textcolor{keywordtype}{int}\ \&maxWalkTime)\ \{}
+\DoxyCodeLine{00127\ \ \ \ \ cout\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ endl;}
+\DoxyCodeLine{00128\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nWhat\ is\ the\ maximum\ acceptable\ walking\ time\ in\ minutes?"{}}\ <<\ endl;}
+\DoxyCodeLine{00129\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nTime:\ "{}};}
+\DoxyCodeLine{00130\ \ \ \ \ cin\ >>\ maxWalkTime;}
+\DoxyCodeLine{00131\ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cl__menu_8h_a98e2a5537160aea06635cf4f039dfbf2}{cl\_avoid\_nodes}}(vector<int>\ \&avoidNodes,\textcolor{keywordtype}{int}\ source,\ \textcolor{keywordtype}{int}\ destination)\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{string}\ input;}
+\DoxyCodeLine{00135\ \ \ \ \ cout\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ endl;}
+\DoxyCodeLine{00136\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nIs\ there\ any\ places\ you\ would\ like\ to\ avoid?"{}}\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}Input\ them\ one\ by\ one\ and\ press\ enter\ to\ finish:\ "{}}\ <<\ endl\ <<\ endl;}
+\DoxyCodeLine{00137\ \ \ \ \ cin.ignore();}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ input\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Place:\ "{}};}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ getline(cin,\ input);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ ==\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (stoi(input)\ ==\ source\ ||\ stoi(input)\ ==\ destination)\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\ -\/>\ Can\ not\ avoid\ source\ nor\ destination."{}}\ <<\ endl;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ avoidNodes.push\_back(stoi(input));}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cl__menu_8h_a0e94e364243130fad3d3cd274f41b9ac}{cl\_avoid\_routes}}(vector<pair<int,int>>\ \&avoidSegments,\ \textcolor{keywordtype}{int}\ source,\ \textcolor{keywordtype}{int}\ destination)\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{string}\ input;}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{string}\ \_first;}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{string}\ \_second;}
+\DoxyCodeLine{00156\ \ \ \ \ pair<int,int>\ avoidSegment\ =\ \{\};}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{int}\ control\ =\ 1;}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{int}\ flag\ =\ 1;}
+\DoxyCodeLine{00159\ \ \ \ \ cout\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ endl;}
+\DoxyCodeLine{00160\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nIs\ there\ any\ routes\ you\ would\ like\ to\ avoid?"{}}\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}Submit\ the\ pair\ of\ locations,\ comma\ separated,\ one\ by\ one."{}}\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}Press\ enter\ on\ a\ new\ pair\ to\ finish."{}}\ <<\ endl\ <<\ endl;}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pair:\ "{}};}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ getline(cin,\ input);}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ ==\ \textcolor{stringliteral}{"{}"{}})\ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ stringstream\ ss(input);}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ getline(ss,\_first,\textcolor{charliteral}{','});}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ getline(ss,\ \_second);}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ val1\ =\ stoi(\_first);}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ val2\ =\ stoi(\_second);}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ avoidSegment.first\ =\ stoi(\_first);}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ avoidSegment.second\ =\ stoi(\_second);}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ avoidSegments.push\_back(avoidSegment);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00176\ \ \ \ \ \}}
+\DoxyCodeLine{00177\ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cl__menu_8h_ac5ebdac6a01701473162ce94771bd4d0}{cl\_include\_node}}(\textcolor{keywordtype}{int}\ \&includeNode,\ \textcolor{keywordtype}{int}\ source,\ \textcolor{keywordtype}{int}\ destination)\ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ input\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ cout\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ endl;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nIs\ there\ any\ stop\ you\ need\ to\ make?"{}}\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}Press\ enter\ to\ skip."{}}\ <<\ endl\ <<\ endl;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ input\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Place:\ "{}};}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ getline(cin,\ input);}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ ==\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (stoi(input)\ ==\ source\ ||\ stoi(input)\ ==\ destination)\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\ -\/>\ Stopping\ node\ can\ not\ be\ the\ source\ nor\ the\ destination."{}}\ <<\ endl;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ includeNode\ =\ stoi(input);}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ cout\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ endl\ <<\ endl;}
+\DoxyCodeLine{00199\ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cl__menu_8h_a57046a479c94d05742601327b5410947}{file\_handler}}(\textcolor{keywordtype}{int}\ \&mode,\ \textcolor{keywordtype}{int}\ \&source,\ \textcolor{keywordtype}{int}\ \&destination,\ \textcolor{keywordtype}{int}\ \&maxWalkTime,\ vector<int>\ \&avoidNodes,\ vector<pair<int,int>>\ \&avoidSegments,\ \textcolor{keywordtype}{int}\ \&includeNode)\ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{string}\ file\_name;}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{string}\ parse;}
+\DoxyCodeLine{00204\ \ \ \ \ cout\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ endl;}
+\DoxyCodeLine{00205\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Please\ submit\ the\ name\ of\ the\ file"{}}\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}>\ "{}};}
+\DoxyCodeLine{00206\ \ \ \ \ cin\ >>\ file\_name;}
+\DoxyCodeLine{00207\ \ \ \ \ ifstream\ file(file\_name);}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}File\ does\ not\ exist"{}}\ <<\ endl;}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{cl__menu_8h_a57046a479c94d05742601327b5410947}{file\_handler}}(mode,\ source,\ destination,\ maxWalkTime,\ avoidNodes,\ avoidSegments,\ includeNode);}
+\DoxyCodeLine{00211\ \ \ \ \ \}}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(file,\ parse))\ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ split\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ var\ =\ parse.substr(0,\ parse.find(\textcolor{stringliteral}{"{}:"{}}));}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ value\ =\ parse.substr(parse.find(\textcolor{stringliteral}{"{}:"{}})+1);}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ ==\ \textcolor{stringliteral}{"{}"{}})\ \{\textcolor{keywordflow}{continue};\}}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (var\ ==\ \textcolor{stringliteral}{"{}Mode"{}})\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ ==\ \textcolor{stringliteral}{"{}driving"{}})\ \{mode\ =\ 1;\}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{mode\ =\ 2;\}}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (var\ ==\ \textcolor{stringliteral}{"{}Source"{}})\ source\ =\ stoi(value);}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (var\ ==\ \textcolor{stringliteral}{"{}Destination"{}})\ destination\ =\ stoi(value);}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (var\ ==\ \textcolor{stringliteral}{"{}MaxWalkTime"{}})\ maxWalkTime\ =\ stoi(value);}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (var\ ==\ \textcolor{stringliteral}{"{}AvoidNodes"{}})\ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ value\ +=\ \textcolor{charliteral}{','};}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ stringstream\ ss(value);}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(ss,\ split,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ avoidNodes.push\_back(stoi(split));}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (var\ ==\ \textcolor{stringliteral}{"{}AvoidSegments"{}})\ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ value.erase(remove\_if(value.begin(),\ value.end(),\ [](\textcolor{keywordtype}{char}\ c)\ \{return\ isspace(c)\ ||\ c\ ==\ \textcolor{stringliteral}{'('}\ ||\ c\ ==\ \textcolor{stringliteral}{')'};\}),\ value.end());}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ stringstream\ ss(value);}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(ss,\ split,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ first,\ second;}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ first\ =\ stoi(split);}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getline(ss,\ split,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ second\ =\ stoi(split);}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ avoidSegments.push\_back(\{first,\ second\});}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (var\ ==\ \textcolor{stringliteral}{"{}IncludeNode"{}})\ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ includeNode\ =\ stoi(value);}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00245\ \ \ \ \ \}}
+\DoxyCodeLine{00246\ \}}
 
 \end{DoxyCode}

@@ -5,6 +5,7 @@ var annotated_dup =
     [ "Graph", "classGraph.html", "classGraph" ],
     [ "location", "structlocation.html", "structlocation" ],
     [ "MutablePriorityQueue", "classMutablePriorityQueue.html", "classMutablePriorityQueue" ],
+    [ "route", "structroute.html", "structroute" ],
     [ "UFDS", "classUFDS.html", "classUFDS" ],
     [ "Vertex", "classVertex.html", "classVertex" ]
 ];

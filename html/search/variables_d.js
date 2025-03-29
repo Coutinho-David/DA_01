@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['walking_0',['Walking',['../structDistanceData.html#ad6246d809a895ee48ddf52b7a794c4ab',1,'DistanceData']]],
-  ['weight1_1',['weight1',['../classEdge.html#a8bb6c04f48a87f5f7fc1d2828b5b5473',1,'Edge']]],
-  ['weight2_2',['weight2',['../classEdge.html#a85323a1b84c8db88836a47160e4c469d',1,'Edge']]]
+  ['vertexset_0',['vertexSet',['../classGraph.html#a26b3a6b9c61f02f5b2cd38ad4c6a4953',1,'Graph']]],
+  ['visited_1',['visited',['../classVertex.html#a187a2fe4ff50261cf3c15b8cda7dfc56',1,'Vertex']]]
 ];

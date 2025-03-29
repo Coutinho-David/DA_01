@@ -15,5 +15,7 @@ var searchData=
   ['distance8_12',['distance8',['../test_8h.html#a955ffb2e9da45310894ab272a325019f',1,'test.h']]],
   ['distance9_13',['distance9',['../test_8h.html#a330027cceab2567bec07a098a9102182',1,'test.h']]],
   ['distmatrix_14',['distMatrix',['../classGraph.html#a4517f4351bc7f0348369b25b7c0b44fe',1,'Graph']]],
-  ['driving_15',['Driving',['../structDistanceData.html#ac84ce803234eba5e1f9b227385cb939b',1,'DistanceData']]]
+  ['driving_15',['Driving',['../structDistanceData.html#ac84ce803234eba5e1f9b227385cb939b',1,'DistanceData']]],
+  ['drivingpath_16',['drivingPath',['../structroute.html#aaad92a185db0a28e47cbedc1c8769415',1,'route']]],
+  ['drivingtime_17',['drivingTime',['../structroute.html#acb85d4df261a5038552fd770c9dbaf90',1,'route']]]
 ];

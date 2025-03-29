@@ -28,7 +28,7 @@ bool relax_driving(Edge<T> *edge);
  * @param g Pointer to the graph.
  * @param origin Source vertex.
  * @return Shortest paths, when found.
- * @complexity O((V + E) log V), where V is the number of vertices and E is the number of edges.
+ * @note **Time complexity** O((V + E) log V), where V is the number of vertices and E is the number of edges.
  */
 template <class T>
 void dijkstra_driving(Graph<T> *g, int origin);
@@ -40,7 +40,7 @@ void dijkstra_driving(Graph<T> *g, int origin);
  * @param origin Source vertex.
  * @param dest Destination vertex.
  * @return Vector containing the path sequence.
- * @complexity O(V), as the path is traced back from the destination to the source.
+ * @note **Time complexity** O(V), as the path is traced back from the destination to the source.
  */
 template <class T>
 static std::vector<T> getPath(Graph<T> *g, int origin, int dest);
@@ -52,7 +52,7 @@ static std::vector<T> getPath(Graph<T> *g, int origin, int dest);
  * @param s Source vertex.
  * @param t Destination vertex.
  * @return String representation of the best driving route.
- * @complexity O((V + E) log V), due to Dijkstra's algorithm.
+ * @note **Time complexity** O((V + E) log V), due to Dijkstra's algorithm.
  */
 template <class T>
 std::string bestDrivingRoute(Graph<T> *g, int s, int t);
@@ -64,7 +64,7 @@ std::string bestDrivingRoute(Graph<T> *g, int s, int t);
  * @param s Source vertex.
  * @param t Destination vertex.
  * @return String representation of the alternative driving route.
- * @complexity O((V + E) log V) for the first Dijkstra call + O(E) for edge removal + O((V + E) log V) for the second Dijkstra call.
+ * @note **Time complexity** O((V + E) log V) for the first Dijkstra call + O(E) for edge removal + O((V + E) log V) for the second Dijkstra call.
  */
 template <class T>
 std::string alternativeDrivingRoute(Graph<T> *g, int s, int t);
@@ -79,7 +79,7 @@ std::string alternativeDrivingRoute(Graph<T> *g, int s, int t);
  * @param avoidSegments Edges to avoid.
  * @param includeNode Mandatory node to include in the path.
  * @return String representation of the routes.
- * @complexity O((V + E) log V) for Dijkstra plus additional overhead for avoidance logic.
+ * @note **Time complexity** O((V + E) log V) for Dijkstra plus additional overhead for avoidance logic.
  */
 template <class T>
 std::string bestAndAlternativeDrivingRoute(Graph<T> *g, int s, int t, vector<int> avoidNodes, vector<pair<int, int>> avoidSegments, int includeNode);
@@ -92,7 +92,7 @@ std::string bestAndAlternativeDrivingRoute(Graph<T> *g, int s, int t, vector<int
  * @param t Destination vertex.
  * @param includeNode Mandatory node to include.
  * @return String representation of the restricted driving route.
- * @complexity O((V + E) log V) for each Dijkstra execution (up to 2 times if includeNode is used).
+ * @note **Time complexity** O((V + E) log V) for each Dijkstra execution (up to 2 times if includeNode is used).
  */
 template <class T>
 std::string restrictedDrivingRoute(Graph<T> *g, int s, int t, int includeNode);
@@ -112,7 +112,7 @@ bool relax_walking(Edge<T> *edge);
  * @tparam T Type of vertex information.
  * @param g Pointer to the graph.
  * @param origin Source vertex.
- * @complexity O((V + E) log V), as it is based on Dijkstra's algorithm.
+ * @note **Time complexity** O((V + E) log V), as it is based on Dijkstra's algorithm.
  */
 template <class T>
 void dijkstra_walking(Graph<T> *g, int origin);
@@ -324,8 +324,5 @@ void dijkstra_walking(Graph<T> *g, int origin) {
         }
     }
 }
-
-
-
 
 #endif // DIJKSTRA_H

@@ -24,5 +24,7 @@ var searchData=
   ['distmatrix_21',['distMatrix',['../classGraph.html#a4517f4351bc7f0348369b25b7c0b44fe',1,'Graph']]],
   ['driving_22',['Driving',['../structDistanceData.html#ac84ce803234eba5e1f9b227385cb939b',1,'DistanceData']]],
   ['drivingandwalking_2eh_23',['drivingAndWalking.h',['../drivingAndWalking_8h.html',1,'']]],
-  ['drivingandwalkingroute_24',['drivingAndWalkingRoute',['../drivingAndWalking_8h.html#a6e302a909d2b61956f70dcf8f6be3273',1,'drivingAndWalking.h']]]
+  ['drivingandwalkingroute_24',['drivingAndWalkingRoute',['../drivingAndWalking_8h.html#a5da68fe9c51b0f91f8f457d4b53d4792',1,'drivingAndWalking.h']]],
+  ['drivingpath_25',['drivingPath',['../structroute.html#aaad92a185db0a28e47cbedc1c8769415',1,'route']]],
+  ['drivingtime_26',['drivingTime',['../structroute.html#acb85d4df261a5038552fd770c9dbaf90',1,'route']]]
 ];
