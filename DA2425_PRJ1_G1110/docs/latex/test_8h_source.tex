@@ -1,0 +1,94 @@
+\doxysection{test.\+h}
+\hypertarget{test_8h_source}{}\label{test_8h_source}\index{/home/cdm/git/DA\_01/src/test.h@{/home/cdm/git/DA\_01/src/test.h}}
+\mbox{\hyperlink{test_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Graph_8h}{data\_structures/Graph.h}}"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <fstream>}\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <cctype>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <climits>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structDistanceData}{DistanceData}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ std::string\ \mbox{\hyperlink{structDistanceData_a953518a8553d678e9752ce6299bbfbf5}{CODE1}};}
+\DoxyCodeLine{00012\ \ \ \ \ std::string\ \mbox{\hyperlink{structDistanceData_a0fec611f60d81d7d698557a58887fcb0}{CODE2}};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structDistanceData_ac84ce803234eba5e1f9b227385cb939b}{Driving}};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structDistanceData_ad6246d809a895ee48ddf52b7a794c4ab}{Walking}};}
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \mbox{\hyperlink{structDistanceData}{DistanceData}}\ \mbox{\hyperlink{test_8h_aac87b9a7b416c910e2f53dfe501fcd0c}{distance1}}\ =\ \{\textcolor{stringliteral}{"{}TR"{}},\ \textcolor{stringliteral}{"{}CA"{}},\ 10,\ 20\};}
+\DoxyCodeLine{00018\ \mbox{\hyperlink{structDistanceData}{DistanceData}}\ \mbox{\hyperlink{test_8h_aea5c69f4de939309df7d33eb98d4091b}{distance2}}\ =\ \{\textcolor{stringliteral}{"{}TR"{}},\ \textcolor{stringliteral}{"{}BAO"{}},\ INT\_MAX,\ 15\};}
+\DoxyCodeLine{00019\ \mbox{\hyperlink{structDistanceData}{DistanceData}}\ \mbox{\hyperlink{test_8h_a44e4a35ed8408b19c3f5397f8c9c24e6}{distance3}}\ =\ \{\textcolor{stringliteral}{"{}CA"{}},\ \textcolor{stringliteral}{"{}BAO"{}},\ 5,\ 8\};}
+\DoxyCodeLine{00020\ \mbox{\hyperlink{structDistanceData}{DistanceData}}\ \mbox{\hyperlink{test_8h_aac7ca1bdabf938d58f5f1d3b50b78df3}{distance4}}\ =\ \{\textcolor{stringliteral}{"{}CA"{}},\ \textcolor{stringliteral}{"{}AL"{}},\ 8,\ 25\};}
+\DoxyCodeLine{00021\ \mbox{\hyperlink{structDistanceData}{DistanceData}}\ \mbox{\hyperlink{test_8h_a3214bbc7476ed97ef2f0354163406c37}{distance5}}\ =\ \{\textcolor{stringliteral}{"{}BAO"{}},\ \textcolor{stringliteral}{"{}SE"{}},\ 12,\ 10\};}
+\DoxyCodeLine{00022\ \mbox{\hyperlink{structDistanceData}{DistanceData}}\ \mbox{\hyperlink{test_8h_a17f8b0bc6be192a7e10e7f7e53aa8e9b}{distance6}}\ =\ \{\textcolor{stringliteral}{"{}SE"{}},\ \textcolor{stringliteral}{"{}RB"{}},\ INT\_MAX,\ 10\};}
+\DoxyCodeLine{00023\ \mbox{\hyperlink{structDistanceData}{DistanceData}}\ \mbox{\hyperlink{test_8h_a591eb1d9c1cdd445af070d0a41276309}{distance7}}\ =\ \{\textcolor{stringliteral}{"{}BAO"{}},\ \textcolor{stringliteral}{"{}FOZ"{}},\ 20,\ 25\};}
+\DoxyCodeLine{00024\ \mbox{\hyperlink{structDistanceData}{DistanceData}}\ \mbox{\hyperlink{test_8h_a955ffb2e9da45310894ab272a325019f}{distance8}}\ =\ \{\textcolor{stringliteral}{"{}AL"{}},\ \textcolor{stringliteral}{"{}RB"{}},\ 15,\ 30\};}
+\DoxyCodeLine{00025\ \mbox{\hyperlink{structDistanceData}{DistanceData}}\ \mbox{\hyperlink{test_8h_a330027cceab2567bec07a098a9102182}{distance9}}\ =\ \{\textcolor{stringliteral}{"{}AL"{}},\ \textcolor{stringliteral}{"{}FOZ"{}},\ 30,\ 50\};}
+\DoxyCodeLine{00026\ \mbox{\hyperlink{structDistanceData}{DistanceData}}\ \mbox{\hyperlink{test_8h_a364487a53d01e7eef248b2de5a4fefbd}{distance10}}\ =\ \{\textcolor{stringliteral}{"{}FOZ"{}},\ \textcolor{stringliteral}{"{}RB"{}},\ INT\_MAX,\ 12\};}
+\DoxyCodeLine{00027\ \mbox{\hyperlink{structDistanceData}{DistanceData}}\ \mbox{\hyperlink{test_8h_a435be4a828e8c724561a225cd17aa3a8}{distance11}}\ =\ \{\textcolor{stringliteral}{"{}AL"{}},\ \textcolor{stringliteral}{"{}CL"{}},\ 6,\ 18\};}
+\DoxyCodeLine{00028\ \mbox{\hyperlink{structDistanceData}{DistanceData}}\ \mbox{\hyperlink{test_8h_adb05eea2ca868b43fa38f4c12816579d}{distance12}}\ =\ \{\textcolor{stringliteral}{"{}FOZ"{}},\ \textcolor{stringliteral}{"{}CL"{}},\ 14,\ 20\};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlocation}{location}}\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ std::string\ \mbox{\hyperlink{structlocation_a7f8fd90788eca471b818de436b68bf40}{location}};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structlocation_a25ec130eaf6d3ffabd1944464eefaf12}{Id}};}
+\DoxyCodeLine{00033\ \ \ \ \ std::string\ \mbox{\hyperlink{structlocation_a3a5d5d3ecb567f07e09738cbd6cb35cc}{CODE}};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structlocation_adb2a1c06c0c3e8527142ca30860b3749}{parking}};}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \mbox{\hyperlink{structlocation}{location}}\ \mbox{\hyperlink{test_8h_a700d06f03c16049b29131c49492668dd}{location1}}\ =\ \{\textcolor{stringliteral}{"{}TRINDADE"{}},\ 1,\ \textcolor{stringliteral}{"{}TR"{}},\ 0\};}
+\DoxyCodeLine{00038\ \mbox{\hyperlink{structlocation}{location}}\ \mbox{\hyperlink{test_8h_a6212d301c5f55381d1df57e3b4aae81c}{location2}}\ =\ \{\textcolor{stringliteral}{"{}Campo\ Alegre"{}},\ 2,\ \textcolor{stringliteral}{"{}CA"{}},\ 1\};}
+\DoxyCodeLine{00039\ \mbox{\hyperlink{structlocation}{location}}\ \mbox{\hyperlink{test_8h_a7374c5f32eb3630668f1ee082b9e61c6}{location3}}\ =\ \{\textcolor{stringliteral}{"{}Bolhao"{}},\ 3,\ \textcolor{stringliteral}{"{}BAO"{}},\ 1\};}
+\DoxyCodeLine{00040\ \mbox{\hyperlink{structlocation}{location}}\ \mbox{\hyperlink{test_8h_a91ed674107be655f049e769185aaf146}{location4}}\ =\ \{\textcolor{stringliteral}{"{}Aliados"{}},\ 4,\ \textcolor{stringliteral}{"{}AL"{}},\ 0\};}
+\DoxyCodeLine{00041\ \mbox{\hyperlink{structlocation}{location}}\ \mbox{\hyperlink{test_8h_a96742883badf34932aeefa084b0e1a0f}{location5}}\ =\ \{\textcolor{stringliteral}{"{}Se"{}},\ 5,\ \textcolor{stringliteral}{"{}SE"{}},\ 0\};}
+\DoxyCodeLine{00042\ \mbox{\hyperlink{structlocation}{location}}\ \mbox{\hyperlink{test_8h_af57bec5ea68c7e19e2e0f94089e2ef20}{location6}}\ =\ \{\textcolor{stringliteral}{"{}RIBEIRA"{}},\ 6,\ \textcolor{stringliteral}{"{}RB"{}},\ 1\};}
+\DoxyCodeLine{00043\ \mbox{\hyperlink{structlocation}{location}}\ \mbox{\hyperlink{test_8h_aa95cbd797b9faea1558505af71b17774}{location7}}\ =\ \{\textcolor{stringliteral}{"{}FOZ"{}},\ 7,\ \textcolor{stringliteral}{"{}FOZ"{}},\ 1\};}
+\DoxyCodeLine{00044\ \mbox{\hyperlink{structlocation}{location}}\ \mbox{\hyperlink{test_8h_ab334d59e1f76ae84771c5e1360ba6a90}{location8}}\ =\ \{\textcolor{stringliteral}{"{}Clerigos"{}},\ 8,\ \textcolor{stringliteral}{"{}CL"{}},\ 0\};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ std::unordered\_map<std::string,\ int>\ \mbox{\hyperlink{populateGraph_8h_a34af5685962e7c219484769c7792fa24}{codeToId}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \mbox{\hyperlink{classGraph}{Graph<int>}}\ \mbox{\hyperlink{test_8h_ac62e3e4c51d18802114740e1d176a2ec}{test}}(std::vector<int>\ \&avoidNodes,\ std::vector<std::pair<int,\ int>>\ \&avoidSegments)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ std::vector<DistanceData>\ distances\ =\ \{\mbox{\hyperlink{test_8h_aac87b9a7b416c910e2f53dfe501fcd0c}{distance1}},\ \mbox{\hyperlink{test_8h_aea5c69f4de939309df7d33eb98d4091b}{distance2}},\ \mbox{\hyperlink{test_8h_a44e4a35ed8408b19c3f5397f8c9c24e6}{distance3}},\ \mbox{\hyperlink{test_8h_aac7ca1bdabf938d58f5f1d3b50b78df3}{distance4}},\ \mbox{\hyperlink{test_8h_a3214bbc7476ed97ef2f0354163406c37}{distance5}},\ \mbox{\hyperlink{test_8h_a17f8b0bc6be192a7e10e7f7e53aa8e9b}{distance6}},\ \mbox{\hyperlink{test_8h_a591eb1d9c1cdd445af070d0a41276309}{distance7}},\ \mbox{\hyperlink{test_8h_a955ffb2e9da45310894ab272a325019f}{distance8}},\ \mbox{\hyperlink{test_8h_a330027cceab2567bec07a098a9102182}{distance9}},\ \mbox{\hyperlink{test_8h_a364487a53d01e7eef248b2de5a4fefbd}{distance10}},\ \mbox{\hyperlink{test_8h_a435be4a828e8c724561a225cd17aa3a8}{distance11}},\ \mbox{\hyperlink{test_8h_adb05eea2ca868b43fa38f4c12816579d}{distance12}}\};}
+\DoxyCodeLine{00050\ \ \ \ \ std::vector<location>\ locations\ =\ \{\mbox{\hyperlink{test_8h_a700d06f03c16049b29131c49492668dd}{location1}},\ \mbox{\hyperlink{test_8h_a6212d301c5f55381d1df57e3b4aae81c}{location2}},\ \mbox{\hyperlink{test_8h_a7374c5f32eb3630668f1ee082b9e61c6}{location3}},\ \mbox{\hyperlink{test_8h_a91ed674107be655f049e769185aaf146}{location4}},\ \mbox{\hyperlink{test_8h_a96742883badf34932aeefa084b0e1a0f}{location5}},\ \mbox{\hyperlink{test_8h_af57bec5ea68c7e19e2e0f94089e2ef20}{location6}},\ \mbox{\hyperlink{test_8h_aa95cbd797b9faea1558505af71b17774}{location7}},\ \mbox{\hyperlink{test_8h_ab334d59e1f76ae84771c5e1360ba6a90}{location8}}\};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{classGraph}{Graph<int>}}\ graph;}
+\DoxyCodeLine{00053\ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 1;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ :\ avoidNodes)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ locations.erase(locations.begin()\ +\ \textcolor{keywordtype}{id}\ -\/\ i);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ j\ =\ 0;\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{structlocation}{location}}\ element\ :\ locations)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{populateGraph_8h_a34af5685962e7c219484769c7792fa24}{codeToId}}[element.CODE]\ =\ element.Id;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (graph.\mbox{\hyperlink{classGraph_a00be284ea2be3b3d0f0d2e493b70245b}{addVertex}}(element.Id))\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ v\ =\ graph.\mbox{\hyperlink{classGraph_a41624b03fcb6bd29e4df574a1ec58541}{getVertexSet}}();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ v[j]-\/>setParking(element.parking);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ j++;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{structDistanceData}{DistanceData}}\ element\ :\ distances)\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ shouldSkip\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ avoidEdge\ :\ avoidSegments)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((avoidEdge.first\ ==\ \mbox{\hyperlink{populateGraph_8h_a34af5685962e7c219484769c7792fa24}{codeToId}}[element.CODE1]\ \&\&\ avoidEdge.second\ ==\ \mbox{\hyperlink{populateGraph_8h_a34af5685962e7c219484769c7792fa24}{codeToId}}[element.CODE2])\ ||\ (avoidEdge.first\ ==\ \mbox{\hyperlink{populateGraph_8h_a34af5685962e7c219484769c7792fa24}{codeToId}}[element.CODE2]\ \&\&\ avoidEdge.second\ ==\ \mbox{\hyperlink{populateGraph_8h_a34af5685962e7c219484769c7792fa24}{codeToId}}[element.CODE1]))\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ shouldSkip\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!shouldSkip)\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ id1\ =\ \mbox{\hyperlink{populateGraph_8h_a34af5685962e7c219484769c7792fa24}{codeToId}}[element.CODE1];}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ id2\ =\ \mbox{\hyperlink{populateGraph_8h_a34af5685962e7c219484769c7792fa24}{codeToId}}[element.CODE2];}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ graph.\mbox{\hyperlink{classGraph_a7ec7ac9b3eb3a1ac6991aa5bb2e45168}{addBidirectionalEdge}}(id1,\ id2,\ element.Driving,\ element.Walking);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{return}\ graph;}
+\DoxyCodeLine{00087\ \}}
+\DoxyCodeLine{00088\ }
+
+\end{DoxyCode}

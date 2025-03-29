@@ -1,0 +1,58 @@
+\doxysection{read\+Distances.\+h}
+\hypertarget{readDistances_8h_source}{}\label{readDistances_8h_source}\index{/home/cdm/git/DA\_01/csv/readDistances.h@{/home/cdm/git/DA\_01/csv/readDistances.h}}
+\mbox{\hyperlink{readDistances_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ READ\_DISTANCES\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ READ\_DISTANCES\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <cctype>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <climits>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structDistanceData}{DistanceData}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ std::string\ \mbox{\hyperlink{structDistanceData_a953518a8553d678e9752ce6299bbfbf5}{CODE1}};}
+\DoxyCodeLine{00014\ \ \ \ \ std::string\ \mbox{\hyperlink{structDistanceData_a0fec611f60d81d7d698557a58887fcb0}{CODE2}};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structDistanceData_ac84ce803234eba5e1f9b227385cb939b}{Driving}};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structDistanceData_ad6246d809a895ee48ddf52b7a794c4ab}{Walking}};}
+\DoxyCodeLine{00017\ \};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00031\ std::vector<DistanceData>\ \mbox{\hyperlink{readDistances_8h_ac704d7ebc379f86aa89e1971b8e411a5}{readDistances}}(\textcolor{keyword}{const}\ std::string\ \&filename)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ std::vector<DistanceData>\ data;\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::ifstream\ file(filename);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ Opening\ :"{}}\ <<\ filename\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data;}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00042\ \ \ \ \ std::getline(file,\ line);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{while}(std::getline(file,\ line))\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ std::stringstream\ stream(line);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structDistanceData}{DistanceData}}\ row;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ std::getline(stream,\ row.\mbox{\hyperlink{structDistanceData_a953518a8553d678e9752ce6299bbfbf5}{CODE1}},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ std::getline(stream,\ row.\mbox{\hyperlink{structDistanceData_a0fec611f60d81d7d698557a58887fcb0}{CODE2}},\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::string\ driving;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ std::getline(stream,\ driving,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isdigit(driving[0]))\ row.\mbox{\hyperlink{structDistanceData_ac84ce803234eba5e1f9b227385cb939b}{Driving}}\ =\ std::stoi(driving);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ row.\mbox{\hyperlink{structDistanceData_ac84ce803234eba5e1f9b227385cb939b}{Driving}}\ =\ INT\_MAX;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ stream\ >>\ row.\mbox{\hyperlink{structDistanceData_ad6246d809a895ee48ddf52b7a794c4ab}{Walking}};}
+\DoxyCodeLine{00055\ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ data.push\_back(row);}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ file.close();}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{return}\ data;\ \ \ }
+\DoxyCodeLine{00061\ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ READ\_DISTANCES\_H}}
+\DoxyCodeLine{00064\ \ \ \ \ }
+
+\end{DoxyCode}

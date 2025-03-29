@@ -1,0 +1,51 @@
+\doxysection{/home/cdm/git/\+DA\+\_\+01/src/driving\+And\+Walking.h File Reference}
+\hypertarget{drivingAndWalking_8h}{}\label{drivingAndWalking_8h}\index{/home/cdm/git/DA\_01/src/drivingAndWalking.h@{/home/cdm/git/DA\_01/src/drivingAndWalking.h}}
+{\ttfamily \#include "{}dijkstra.\+h"{}}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$climits$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structroute}{route}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{drivingAndWalking_8h_a5da68fe9c51b0f91f8f457d4b53d4792}{driving\+And\+Walking\+Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ int $>$ \&graph, int s, int t, int max\+Walk\+Time)
+\begin{DoxyCompactList}\small\item\em Computes the optimal driving and walking route between two points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{drivingAndWalking_8h_a5da68fe9c51b0f91f8f457d4b53d4792}\index{drivingAndWalking.h@{drivingAndWalking.h}!drivingAndWalkingRoute@{drivingAndWalkingRoute}}
+\index{drivingAndWalkingRoute@{drivingAndWalkingRoute}!drivingAndWalking.h@{drivingAndWalking.h}}
+\doxysubsubsection{\texorpdfstring{drivingAndWalkingRoute()}{drivingAndWalkingRoute()}}
+{\footnotesize\ttfamily \label{drivingAndWalking_8h_a5da68fe9c51b0f91f8f457d4b53d4792} 
+std\+::string driving\+And\+Walking\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ int $>$ \&}]{graph}{, }\item[{int}]{s}{, }\item[{int}]{t}{, }\item[{int}]{max\+Walk\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Computes the optimal driving and walking route between two points. 
+
+This function finds the best parking node along the way and determines the most efficient route by combining driving and walking segments. If no valid parking node is found within the maximum allowed walking time, an alternative approximate solution is attempted.
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & A reference to the graph representing the map. \\
+\hline
+{\em s} & The starting node (source). \\
+\hline
+{\em t} & The destination node (target). \\
+\hline
+{\em max\+Walk\+Time} & The maximum allowed walking time from parking to the destination.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String containing the best or alternative route, including driving paths, walking paths, parking nodes, and total times.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+{\bfseries{Time Complexity\+:}} O(V\texorpdfstring{$^\wedge$}{\string^}2 log V + E) when iterating over multiple parking options. 
+\end{DoxyNote}
