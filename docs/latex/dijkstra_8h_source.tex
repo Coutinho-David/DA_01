@@ -1,0 +1,256 @@
+\doxysection{dijkstra.\+h}
+\hypertarget{dijkstra_8h_source}{}\label{dijkstra_8h_source}\index{/home/cdm/git/DA\_01/src/dijkstra.h@{/home/cdm/git/DA\_01/src/dijkstra.h}}
+\mbox{\hyperlink{dijkstra_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DIJKSTRA\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DIJKSTRA\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Graph_8h}{data\_structures/Graph.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MutablePriorityQueue_8h}{data\_structures/MutablePriorityQueue.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{dijkstra_8h_ac6c9b9be80fd9b3831e06e4ebdf1d0e0}{relax\_driving}}(\mbox{\hyperlink{classEdge}{Edge<T>}}\ *edge);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dijkstra_8h_a9d799af5f93fc7ff08f75e65b9df75f6}{dijkstra\_driving}}(\mbox{\hyperlink{classGraph}{Graph<T>}}\ *g,\ \textcolor{keywordtype}{int}\ origin);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00046\ \textcolor{keyword}{static}\ std::vector<T>\ getPath(\mbox{\hyperlink{classGraph}{Graph<T>}}\ *g,\ \textcolor{keywordtype}{int}\ origin,\ \textcolor{keywordtype}{int}\ dest);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00058\ std::string\ \mbox{\hyperlink{dijkstra_8h_aa10bd97713670c3bf2f6f14f19b2ac57}{bestDrivingRoute}}(\mbox{\hyperlink{classGraph}{Graph<T>}}\ *g,\ \textcolor{keywordtype}{int}\ s,\ \textcolor{keywordtype}{int}\ t);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00070\ std::string\ \mbox{\hyperlink{dijkstra_8h_a5869c5befc93a78ad396fe03fd68c053}{alternativeDrivingRoute}}(\mbox{\hyperlink{classGraph}{Graph<T>}}\ *g,\ \textcolor{keywordtype}{int}\ s,\ \textcolor{keywordtype}{int}\ t);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00085\ std::string\ \mbox{\hyperlink{dijkstra_8h_a4d24d6a07d6e8f5a5be53ce76de4a0ad}{bestAndAlternativeDrivingRoute}}(\mbox{\hyperlink{classGraph}{Graph<T>}}\ *g,\ \textcolor{keywordtype}{int}\ s,\ \textcolor{keywordtype}{int}\ t,\ vector<int>\ avoidNodes,\ vector<pair<int,\ int>>\ avoidSegments,\ \textcolor{keywordtype}{int}\ includeNode);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00098\ std::string\ \mbox{\hyperlink{dijkstra_8h_a9b96325baa225a6df1b985fa04acb3ee}{restrictedDrivingRoute}}(\mbox{\hyperlink{classGraph}{Graph<T>}}\ *g,\ \textcolor{keywordtype}{int}\ s,\ \textcolor{keywordtype}{int}\ t,\ \textcolor{keywordtype}{int}\ includeNode);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00107\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{dijkstra_8h_aa1dab36a3833b3f0b1e578bdef35a1e0}{relax\_walking}}(\mbox{\hyperlink{classEdge}{Edge<T>}}\ *edge);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00117\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00118\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dijkstra_8h_a56a6f3cff304c83a461eff536d8f91b8}{dijkstra\_walking}}(\mbox{\hyperlink{classGraph}{Graph<T>}}\ *g,\ \textcolor{keywordtype}{int}\ origin);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00121\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{dijkstra_8h_ac6c9b9be80fd9b3831e06e4ebdf1d0e0}{relax\_driving}}(\mbox{\hyperlink{classEdge}{Edge<T>}}\ *edge)\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{if}\ (edge-\/>\mbox{\hyperlink{classEdge_a40fc1470c5339203defca19b67c2535b}{getOrig}}()-\/>getDist()\ +\ edge-\/>\mbox{\hyperlink{classEdge_a57c8d7ad97fa0f5fd1094735a355771e}{getWeight}}()[0]\ <\ edge-\/>\mbox{\hyperlink{classEdge_a9a2de066dff8513dd788d553fc1d0c81}{getDest}}()-\/>getDist())\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ edge-\/>\mbox{\hyperlink{classEdge_a9a2de066dff8513dd788d553fc1d0c81}{getDest}}()-\/>setDist(edge-\/>\mbox{\hyperlink{classEdge_a40fc1470c5339203defca19b67c2535b}{getOrig}}()-\/>getDist()\ +\ edge-\/>\mbox{\hyperlink{classEdge_a57c8d7ad97fa0f5fd1094735a355771e}{getWeight}}()[0]);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ edge-\/>\mbox{\hyperlink{classEdge_a9a2de066dff8513dd788d553fc1d0c81}{getDest}}()-\/>setPath(edge);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00128\ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00131\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dijkstra_8h_a9d799af5f93fc7ff08f75e65b9df75f6}{dijkstra\_driving}}(\mbox{\hyperlink{classGraph}{Graph<T>}}\ *g,\ \textcolor{keywordtype}{int}\ origin)\ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ v\ :\ g-\/>\mbox{\hyperlink{classGraph_a41624b03fcb6bd29e4df574a1ec58541}{getVertexSet}}())\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ v-\/>setDist(\mbox{\hyperlink{Graph_8h_a12c2040f25d8e3a7b9e1c2024c618cb6}{INF}});}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ v-\/>setPath(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{auto}\ s\ =\ g-\/>\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(origin);}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordflow}{if}\ (!s)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00139\ \ \ \ \ s-\/>setDist(0);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{classMutablePriorityQueue}{MutablePriorityQueue<Vertex<T>}}>\ q;}
+\DoxyCodeLine{00142\ \ \ \ \ q.\mbox{\hyperlink{classMutablePriorityQueue_a058fc182052af82e10cc3719e448b62d}{insert}}(s);}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{while}\ (!q.\mbox{\hyperlink{classMutablePriorityQueue_a2edbb1f4a6fa3ff735700dfcebebe8d4}{empty}}())\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ v\ =\ q.\mbox{\hyperlink{classMutablePriorityQueue_a3880874d7364279ac0d6d31302b28853}{extractMin}}();}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ e\ :\ v-\/>getAdj())\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ oldDist\ =\ e-\/>getDest()-\/>getDist();}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{dijkstra_8h_ac6c9b9be80fd9b3831e06e4ebdf1d0e0}{relax\_driving}}(e))\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (oldDist\ ==\ \mbox{\hyperlink{Graph_8h_a12c2040f25d8e3a7b9e1c2024c618cb6}{INF}})\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ q.\mbox{\hyperlink{classMutablePriorityQueue_a058fc182052af82e10cc3719e448b62d}{insert}}(e-\/>getDest());}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ q.\mbox{\hyperlink{classMutablePriorityQueue_a0878839cc1d2dba2b8ab2e589ecc6405}{decreaseKey}}(e-\/>getDest());}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00159\ \textcolor{keyword}{static}\ std::vector<T>\ getPath(\mbox{\hyperlink{classGraph}{Graph<T>}}\ *g,\ \textcolor{keywordtype}{int}\ origin,\ \textcolor{keywordtype}{int}\ dest)\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ std::vector<T>\ res;}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{auto}\ v\ =\ g-\/>\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(dest);}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordflow}{if}\ (v\ ==\ \textcolor{keyword}{nullptr}\ ||\ v-\/>getDist()\ ==\ \mbox{\hyperlink{Graph_8h_a12c2040f25d8e3a7b9e1c2024c618cb6}{INF}})\ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \ \ res.push\_back(v-\/>getInfo());}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordflow}{while}\ (v-\/>getPath()\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ v\ =\ v-\/>getPath()-\/>getOrig();}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ res.push\_back(v-\/>getInfo());}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ reverse(res.begin(),\ res.end());}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordflow}{if}\ (res.empty()\ ||\ res[0]\ !=\ origin)\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Origin\ not\ found!!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00173\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00175\ \}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00178\ std::string\ \mbox{\hyperlink{dijkstra_8h_aa10bd97713670c3bf2f6f14f19b2ac57}{bestDrivingRoute}}(\mbox{\hyperlink{classGraph}{Graph<T>}}\ *g,\ \textcolor{keywordtype}{int}\ s,\ \textcolor{keywordtype}{int}\ t)\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \mbox{\hyperlink{dijkstra_8h_a9d799af5f93fc7ff08f75e65b9df75f6}{dijkstra\_driving}}(g,\ s);}
+\DoxyCodeLine{00180\ \ \ \ \ }
+\DoxyCodeLine{00181\ \ \ \ \ std::vector<T>\ path\ =\ getPath(g,\ s,\ t);}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordflow}{if}\ (path.empty())\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}BestDrivingRoute:none"{}};}
+\DoxyCodeLine{00184\ \ \ \ \ \}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ std::ostringstream\ result;}
+\DoxyCodeLine{00187\ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}BestDrivingRoute:"{}};}
+\DoxyCodeLine{00188\ \ \ \ \ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ path.size();\ i++)\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ result\ <<\ path[i];}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ path.size()\ -\/\ 1)\ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \ \ \ \ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ g-\/>\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(t)-\/>getDist()\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00197\ \ \ \ \ }
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordflow}{return}\ result.str();}
+\DoxyCodeLine{00199\ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00203\ std::string\ \mbox{\hyperlink{dijkstra_8h_a5869c5befc93a78ad396fe03fd68c053}{alternativeDrivingRoute}}(\mbox{\hyperlink{classGraph}{Graph<T>}}\ *g,\ \textcolor{keywordtype}{int}\ s,\ \textcolor{keywordtype}{int}\ t)\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \mbox{\hyperlink{dijkstra_8h_a9d799af5f93fc7ff08f75e65b9df75f6}{dijkstra\_driving}}(g,\ s);}
+\DoxyCodeLine{00205\ \ \ \ \ std::vector<T>\ bestPath\ =\ getPath(g,\ s,\ t);}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordflow}{if}\ (bestPath.empty())\ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}AlternativeDrivingRoute:none"{}};}
+\DoxyCodeLine{00208\ \ \ \ \ \}}
+\DoxyCodeLine{00209\ \ \ \ \ }
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordtype}{int}\ bestDist\ =\ g-\/>\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(t)-\/>getDist();}
+\DoxyCodeLine{00211\ \ \ \ \ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ bestPath.size()\ -\/\ 1;\ i++)\ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ v\ =\ g-\/>\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(bestPath[i]);}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v)\ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ v-\/>removeEdge(bestPath[i\ +\ 1]);}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00217\ \ \ \ \ \}}
+\DoxyCodeLine{00218\ \ \ \ \ }
+\DoxyCodeLine{00219\ \ \ \ \ \mbox{\hyperlink{dijkstra_8h_a9d799af5f93fc7ff08f75e65b9df75f6}{dijkstra\_driving}}(g,\ s);}
+\DoxyCodeLine{00220\ \ \ \ \ std::vector<T>\ altPath\ =\ getPath(g,\ s,\ t);}
+\DoxyCodeLine{00221\ \ \ \ \ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{if}\ (altPath.empty()\ ||\ g-\/>\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(t)-\/>getDist()\ <\ bestDist)\ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}AlternativeDrivingRoute:none"{}};}
+\DoxyCodeLine{00224\ \ \ \ \ \}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ std::ostringstream\ result;}
+\DoxyCodeLine{00227\ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}AlternativeDrivingRoute:"{}};}
+\DoxyCodeLine{00228\ \ \ \ \ }
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ altPath.size();\ i++)\ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ result\ <<\ altPath[i];}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ altPath.size()\ -\/\ 1)\ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00234\ \ \ \ \ \}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ g-\/>\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(t)-\/>getDist()\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00237\ \ \ \ \ }
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordflow}{return}\ result.str();}
+\DoxyCodeLine{00239\ \}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00243\ std::string\ \mbox{\hyperlink{dijkstra_8h_a4d24d6a07d6e8f5a5be53ce76de4a0ad}{bestAndAlternativeDrivingRoute}}(\mbox{\hyperlink{classGraph}{Graph<T>}}\ *g,\ \textcolor{keywordtype}{int}\ s,\ \textcolor{keywordtype}{int}\ t,\ vector<int>\ avoidNodes,\ vector<pair<int,\ int>>\ avoidSegments,\ \textcolor{keywordtype}{int}\ includeNode\ )\ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordflow}{if}(avoidNodes.empty()\ \&\&\ avoidSegments.empty()\ \&\&\ includeNode\ ==\ -\/1)\ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ std::string\ best\ =\ \mbox{\hyperlink{dijkstra_8h_aa10bd97713670c3bf2f6f14f19b2ac57}{bestDrivingRoute}}(g,\ s,\ t);}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ std::string\ alternative\ =\ \mbox{\hyperlink{dijkstra_8h_a5869c5befc93a78ad396fe03fd68c053}{alternativeDrivingRoute}}(g,\ s,\ t);}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ best\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ +\ alternative;}
+\DoxyCodeLine{00248\ \ \ \ \ \}}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{dijkstra_8h_a9b96325baa225a6df1b985fa04acb3ee}{restrictedDrivingRoute}}(g,\ s,\ t,\ includeNode);}
+\DoxyCodeLine{00250\ \}}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00254\ std::string\ \mbox{\hyperlink{dijkstra_8h_a9b96325baa225a6df1b985fa04acb3ee}{restrictedDrivingRoute}}(\mbox{\hyperlink{classGraph}{Graph<T>}}\ *g,\ \textcolor{keywordtype}{int}\ s,\ \textcolor{keywordtype}{int}\ t,\ \textcolor{keywordtype}{int}\ includeNode)\ \{}
+\DoxyCodeLine{00255\ \ \ \ \ std::vector<T>\ path;}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordtype}{int}\ totalDistance\ =\ \mbox{\hyperlink{Graph_8h_a12c2040f25d8e3a7b9e1c2024c618cb6}{INF}};}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordflow}{if}\ (includeNode\ !=\ -\/1)\ \{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dijkstra_8h_a9d799af5f93fc7ff08f75e65b9df75f6}{dijkstra\_driving}}(g,\ s);}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ firstHalf\ =\ getPath(g,\ s,\ includeNode);}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ firstDist\ =\ g-\/>\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(includeNode)-\/>getDist();}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dijkstra_8h_a9d799af5f93fc7ff08f75e65b9df75f6}{dijkstra\_driving}}(g,\ includeNode);}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ secondHalf\ =\ getPath(g,\ includeNode,\ t);}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ secondDist\ =\ g-\/>\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(t)-\/>getDist();}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!firstHalf.empty()\ \&\&\ !secondHalf.empty())\ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ totalDistance\ =\ firstDist\ +\ secondDist;}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ firstHalf.pop\_back();}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ path.insert(path.end(),\ firstHalf.begin(),\ firstHalf.end());}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ path.insert(path.end(),\ secondHalf.begin(),\ secondHalf.end());}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00272\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dijkstra_8h_a9d799af5f93fc7ff08f75e65b9df75f6}{dijkstra\_driving}}(g,\ s);\ }
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ path\ =\ getPath(g,\ s,\ t);\ \ \ \ }
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ totalDistance\ =\ g-\/>\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(t)-\/>getDist();}
+\DoxyCodeLine{00276\ \ \ \ \ \}}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordflow}{if}\ (path.empty())\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}RestrictedDrivingRoute:none"{}};}
+\DoxyCodeLine{00279\ \ \ \ \ std::ostringstream\ result;}
+\DoxyCodeLine{00280\ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}RestrictedDrivingRoute:"{}};}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ path.size();\ i++)\ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ result\ <<\ path[i];}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ path.size()\ -\/\ 1)\ result\ <<\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00284\ \ \ \ \ \}}
+\DoxyCodeLine{00285\ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ totalDistance\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordflow}{return}\ result.str();}
+\DoxyCodeLine{00288\ \}}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00291\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{dijkstra_8h_aa1dab36a3833b3f0b1e578bdef35a1e0}{relax\_walking}}(\mbox{\hyperlink{classEdge}{Edge<T>}}\ *edge)\ \{}
+\DoxyCodeLine{00292\ \ \ \ \ \textcolor{keywordflow}{if}\ (edge-\/>\mbox{\hyperlink{classEdge_a40fc1470c5339203defca19b67c2535b}{getOrig}}()-\/>getDist()\ +\ edge-\/>\mbox{\hyperlink{classEdge_a57c8d7ad97fa0f5fd1094735a355771e}{getWeight}}()[1]\ <\ edge-\/>\mbox{\hyperlink{classEdge_a9a2de066dff8513dd788d553fc1d0c81}{getDest}}()-\/>getDist())\ \{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ edge-\/>\mbox{\hyperlink{classEdge_a9a2de066dff8513dd788d553fc1d0c81}{getDest}}()-\/>setDist(edge-\/>\mbox{\hyperlink{classEdge_a40fc1470c5339203defca19b67c2535b}{getOrig}}()-\/>getDist()\ +\ edge-\/>\mbox{\hyperlink{classEdge_a57c8d7ad97fa0f5fd1094735a355771e}{getWeight}}()[1]);}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ edge-\/>\mbox{\hyperlink{classEdge_a9a2de066dff8513dd788d553fc1d0c81}{getDest}}()-\/>setPath(edge);}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00296\ \ \ \ \ \}}
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00298\ \}}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00301\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dijkstra_8h_a56a6f3cff304c83a461eff536d8f91b8}{dijkstra\_walking}}(\mbox{\hyperlink{classGraph}{Graph<T>}}\ *g,\ \textcolor{keywordtype}{int}\ origin)\ \{}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ v\ :\ g-\/>\mbox{\hyperlink{classGraph_a41624b03fcb6bd29e4df574a1ec58541}{getVertexSet}}())\ \{}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ v-\/>setDist(\mbox{\hyperlink{Graph_8h_a12c2040f25d8e3a7b9e1c2024c618cb6}{INF}});}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ v-\/>setPath(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00305\ \ \ \ \ \}}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keyword}{auto}\ s\ =\ g-\/>\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(origin);}
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keywordflow}{if}\ (!s)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00309\ \ \ \ \ s-\/>setDist(0);}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \ \ \ \ \mbox{\hyperlink{classMutablePriorityQueue}{MutablePriorityQueue<Vertex<T>}}>\ q;}
+\DoxyCodeLine{00312\ \ \ \ \ q.\mbox{\hyperlink{classMutablePriorityQueue_a058fc182052af82e10cc3719e448b62d}{insert}}(s);}
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{keywordflow}{while}\ (!q.\mbox{\hyperlink{classMutablePriorityQueue_a2edbb1f4a6fa3ff735700dfcebebe8d4}{empty}}())\ \{}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ v\ =\ q.\mbox{\hyperlink{classMutablePriorityQueue_a3880874d7364279ac0d6d31302b28853}{extractMin}}();}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ e\ :\ v-\/>getAdj())\ \{}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ oldDist\ =\ e-\/>getDest()-\/>getDist();}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{dijkstra_8h_aa1dab36a3833b3f0b1e578bdef35a1e0}{relax\_walking}}(e))\ \{}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (oldDist\ ==\ \mbox{\hyperlink{Graph_8h_a12c2040f25d8e3a7b9e1c2024c618cb6}{INF}})\ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ q.\mbox{\hyperlink{classMutablePriorityQueue_a058fc182052af82e10cc3719e448b62d}{insert}}(e-\/>getDest());}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ q.\mbox{\hyperlink{classMutablePriorityQueue_a0878839cc1d2dba2b8ab2e589ecc6405}{decreaseKey}}(e-\/>getDest());}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00325\ \ \ \ \ \}}
+\DoxyCodeLine{00326\ \}}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIJKSTRA\_H}}
+
+\end{DoxyCode}

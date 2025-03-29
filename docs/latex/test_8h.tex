@@ -1,0 +1,205 @@
+\doxysection{/home/cdm/git/\+DA\+\_\+01/src/test.h File Reference}
+\hypertarget{test_8h}{}\label{test_8h}\index{/home/cdm/git/DA\_01/src/test.h@{/home/cdm/git/DA\_01/src/test.h}}
+{\ttfamily \#include "{}data\+\_\+structures/\+Graph.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$climits$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structDistanceData}{Distance\+Data}}
+\item 
+struct \mbox{\hyperlink{structlocation}{location}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGraph}{Graph}}$<$ int $>$ \mbox{\hyperlink{test_8h_ac62e3e4c51d18802114740e1d176a2ec}{test}} (std\+::vector$<$ int $>$ \&avoid\+Nodes, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&avoid\+Segments)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} \mbox{\hyperlink{test_8h_aac87b9a7b416c910e2f53dfe501fcd0c}{distance1}} = \{"{}TR"{}, "{}CA"{}, 10, 20\}
+\item 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} \mbox{\hyperlink{test_8h_aea5c69f4de939309df7d33eb98d4091b}{distance2}} = \{"{}TR"{}, "{}BAO"{}, INT\+\_\+\+MAX, 15\}
+\item 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} \mbox{\hyperlink{test_8h_a44e4a35ed8408b19c3f5397f8c9c24e6}{distance3}} = \{"{}CA"{}, "{}BAO"{}, 5, 8\}
+\item 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} \mbox{\hyperlink{test_8h_aac7ca1bdabf938d58f5f1d3b50b78df3}{distance4}} = \{"{}CA"{}, "{}AL"{}, 8, 25\}
+\item 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} \mbox{\hyperlink{test_8h_a3214bbc7476ed97ef2f0354163406c37}{distance5}} = \{"{}BAO"{}, "{}SE"{}, 12, 10\}
+\item 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} \mbox{\hyperlink{test_8h_a17f8b0bc6be192a7e10e7f7e53aa8e9b}{distance6}} = \{"{}SE"{}, "{}RB"{}, INT\+\_\+\+MAX, 10\}
+\item 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} \mbox{\hyperlink{test_8h_a591eb1d9c1cdd445af070d0a41276309}{distance7}} = \{"{}BAO"{}, "{}FOZ"{}, 20, 25\}
+\item 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} \mbox{\hyperlink{test_8h_a955ffb2e9da45310894ab272a325019f}{distance8}} = \{"{}AL"{}, "{}RB"{}, 15, 30\}
+\item 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} \mbox{\hyperlink{test_8h_a330027cceab2567bec07a098a9102182}{distance9}} = \{"{}AL"{}, "{}FOZ"{}, 30, 50\}
+\item 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} \mbox{\hyperlink{test_8h_a364487a53d01e7eef248b2de5a4fefbd}{distance10}} = \{"{}FOZ"{}, "{}RB"{}, INT\+\_\+\+MAX, 12\}
+\item 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} \mbox{\hyperlink{test_8h_a435be4a828e8c724561a225cd17aa3a8}{distance11}} = \{"{}AL"{}, "{}CL"{}, 6, 18\}
+\item 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} \mbox{\hyperlink{test_8h_adb05eea2ca868b43fa38f4c12816579d}{distance12}} = \{"{}FOZ"{}, "{}CL"{}, 14, 20\}
+\item 
+\mbox{\hyperlink{structlocation}{location}} \mbox{\hyperlink{test_8h_a700d06f03c16049b29131c49492668dd}{location1}} = \{"{}TRINDADE"{}, 1, "{}TR"{}, 0\}
+\item 
+\mbox{\hyperlink{structlocation}{location}} \mbox{\hyperlink{test_8h_a6212d301c5f55381d1df57e3b4aae81c}{location2}} = \{"{}Campo Alegre"{}, 2, "{}CA"{}, 1\}
+\item 
+\mbox{\hyperlink{structlocation}{location}} \mbox{\hyperlink{test_8h_a7374c5f32eb3630668f1ee082b9e61c6}{location3}} = \{"{}Bolhao"{}, 3, "{}BAO"{}, 1\}
+\item 
+\mbox{\hyperlink{structlocation}{location}} \mbox{\hyperlink{test_8h_a91ed674107be655f049e769185aaf146}{location4}} = \{"{}Aliados"{}, 4, "{}AL"{}, 0\}
+\item 
+\mbox{\hyperlink{structlocation}{location}} \mbox{\hyperlink{test_8h_a96742883badf34932aeefa084b0e1a0f}{location5}} = \{"{}Se"{}, 5, "{}SE"{}, 0\}
+\item 
+\mbox{\hyperlink{structlocation}{location}} \mbox{\hyperlink{test_8h_af57bec5ea68c7e19e2e0f94089e2ef20}{location6}} = \{"{}RIBEIRA"{}, 6, "{}RB"{}, 1\}
+\item 
+\mbox{\hyperlink{structlocation}{location}} \mbox{\hyperlink{test_8h_aa95cbd797b9faea1558505af71b17774}{location7}} = \{"{}FOZ"{}, 7, "{}FOZ"{}, 1\}
+\item 
+\mbox{\hyperlink{structlocation}{location}} \mbox{\hyperlink{test_8h_ab334d59e1f76ae84771c5e1360ba6a90}{location8}} = \{"{}Clerigos"{}, 8, "{}CL"{}, 0\}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, int $>$ \mbox{\hyperlink{test_8h_a34af5685962e7c219484769c7792fa24}{code\+To\+Id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test_8h_ac62e3e4c51d18802114740e1d176a2ec}\index{test.h@{test.h}!test@{test}}
+\index{test@{test}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily \label{test_8h_ac62e3e4c51d18802114740e1d176a2ec} 
+\mbox{\hyperlink{classGraph}{Graph}}$<$ int $>$ test (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{avoid\+Nodes}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{avoid\+Segments}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{test_8h_a34af5685962e7c219484769c7792fa24}\index{test.h@{test.h}!codeToId@{codeToId}}
+\index{codeToId@{codeToId}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{codeToId}{codeToId}}
+{\footnotesize\ttfamily \label{test_8h_a34af5685962e7c219484769c7792fa24} 
+std\+::unordered\+\_\+map$<$std\+::string, int$>$ code\+To\+Id}
+
+\Hypertarget{test_8h_aac87b9a7b416c910e2f53dfe501fcd0c}\index{test.h@{test.h}!distance1@{distance1}}
+\index{distance1@{distance1}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{distance1}{distance1}}
+{\footnotesize\ttfamily \label{test_8h_aac87b9a7b416c910e2f53dfe501fcd0c} 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} distance1 = \{"{}TR"{}, "{}CA"{}, 10, 20\}}
+
+\Hypertarget{test_8h_a364487a53d01e7eef248b2de5a4fefbd}\index{test.h@{test.h}!distance10@{distance10}}
+\index{distance10@{distance10}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{distance10}{distance10}}
+{\footnotesize\ttfamily \label{test_8h_a364487a53d01e7eef248b2de5a4fefbd} 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} distance10 = \{"{}FOZ"{}, "{}RB"{}, INT\+\_\+\+MAX, 12\}}
+
+\Hypertarget{test_8h_a435be4a828e8c724561a225cd17aa3a8}\index{test.h@{test.h}!distance11@{distance11}}
+\index{distance11@{distance11}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{distance11}{distance11}}
+{\footnotesize\ttfamily \label{test_8h_a435be4a828e8c724561a225cd17aa3a8} 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} distance11 = \{"{}AL"{}, "{}CL"{}, 6, 18\}}
+
+\Hypertarget{test_8h_adb05eea2ca868b43fa38f4c12816579d}\index{test.h@{test.h}!distance12@{distance12}}
+\index{distance12@{distance12}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{distance12}{distance12}}
+{\footnotesize\ttfamily \label{test_8h_adb05eea2ca868b43fa38f4c12816579d} 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} distance12 = \{"{}FOZ"{}, "{}CL"{}, 14, 20\}}
+
+\Hypertarget{test_8h_aea5c69f4de939309df7d33eb98d4091b}\index{test.h@{test.h}!distance2@{distance2}}
+\index{distance2@{distance2}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{distance2}{distance2}}
+{\footnotesize\ttfamily \label{test_8h_aea5c69f4de939309df7d33eb98d4091b} 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} distance2 = \{"{}TR"{}, "{}BAO"{}, INT\+\_\+\+MAX, 15\}}
+
+\Hypertarget{test_8h_a44e4a35ed8408b19c3f5397f8c9c24e6}\index{test.h@{test.h}!distance3@{distance3}}
+\index{distance3@{distance3}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{distance3}{distance3}}
+{\footnotesize\ttfamily \label{test_8h_a44e4a35ed8408b19c3f5397f8c9c24e6} 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} distance3 = \{"{}CA"{}, "{}BAO"{}, 5, 8\}}
+
+\Hypertarget{test_8h_aac7ca1bdabf938d58f5f1d3b50b78df3}\index{test.h@{test.h}!distance4@{distance4}}
+\index{distance4@{distance4}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{distance4}{distance4}}
+{\footnotesize\ttfamily \label{test_8h_aac7ca1bdabf938d58f5f1d3b50b78df3} 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} distance4 = \{"{}CA"{}, "{}AL"{}, 8, 25\}}
+
+\Hypertarget{test_8h_a3214bbc7476ed97ef2f0354163406c37}\index{test.h@{test.h}!distance5@{distance5}}
+\index{distance5@{distance5}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{distance5}{distance5}}
+{\footnotesize\ttfamily \label{test_8h_a3214bbc7476ed97ef2f0354163406c37} 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} distance5 = \{"{}BAO"{}, "{}SE"{}, 12, 10\}}
+
+\Hypertarget{test_8h_a17f8b0bc6be192a7e10e7f7e53aa8e9b}\index{test.h@{test.h}!distance6@{distance6}}
+\index{distance6@{distance6}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{distance6}{distance6}}
+{\footnotesize\ttfamily \label{test_8h_a17f8b0bc6be192a7e10e7f7e53aa8e9b} 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} distance6 = \{"{}SE"{}, "{}RB"{}, INT\+\_\+\+MAX, 10\}}
+
+\Hypertarget{test_8h_a591eb1d9c1cdd445af070d0a41276309}\index{test.h@{test.h}!distance7@{distance7}}
+\index{distance7@{distance7}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{distance7}{distance7}}
+{\footnotesize\ttfamily \label{test_8h_a591eb1d9c1cdd445af070d0a41276309} 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} distance7 = \{"{}BAO"{}, "{}FOZ"{}, 20, 25\}}
+
+\Hypertarget{test_8h_a955ffb2e9da45310894ab272a325019f}\index{test.h@{test.h}!distance8@{distance8}}
+\index{distance8@{distance8}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{distance8}{distance8}}
+{\footnotesize\ttfamily \label{test_8h_a955ffb2e9da45310894ab272a325019f} 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} distance8 = \{"{}AL"{}, "{}RB"{}, 15, 30\}}
+
+\Hypertarget{test_8h_a330027cceab2567bec07a098a9102182}\index{test.h@{test.h}!distance9@{distance9}}
+\index{distance9@{distance9}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{distance9}{distance9}}
+{\footnotesize\ttfamily \label{test_8h_a330027cceab2567bec07a098a9102182} 
+\mbox{\hyperlink{structDistanceData}{Distance\+Data}} distance9 = \{"{}AL"{}, "{}FOZ"{}, 30, 50\}}
+
+\Hypertarget{test_8h_a700d06f03c16049b29131c49492668dd}\index{test.h@{test.h}!location1@{location1}}
+\index{location1@{location1}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{location1}{location1}}
+{\footnotesize\ttfamily \label{test_8h_a700d06f03c16049b29131c49492668dd} 
+\mbox{\hyperlink{structlocation}{location}} location1 = \{"{}TRINDADE"{}, 1, "{}TR"{}, 0\}}
+
+\Hypertarget{test_8h_a6212d301c5f55381d1df57e3b4aae81c}\index{test.h@{test.h}!location2@{location2}}
+\index{location2@{location2}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{location2}{location2}}
+{\footnotesize\ttfamily \label{test_8h_a6212d301c5f55381d1df57e3b4aae81c} 
+\mbox{\hyperlink{structlocation}{location}} location2 = \{"{}Campo Alegre"{}, 2, "{}CA"{}, 1\}}
+
+\Hypertarget{test_8h_a7374c5f32eb3630668f1ee082b9e61c6}\index{test.h@{test.h}!location3@{location3}}
+\index{location3@{location3}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{location3}{location3}}
+{\footnotesize\ttfamily \label{test_8h_a7374c5f32eb3630668f1ee082b9e61c6} 
+\mbox{\hyperlink{structlocation}{location}} location3 = \{"{}Bolhao"{}, 3, "{}BAO"{}, 1\}}
+
+\Hypertarget{test_8h_a91ed674107be655f049e769185aaf146}\index{test.h@{test.h}!location4@{location4}}
+\index{location4@{location4}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{location4}{location4}}
+{\footnotesize\ttfamily \label{test_8h_a91ed674107be655f049e769185aaf146} 
+\mbox{\hyperlink{structlocation}{location}} location4 = \{"{}Aliados"{}, 4, "{}AL"{}, 0\}}
+
+\Hypertarget{test_8h_a96742883badf34932aeefa084b0e1a0f}\index{test.h@{test.h}!location5@{location5}}
+\index{location5@{location5}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{location5}{location5}}
+{\footnotesize\ttfamily \label{test_8h_a96742883badf34932aeefa084b0e1a0f} 
+\mbox{\hyperlink{structlocation}{location}} location5 = \{"{}Se"{}, 5, "{}SE"{}, 0\}}
+
+\Hypertarget{test_8h_af57bec5ea68c7e19e2e0f94089e2ef20}\index{test.h@{test.h}!location6@{location6}}
+\index{location6@{location6}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{location6}{location6}}
+{\footnotesize\ttfamily \label{test_8h_af57bec5ea68c7e19e2e0f94089e2ef20} 
+\mbox{\hyperlink{structlocation}{location}} location6 = \{"{}RIBEIRA"{}, 6, "{}RB"{}, 1\}}
+
+\Hypertarget{test_8h_aa95cbd797b9faea1558505af71b17774}\index{test.h@{test.h}!location7@{location7}}
+\index{location7@{location7}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{location7}{location7}}
+{\footnotesize\ttfamily \label{test_8h_aa95cbd797b9faea1558505af71b17774} 
+\mbox{\hyperlink{structlocation}{location}} location7 = \{"{}FOZ"{}, 7, "{}FOZ"{}, 1\}}
+
+\Hypertarget{test_8h_ab334d59e1f76ae84771c5e1360ba6a90}\index{test.h@{test.h}!location8@{location8}}
+\index{location8@{location8}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{location8}{location8}}
+{\footnotesize\ttfamily \label{test_8h_ab334d59e1f76ae84771c5e1360ba6a90} 
+\mbox{\hyperlink{structlocation}{location}} location8 = \{"{}Clerigos"{}, 8, "{}CL"{}, 0\}}
+
