@@ -126,6 +126,7 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac704d7ebc379f86aa89e1971b8e411a5" id="r_ac704d7ebc379f86aa89e1971b8e411a5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structDistanceData.html">DistanceData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac704d7ebc379f86aa89e1971b8e411a5">readDistances</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:ac704d7ebc379f86aa89e1971b8e411a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads distances data from a CSV file.  <br /></td></tr>
 <tr class="separator:ac704d7ebc379f86aa89e1971b8e411a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -143,6 +144,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Reads distances data from a CSV file. </p>
+<p>This function parses a CSV file containing distance information between locations and stores it in a vector of <code><a class="el" href="structDistanceData.html">DistanceData</a></code> structures. Each row in the file represents a pair of locations along with their driving and walking distances.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>The name of the CSV file to read.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of <code><a class="el" href="structDistanceData.html">DistanceData</a></code> structures containing parsed distance information. </dd></dl>
 
 </div>
 </div>

@@ -21,123 +21,123 @@
 \DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structroute_ad5aa7dcea197ec94e49e228b9604fc92}{totalTime}};}
 \DoxyCodeLine{00019\ \};}
 \DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ std::string\ \mbox{\hyperlink{drivingAndWalking_8h_a5da68fe9c51b0f91f8f457d4b53d4792}{drivingAndWalkingRoute}}(\mbox{\hyperlink{classGraph}{Graph<int>}}\ \&graph,\ \textcolor{keywordtype}{int}\ s,\ \textcolor{keywordtype}{int}\ t,\ \textcolor{keywordtype}{int}\ maxWalkTime)\ \{}
-\DoxyCodeLine{00022\ \ \ \ \ }
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ bestParkNode\ =\ -\/1;}
-\DoxyCodeLine{00024\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{dijkstra_8h_aa10bd97713670c3bf2f6f14f19b2ac57}{bestDrivingRoute}};}
-\DoxyCodeLine{00025\ \ \ \ \ std::vector<int>\ bestWalkingRoute;}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ bestDrivingTime\ =\ 0;}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ bestWalkingTime\ =\ 0;}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ bestTotalTime\ =\ INT\_MAX;}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ parkVertex\ :\ graph.\mbox{\hyperlink{classGraph_a41624b03fcb6bd29e4df574a1ec58541}{getVertexSet}}())\ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!parkVertex-\/>isParking())\ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dijkstra_8h_a9d799af5f93fc7ff08f75e65b9df75f6}{dijkstra\_driving}}(\&graph,\ s);}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ drivingPath\ =\ getPath(\&graph,\ s,\ parkVertex-\/>getInfo());}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ drivingTime\ =\ parkVertex-\/>getDist();}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (drivingPath.empty())\ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dijkstra_8h_a56a6f3cff304c83a461eff536d8f91b8}{dijkstra\_walking}}(\&graph,\ parkVertex-\/>getInfo());}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ walkingPath\ =\ getPath(\&graph,\ parkVertex-\/>getInfo(),\ t);}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ walkingTime\ =\ graph.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(t)-\/>getDist();}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (walkingPath.empty())\ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (walkingTime\ >\ maxWalkTime)\ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ totalTime\ =\ drivingTime\ +\ walkingTime;}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (totalTime\ <\ bestTotalTime\ ||\ (totalTime\ ==\ bestTotalTime\ \&\&\ walkingTime\ >\ bestWalkingTime))\ \{}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ bestTotalTime\ =\ totalTime;}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ bestParkNode\ =\ parkVertex-\/>getInfo();}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ bestDrivingTime\ =\ drivingTime;}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ bestWalkingTime\ =\ walkingTime;}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dijkstra_8h_aa10bd97713670c3bf2f6f14f19b2ac57}{bestDrivingRoute}}\ =\ drivingPath;}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ bestWalkingRoute\ =\ walkingPath;}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ std::string\ \mbox{\hyperlink{drivingAndWalking_8h_a5da68fe9c51b0f91f8f457d4b53d4792}{drivingAndWalkingRoute}}(\mbox{\hyperlink{classGraph}{Graph<int>}}\ \&graph,\ \textcolor{keywordtype}{int}\ s,\ \textcolor{keywordtype}{int}\ t,\ \textcolor{keywordtype}{int}\ maxWalkTime)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ bestParkNode\ =\ -\/1;}
+\DoxyCodeLine{00042\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{dijkstra_8h_aa10bd97713670c3bf2f6f14f19b2ac57}{bestDrivingRoute}};}
+\DoxyCodeLine{00043\ \ \ \ \ std::vector<int>\ bestWalkingRoute;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ bestDrivingTime\ =\ 0;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ bestWalkingTime\ =\ 0;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ bestTotalTime\ =\ INT\_MAX;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ parkVertex\ :\ graph.\mbox{\hyperlink{classGraph_a41624b03fcb6bd29e4df574a1ec58541}{getVertexSet}}())\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!parkVertex-\/>isParking())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dijkstra_8h_a9d799af5f93fc7ff08f75e65b9df75f6}{dijkstra\_driving}}(\&graph,\ s);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ drivingPath\ =\ getPath(\&graph,\ s,\ parkVertex-\/>getInfo());}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ drivingTime\ =\ parkVertex-\/>getDist();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (drivingPath.empty())\ \textcolor{keywordflow}{continue};}
 \DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//start\ approximate\ solution\ }}
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (bestParkNode\ ==\ -\/1)\ \{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ std::vector<route>\ alternatives;}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ parkVertex\ :\ graph.\mbox{\hyperlink{classGraph_a41624b03fcb6bd29e4df574a1ec58541}{getVertexSet}}())\ \{}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!parkVertex-\/>isParking())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dijkstra_8h_a56a6f3cff304c83a461eff536d8f91b8}{dijkstra\_walking}}(\&graph,\ parkVertex-\/>getInfo());}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ walkingPath\ =\ getPath(\&graph,\ parkVertex-\/>getInfo(),\ t);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ walkingTime\ =\ graph.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(t)-\/>getDist();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (walkingPath.empty())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (walkingTime\ >\ maxWalkTime)\ \textcolor{keywordflow}{continue};}
 \DoxyCodeLine{00062\ }
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dijkstra_8h_a9d799af5f93fc7ff08f75e65b9df75f6}{dijkstra\_driving}}(\&graph,\ s);}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ drivingPath\ =\ getPath(\&graph,\ s,\ parkVertex-\/>getInfo());}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ drivingTime\ =\ parkVertex-\/>getDist();}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (drivingPath.empty())\ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dijkstra_8h_a56a6f3cff304c83a461eff536d8f91b8}{dijkstra\_walking}}(\&graph,\ parkVertex-\/>getInfo());}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ walkingPath\ =\ getPath(\&graph,\ parkVertex-\/>getInfo(),\ t);}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ walkingTime\ =\ graph.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(t)-\/>getDist();}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (walkingPath.empty())\ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structroute}{route}}\ option;}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ option.\mbox{\hyperlink{structroute_ab36bafe711f11bd06ea66b6ecfd2c409}{parkNode}}\ =\ parkVertex-\/>getInfo();}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ option.\mbox{\hyperlink{structroute_aaad92a185db0a28e47cbedc1c8769415}{drivingPath}}\ =\ drivingPath;}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ option.\mbox{\hyperlink{structroute_acb85d4df261a5038552fd770c9dbaf90}{drivingTime}}\ =\ drivingTime;}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ option.\mbox{\hyperlink{structroute_a2e5fab4c98cacfdd410fd1c308b0f7e6}{walkingPath}}\ =\ walkingPath;}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ option.\mbox{\hyperlink{structroute_a7d3b00a22bc7ca51b69893d95c657084}{walkingTime}}\ =\ walkingTime;}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ option.\mbox{\hyperlink{structroute_ad5aa7dcea197ec94e49e228b9604fc92}{totalTime}}\ =\ drivingTime\ +\ walkingTime;}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ alternatives.push\_back(option);}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (alternatives.empty())\ \{}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}DrivingAndWalkingRoute:\ none"{}};}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ std::sort(alternatives.begin(),\ alternatives.end(),\ [](\textcolor{keyword}{const}\ \mbox{\hyperlink{structroute}{route}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structroute}{route}}\&\ b)\ \{\ }
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (a.totalTime\ !=\ b.totalTime)\ return\ a.totalTime\ <\ b.totalTime;}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ a.walkingTime\ <\ b.walkingTime;}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numAlternatives\ =\ std::min(2,\ (\textcolor{keywordtype}{int})alternatives.size());}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numAlternatives\ ==\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}DrivingAndWalkingRoute:none"{}};}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ std::ostringstream\ result;}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ numAlternatives;\ ++i)\ \{}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ alt\ =\ alternatives[i];}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}DrivingRoute"{}}\ <<\ (i+1)\ <<\ \textcolor{stringliteral}{"{}:"{}};}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ alt.drivingPath.size();\ ++j)\ \{}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ alt.drivingPath[j];}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ !=\ alt.drivingPath.size()\ -\/\ 1)\ result\ <<\ \textcolor{stringliteral}{"{},"{}};}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ totalTime\ =\ drivingTime\ +\ walkingTime;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (totalTime\ <\ bestTotalTime\ ||\ (totalTime\ ==\ bestTotalTime\ \&\&\ walkingTime\ >\ bestWalkingTime))\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ bestTotalTime\ =\ totalTime;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ bestParkNode\ =\ parkVertex-\/>getInfo();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ bestDrivingTime\ =\ drivingTime;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ bestWalkingTime\ =\ walkingTime;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dijkstra_8h_aa10bd97713670c3bf2f6f14f19b2ac57}{bestDrivingRoute}}\ =\ drivingPath;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ bestWalkingRoute\ =\ walkingPath;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//start\ approximate\ solution\ }}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{if}\ (bestParkNode\ ==\ -\/1)\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ std::vector<route>\ alternatives;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ parkVertex\ :\ graph.\mbox{\hyperlink{classGraph_a41624b03fcb6bd29e4df574a1ec58541}{getVertexSet}}())\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!parkVertex-\/>isParking())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dijkstra_8h_a9d799af5f93fc7ff08f75e65b9df75f6}{dijkstra\_driving}}(\&graph,\ s);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ drivingPath\ =\ getPath(\&graph,\ s,\ parkVertex-\/>getInfo());}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ drivingTime\ =\ parkVertex-\/>getDist();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (drivingPath.empty())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dijkstra_8h_a56a6f3cff304c83a461eff536d8f91b8}{dijkstra\_walking}}(\&graph,\ parkVertex-\/>getInfo());}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ walkingPath\ =\ getPath(\&graph,\ parkVertex-\/>getInfo(),\ t);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ walkingTime\ =\ graph.\mbox{\hyperlink{classGraph_a8b7b7465fbfd562e2a469f90a437ab75}{findVertex}}(t)-\/>getDist();}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (walkingPath.empty())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structroute}{route}}\ option;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ option.\mbox{\hyperlink{structroute_ab36bafe711f11bd06ea66b6ecfd2c409}{parkNode}}\ =\ parkVertex-\/>getInfo();}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ option.\mbox{\hyperlink{structroute_aaad92a185db0a28e47cbedc1c8769415}{drivingPath}}\ =\ drivingPath;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ option.\mbox{\hyperlink{structroute_acb85d4df261a5038552fd770c9dbaf90}{drivingTime}}\ =\ drivingTime;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ option.\mbox{\hyperlink{structroute_a2e5fab4c98cacfdd410fd1c308b0f7e6}{walkingPath}}\ =\ walkingPath;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ option.\mbox{\hyperlink{structroute_a7d3b00a22bc7ca51b69893d95c657084}{walkingTime}}\ =\ walkingTime;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ option.\mbox{\hyperlink{structroute_ad5aa7dcea197ec94e49e228b9604fc92}{totalTime}}\ =\ drivingTime\ +\ walkingTime;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ alternatives.push\_back(option);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (alternatives.empty())\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}DrivingAndWalkingRoute:\ none"{}};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00104\ }
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ alt.drivingTime\ <<\ \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}ParkingNode"{}}\ <<\ (i+1)\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ alt.parkNode\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}WalkingRoute"{}}\ <<\ (i+1)\ <<\ \textcolor{stringliteral}{"{}:"{}};}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ alt.walkingPath.size();\ ++j)\ \{}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ alt.walkingPath[j];}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ !=\ alt.walkingPath.size()\ -\/\ 1)\ result\ <<\ \textcolor{stringliteral}{"{},"{}};}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ alt.walkingTime\ <<\ \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}TotalTime"{}}\ <<\ (i+1)\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ alt.totalTime;}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ numAlternatives\ -\/\ 1)\ result\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result.str();}
-\DoxyCodeLine{00117\ \ \ \ \ \}}
-\DoxyCodeLine{00118\ }
-\DoxyCodeLine{00119\ \ \ \ \ std::ostringstream\ result;}
-\DoxyCodeLine{00120\ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}DrivingRoute:"{}};}
-\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{dijkstra_8h_aa10bd97713670c3bf2f6f14f19b2ac57}{bestDrivingRoute}}.size();\ i++)\ \{}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ result\ <<\ \mbox{\hyperlink{dijkstra_8h_aa10bd97713670c3bf2f6f14f19b2ac57}{bestDrivingRoute}}[i];}
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ \mbox{\hyperlink{dijkstra_8h_aa10bd97713670c3bf2f6f14f19b2ac57}{bestDrivingRoute}}.size()\ -\/\ 1)\ result\ <<\ \textcolor{stringliteral}{"{},"{}};}
-\DoxyCodeLine{00124\ \ \ \ \ \}}
-\DoxyCodeLine{00125\ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ bestDrivingTime\ <<\ \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
-\DoxyCodeLine{00126\ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}ParkingNode:"{}}\ <<\ bestParkNode\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
-\DoxyCodeLine{00127\ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}WalkingRoute:"{}};}
-\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ bestWalkingRoute.size();\ i++)\ \{}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ result\ <<\ bestWalkingRoute[i];}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ bestWalkingRoute.size()\ -\/\ 1)\ result\ <<\ \textcolor{stringliteral}{"{},"{}};}
-\DoxyCodeLine{00131\ \ \ \ \ \}}
-\DoxyCodeLine{00132\ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ bestWalkingTime\ <<\ \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
-\DoxyCodeLine{00133\ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}TotalTime:"{}}\ <<\ bestTotalTime;}
-\DoxyCodeLine{00134\ }
-\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordflow}{return}\ result.str();}
-\DoxyCodeLine{00136\ \}}
-\DoxyCodeLine{00137\ }
-\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ std::sort(alternatives.begin(),\ alternatives.end(),\ [](\textcolor{keyword}{const}\ \mbox{\hyperlink{structroute}{route}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structroute}{route}}\&\ b)\ \{\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (a.totalTime\ !=\ b.totalTime)\ return\ a.totalTime\ <\ b.totalTime;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ a.walkingTime\ <\ b.walkingTime;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numAlternatives\ =\ std::min(2,\ (\textcolor{keywordtype}{int})alternatives.size());}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numAlternatives\ ==\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}DrivingAndWalkingRoute:none"{}};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ std::ostringstream\ result;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ numAlternatives;\ ++i)\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ alt\ =\ alternatives[i];}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}DrivingRoute"{}}\ <<\ (i+1)\ <<\ \textcolor{stringliteral}{"{}:"{}};}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ alt.drivingPath.size();\ ++j)\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ alt.drivingPath[j];}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ !=\ alt.drivingPath.size()\ -\/\ 1)\ result\ <<\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ alt.drivingTime\ <<\ \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}ParkingNode"{}}\ <<\ (i+1)\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ alt.parkNode\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}WalkingRoute"{}}\ <<\ (i+1)\ <<\ \textcolor{stringliteral}{"{}:"{}};}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ alt.walkingPath.size();\ ++j)\ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ alt.walkingPath[j];}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ !=\ alt.walkingPath.size()\ -\/\ 1)\ result\ <<\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ alt.walkingTime\ <<\ \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}TotalTime"{}}\ <<\ (i+1)\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ alt.totalTime;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ numAlternatives\ -\/\ 1)\ result\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result.str();}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ std::ostringstream\ result;}
+\DoxyCodeLine{00138\ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}DrivingRoute:"{}};}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{dijkstra_8h_aa10bd97713670c3bf2f6f14f19b2ac57}{bestDrivingRoute}}.size();\ i++)\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ result\ <<\ \mbox{\hyperlink{dijkstra_8h_aa10bd97713670c3bf2f6f14f19b2ac57}{bestDrivingRoute}}[i];}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ \mbox{\hyperlink{dijkstra_8h_aa10bd97713670c3bf2f6f14f19b2ac57}{bestDrivingRoute}}.size()\ -\/\ 1)\ result\ <<\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ bestDrivingTime\ <<\ \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
+\DoxyCodeLine{00144\ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}ParkingNode:"{}}\ <<\ bestParkNode\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00145\ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}WalkingRoute:"{}};}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ bestWalkingRoute.size();\ i++)\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ result\ <<\ bestWalkingRoute[i];}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ bestWalkingRoute.size()\ -\/\ 1)\ result\ <<\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ bestWalkingTime\ <<\ \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
+\DoxyCodeLine{00151\ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}TotalTime:"{}}\ <<\ bestTotalTime;}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{return}\ result.str();}
+\DoxyCodeLine{00154\ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#endif\ }}
 
 \end{DoxyCode}

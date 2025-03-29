@@ -118,6 +118,7 @@ $(function(){initNavTree('populateGraph_8h.html',''); initResizable(true); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a5e78856ef080e9c543954b70bed21087" id="r_a5e78856ef080e9c543954b70bed21087"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGraph.html">Graph</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e78856ef080e9c543954b70bed21087">populate</a> (std::vector&lt; int &gt; &amp;avoidNodes, std::vector&lt; std::pair&lt; int, int &gt; &gt; &amp;avoidSegments)</td></tr>
+<tr class="memdesc:a5e78856ef080e9c543954b70bed21087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populates a graph with locations and distance data.  <br /></td></tr>
 <tr class="separator:a5e78856ef080e9c543954b70bed21087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -144,6 +145,28 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Populates a graph with locations and distance data. </p>
+<p>This function constructs a graph from the data in "Distances.csv" and "Locations.csv". It removes specified nodes and edges based on the provided avoidance lists.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">avoidNodes</td><td>A vector of node IDs to be removed from the graph. </td></tr>
+    <tr><td class="paramname">avoidSegments</td><td>A vector of pairs representing edges to be excluded.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="classGraph.html">Graph</a>&lt;int&gt;</code> object representing the populated network.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>Time Complexity:</b><ul>
+<li><b>Best case:</b> O(V + E) when no nodes or edges need to be avoided.</li>
+<li><b>Worst case:</b> O(V + E + A + S), where:<ul>
+<li>V is the number of locations,</li>
+<li>E is the number of distance entries,</li>
+<li>A is the number of nodes to avoid,</li>
+<li>S is the number of edges to avoid. </li>
+</ul>
+</li>
+</ul>
+</dd></dl>
 
 </div>
 </div>

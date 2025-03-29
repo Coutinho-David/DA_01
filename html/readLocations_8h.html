@@ -124,6 +124,7 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a1512b8856badfa0bf37a59d8140c2799" id="r_a1512b8856badfa0bf37a59d8140c2799"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structlocation.html">location</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1512b8856badfa0bf37a59d8140c2799">readLocations</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:a1512b8856badfa0bf37a59d8140c2799"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads locations data from a CSV file.  <br /></td></tr>
 <tr class="separator:a1512b8856badfa0bf37a59d8140c2799"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -141,6 +142,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Reads locations data from a CSV file. </p>
+<p>This function parses a CSV file containing locations information and stores it in a vector of <code>location</code> structures. Each row in the file represents a locations along with their name, id and parking information.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>The name of the CSV file to read.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of <code>location</code> structures containing parsed locations information. </dd></dl>
 
 </div>
 </div>

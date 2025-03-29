@@ -8,7 +8,7 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classGraph}{Graph}}$<$ int $>$ \mbox{\hyperlink{populateGraph_8h_a5e78856ef080e9c543954b70bed21087}{populate}} (std\+::vector$<$ int $>$ \&avoid\+Nodes, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&avoid\+Segments)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Populates a graph with locations and distance data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -23,6 +23,35 @@ std\+::unordered\+\_\+map$<$ std\+::string, int $>$ \mbox{\hyperlink{populateGra
 {\footnotesize\ttfamily \label{populateGraph_8h_a5e78856ef080e9c543954b70bed21087} 
 \mbox{\hyperlink{classGraph}{Graph}}$<$ int $>$ populate (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{avoid\+Nodes}{, }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{avoid\+Segments}{}\end{DoxyParamCaption})}
 
+
+
+Populates a graph with locations and distance data. 
+
+This function constructs a graph from the data in "{}\+Distances.\+csv"{} and "{}\+Locations.\+csv"{}. It removes specified nodes and edges based on the provided avoidance lists.
+
+
+\begin{DoxyParams}{Parameters}
+{\em avoid\+Nodes} & A vector of node IDs to be removed from the graph. \\
+\hline
+{\em avoid\+Segments} & A vector of pairs representing edges to be excluded.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{classGraph}{Graph}\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}} object representing the populated network.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+{\bfseries{Time Complexity\+:}}
+\begin{DoxyItemize}
+\item {\bfseries{Best case\+:}} O(V + E) when no nodes or edges need to be avoided.
+\item {\bfseries{Worst case\+:}} O(V + E + A + S), where\+:
+\begin{DoxyItemize}
+\item V is the number of locations,
+\item E is the number of distance entries,
+\item A is the number of nodes to avoid,
+\item S is the number of edges to avoid. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyNote}
 
 
 \doxysubsection{Variable Documentation}
