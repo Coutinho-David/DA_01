@@ -12,21 +12,21 @@
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$class T$>$ }\\bool \mbox{\hyperlink{dijkstra_8h_ac6c9b9be80fd9b3831e06e4ebdf1d0e0}{relax\+\_\+driving}} (\mbox{\hyperlink{classEdge}{Edge}}$<$ T $>$ \texorpdfstring{$\ast$}{*}edge)
-\item 
+\begin{DoxyCompactList}\small\item\em Relaxation function for driving distances. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T$>$ }\\void \mbox{\hyperlink{dijkstra_8h_a9d799af5f93fc7ff08f75e65b9df75f6}{dijkstra\+\_\+driving}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}g, int origin)
-\item 
+\begin{DoxyCompactList}\small\item\em Dijkstra\textquotesingle{}s algorithm to compute shortest paths when driving. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T$>$ }\\std\+::string \mbox{\hyperlink{dijkstra_8h_aa10bd97713670c3bf2f6f14f19b2ac57}{best\+Driving\+Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}g, int s, int t)
-\item 
+\begin{DoxyCompactList}\small\item\em Computes the best driving route from source to destination. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T$>$ }\\std\+::string \mbox{\hyperlink{dijkstra_8h_a5869c5befc93a78ad396fe03fd68c053}{alternative\+Driving\+Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}g, int s, int t)
-\item 
-{\footnotesize template$<$class T$>$ }\\std\+::string \mbox{\hyperlink{dijkstra_8h_aa8d589d949494404b355e005e9e78812}{best\+And\+Alternative\+Driving\+Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}g, int s, int t)
-\item 
-{\footnotesize template$<$class T$>$ }\\std\+::string \mbox{\hyperlink{dijkstra_8h_a24bcedbd0c6163860251115767cb54d0}{restricted\+Driving\+Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}g, int s, int t, vector$<$ int $>$ avoid\+Nodes, vector$<$ pair$<$ int, int $>$ $>$ avoid\+Segments, int include\+Node)
-\item 
+\begin{DoxyCompactList}\small\item\em Computes an alternative driving route avoiding the best route\textquotesingle{}s edges. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T$>$ }\\std\+::string \mbox{\hyperlink{dijkstra_8h_a4d24d6a07d6e8f5a5be53ce76de4a0ad}{best\+And\+Alternative\+Driving\+Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}g, int s, int t, vector$<$ int $>$ avoid\+Nodes, vector$<$ pair$<$ int, int $>$ $>$ avoid\+Segments, int include\+Node)
+\begin{DoxyCompactList}\small\item\em Computes the best and second best driving routes. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T$>$ }\\std\+::string \mbox{\hyperlink{dijkstra_8h_a9b96325baa225a6df1b985fa04acb3ee}{restricted\+Driving\+Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}g, int s, int t, int include\+Node)
+\begin{DoxyCompactList}\small\item\em Computes a restricted driving route considering specific nodes. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T$>$ }\\bool \mbox{\hyperlink{dijkstra_8h_aa1dab36a3833b3f0b1e578bdef35a1e0}{relax\+\_\+walking}} (\mbox{\hyperlink{classEdge}{Edge}}$<$ T $>$ \texorpdfstring{$\ast$}{*}edge)
-\item 
+\begin{DoxyCompactList}\small\item\em Relaxation function for walking distances. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T$>$ }\\void \mbox{\hyperlink{dijkstra_8h_a56a6f3cff304c83a461eff536d8f91b8}{dijkstra\+\_\+walking}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}g, int origin)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Runs Dijkstra\textquotesingle{}s algorithm to compute shortest paths for walking. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -37,13 +37,67 @@
 template$<$class T$>$ \\
 std\+::string alternative\+Driving\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{s}{, }\item[{int}]{t}{}\end{DoxyParamCaption})}
 
-\Hypertarget{dijkstra_8h_aa8d589d949494404b355e005e9e78812}\index{dijkstra.h@{dijkstra.h}!bestAndAlternativeDrivingRoute@{bestAndAlternativeDrivingRoute}}
+
+
+Computes an alternative driving route avoiding the best route\textquotesingle{}s edges. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of vertex information. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the graph. \\
+\hline
+{\em s} & Source vertex. \\
+\hline
+{\em t} & Destination vertex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation of the alternative driving route. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+{\bfseries{Time complexity}} O((V + E) log V) for the first Dijkstra call + O(\+E) for edge removal + O((V + E) log V) for the second Dijkstra call. 
+\end{DoxyNote}
+\Hypertarget{dijkstra_8h_a4d24d6a07d6e8f5a5be53ce76de4a0ad}\index{dijkstra.h@{dijkstra.h}!bestAndAlternativeDrivingRoute@{bestAndAlternativeDrivingRoute}}
 \index{bestAndAlternativeDrivingRoute@{bestAndAlternativeDrivingRoute}!dijkstra.h@{dijkstra.h}}
 \doxysubsubsection{\texorpdfstring{bestAndAlternativeDrivingRoute()}{bestAndAlternativeDrivingRoute()}}
-{\footnotesize\ttfamily \label{dijkstra_8h_aa8d589d949494404b355e005e9e78812} 
+{\footnotesize\ttfamily \label{dijkstra_8h_a4d24d6a07d6e8f5a5be53ce76de4a0ad} 
 template$<$class T$>$ \\
-std\+::string best\+And\+Alternative\+Driving\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{s}{, }\item[{int}]{t}{}\end{DoxyParamCaption})}
+std\+::string best\+And\+Alternative\+Driving\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{s}{, }\item[{int}]{t}{, }\item[{vector$<$ int $>$}]{avoid\+Nodes}{, }\item[{vector$<$ pair$<$ int, int $>$ $>$}]{avoid\+Segments}{, }\item[{int}]{include\+Node}{}\end{DoxyParamCaption})}
 
+
+
+Computes the best and second best driving routes. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of vertex information. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the graph. \\
+\hline
+{\em s} & Source vertex. \\
+\hline
+{\em t} & Destination vertex. \\
+\hline
+{\em avoid\+Nodes} & Nodes to avoid. \\
+\hline
+{\em avoid\+Segments} & Edges to avoid. \\
+\hline
+{\em include\+Node} & Mandatory node to include in the path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation of the routes. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+{\bfseries{Time complexity}} O((V + E) log V) for Dijkstra plus additional overhead for avoidance logic. 
+\end{DoxyNote}
 \Hypertarget{dijkstra_8h_aa10bd97713670c3bf2f6f14f19b2ac57}\index{dijkstra.h@{dijkstra.h}!bestDrivingRoute@{bestDrivingRoute}}
 \index{bestDrivingRoute@{bestDrivingRoute}!dijkstra.h@{dijkstra.h}}
 \doxysubsubsection{\texorpdfstring{bestDrivingRoute()}{bestDrivingRoute()}}
@@ -51,6 +105,30 @@ std\+::string best\+And\+Alternative\+Driving\+Route (\begin{DoxyParamCaption}\i
 template$<$class T$>$ \\
 std\+::string best\+Driving\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{s}{, }\item[{int}]{t}{}\end{DoxyParamCaption})}
 
+
+
+Computes the best driving route from source to destination. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of vertex information. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the graph. \\
+\hline
+{\em s} & Source vertex. \\
+\hline
+{\em t} & Destination vertex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation of the best driving route. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+{\bfseries{Time complexity}} O((V + E) log V), due to Dijkstra\textquotesingle{}s algorithm. 
+\end{DoxyNote}
 \Hypertarget{dijkstra_8h_a9d799af5f93fc7ff08f75e65b9df75f6}\index{dijkstra.h@{dijkstra.h}!dijkstra\_driving@{dijkstra\_driving}}
 \index{dijkstra\_driving@{dijkstra\_driving}!dijkstra.h@{dijkstra.h}}
 \doxysubsubsection{\texorpdfstring{dijkstra\_driving()}{dijkstra\_driving()}}
@@ -58,6 +136,28 @@ std\+::string best\+Driving\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperl
 template$<$class T$>$ \\
 void dijkstra\+\_\+driving (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{origin}{}\end{DoxyParamCaption})}
 
+
+
+Dijkstra\textquotesingle{}s algorithm to compute shortest paths when driving. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of vertex information. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the graph. \\
+\hline
+{\em origin} & Source vertex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Shortest paths, when found. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+{\bfseries{Time complexity}} O((V + E) log V), where V is the number of vertices and E is the number of edges. 
+\end{DoxyNote}
 \Hypertarget{dijkstra_8h_a56a6f3cff304c83a461eff536d8f91b8}\index{dijkstra.h@{dijkstra.h}!dijkstra\_walking@{dijkstra\_walking}}
 \index{dijkstra\_walking@{dijkstra\_walking}!dijkstra.h@{dijkstra.h}}
 \doxysubsubsection{\texorpdfstring{dijkstra\_walking()}{dijkstra\_walking()}}
@@ -65,6 +165,25 @@ void dijkstra\+\_\+driving (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clas
 template$<$class T$>$ \\
 void dijkstra\+\_\+walking (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{origin}{}\end{DoxyParamCaption})}
 
+
+
+Runs Dijkstra\textquotesingle{}s algorithm to compute shortest paths for walking. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of vertex information. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the graph. \\
+\hline
+{\em origin} & Source vertex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+{\bfseries{Time complexity}} O((V + E) log V), as it is based on Dijkstra\textquotesingle{}s algorithm. 
+\end{DoxyNote}
 \Hypertarget{dijkstra_8h_ac6c9b9be80fd9b3831e06e4ebdf1d0e0}\index{dijkstra.h@{dijkstra.h}!relax\_driving@{relax\_driving}}
 \index{relax\_driving@{relax\_driving}!dijkstra.h@{dijkstra.h}}
 \doxysubsubsection{\texorpdfstring{relax\_driving()}{relax\_driving()}}
@@ -72,6 +191,23 @@ void dijkstra\+\_\+walking (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clas
 template$<$class T$>$ \\
 bool relax\+\_\+driving (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{Edge}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{edge}{}\end{DoxyParamCaption})}
 
+
+
+Relaxation function for driving distances. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of vertex information. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & Pointer to the edge being relaxed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the edge was relaxed, false otherwise. Applies the edge relaxation principles taught in the course. 
+\end{DoxyReturn}
 \Hypertarget{dijkstra_8h_aa1dab36a3833b3f0b1e578bdef35a1e0}\index{dijkstra.h@{dijkstra.h}!relax\_walking@{relax\_walking}}
 \index{relax\_walking@{relax\_walking}!dijkstra.h@{dijkstra.h}}
 \doxysubsubsection{\texorpdfstring{relax\_walking()}{relax\_walking()}}
@@ -79,10 +215,53 @@ bool relax\+\_\+driving (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEd
 template$<$class T$>$ \\
 bool relax\+\_\+walking (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{Edge}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{edge}{}\end{DoxyParamCaption})}
 
-\Hypertarget{dijkstra_8h_a24bcedbd0c6163860251115767cb54d0}\index{dijkstra.h@{dijkstra.h}!restrictedDrivingRoute@{restrictedDrivingRoute}}
+
+
+Relaxation function for walking distances. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of vertex information. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & Pointer to the edge being relaxed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the edge was relaxed, false otherwise. Applies the edge relaxation principles taught in the course. 
+\end{DoxyReturn}
+\Hypertarget{dijkstra_8h_a9b96325baa225a6df1b985fa04acb3ee}\index{dijkstra.h@{dijkstra.h}!restrictedDrivingRoute@{restrictedDrivingRoute}}
 \index{restrictedDrivingRoute@{restrictedDrivingRoute}!dijkstra.h@{dijkstra.h}}
 \doxysubsubsection{\texorpdfstring{restrictedDrivingRoute()}{restrictedDrivingRoute()}}
-{\footnotesize\ttfamily \label{dijkstra_8h_a24bcedbd0c6163860251115767cb54d0} 
+{\footnotesize\ttfamily \label{dijkstra_8h_a9b96325baa225a6df1b985fa04acb3ee} 
 template$<$class T$>$ \\
-std\+::string restricted\+Driving\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{s}{, }\item[{int}]{t}{, }\item[{vector$<$ int $>$}]{avoid\+Nodes}{, }\item[{vector$<$ pair$<$ int, int $>$ $>$}]{avoid\+Segments}{, }\item[{int}]{include\+Node}{}\end{DoxyParamCaption})}
+std\+::string restricted\+Driving\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{s}{, }\item[{int}]{t}{, }\item[{int}]{include\+Node}{}\end{DoxyParamCaption})}
 
+
+
+Computes a restricted driving route considering specific nodes. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of vertex information. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the graph. \\
+\hline
+{\em s} & Source vertex. \\
+\hline
+{\em t} & Destination vertex. \\
+\hline
+{\em include\+Node} & Mandatory node to include. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation of the restricted driving route. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+{\bfseries{Time complexity}} O((V + E) log V) for each Dijkstra execution (up to 2 times if include\+Node is used). 
+\end{DoxyNote}

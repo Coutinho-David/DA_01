@@ -7,6 +7,5 @@ var searchData=
   ['removeedge_4',['removeEdge',['../classVertex.html#ac1f1dd0a8e1019a242f1120d6559c754',1,'Vertex::removeEdge()'],['../classGraph.html#a8949d071d45bf93e171e275462e1007a',1,'Graph::removeEdge()']]],
   ['removeoutgoingedges_5',['removeOutgoingEdges',['../classVertex.html#a414ce58fdf35ee5200a82912f3865506',1,'Vertex']]],
   ['removevertex_6',['removeVertex',['../classGraph.html#af9c903104ad69a7782979fa9caedf163',1,'Graph']]],
-  ['restricteddrivingroute_7',['restrictedDrivingRoute',['../dijkstra_8h.html#a24bcedbd0c6163860251115767cb54d0',1,'dijkstra.h']]],
-  ['run_8',['run',['../main_8cpp.html#a58e8be2db2660128e4e6456a9c981fb5',1,'main.cpp']]]
+  ['restricteddrivingroute_7',['restrictedDrivingRoute',['../dijkstra_8h.html#a9b96325baa225a6df1b985fa04acb3ee',1,'dijkstra.h']]]
 ];

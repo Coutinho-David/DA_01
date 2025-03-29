@@ -122,27 +122,35 @@ $(function(){initNavTree('dijkstra_8h.html',''); initResizable(true); });
 Functions</h2></td></tr>
 <tr class="memitem:ac6c9b9be80fd9b3831e06e4ebdf1d0e0" id="r_ac6c9b9be80fd9b3831e06e4ebdf1d0e0"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:ac6c9b9be80fd9b3831e06e4ebdf1d0e0"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac6c9b9be80fd9b3831e06e4ebdf1d0e0">relax_driving</a> (<a class="el" href="classEdge.html">Edge</a>&lt; T &gt; *edge)</td></tr>
+<tr class="memdesc:ac6c9b9be80fd9b3831e06e4ebdf1d0e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relaxation function for driving distances.  <br /></td></tr>
 <tr class="separator:ac6c9b9be80fd9b3831e06e4ebdf1d0e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d799af5f93fc7ff08f75e65b9df75f6" id="r_a9d799af5f93fc7ff08f75e65b9df75f6"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a9d799af5f93fc7ff08f75e65b9df75f6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9d799af5f93fc7ff08f75e65b9df75f6">dijkstra_driving</a> (<a class="el" href="classGraph.html">Graph</a>&lt; T &gt; *g, int origin)</td></tr>
+<tr class="memdesc:a9d799af5f93fc7ff08f75e65b9df75f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dijkstra's algorithm to compute shortest paths when driving.  <br /></td></tr>
 <tr class="separator:a9d799af5f93fc7ff08f75e65b9df75f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa10bd97713670c3bf2f6f14f19b2ac57" id="r_aa10bd97713670c3bf2f6f14f19b2ac57"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:aa10bd97713670c3bf2f6f14f19b2ac57"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa10bd97713670c3bf2f6f14f19b2ac57">bestDrivingRoute</a> (<a class="el" href="classGraph.html">Graph</a>&lt; T &gt; *g, int s, int t)</td></tr>
+<tr class="memdesc:aa10bd97713670c3bf2f6f14f19b2ac57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the best driving route from source to destination.  <br /></td></tr>
 <tr class="separator:aa10bd97713670c3bf2f6f14f19b2ac57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5869c5befc93a78ad396fe03fd68c053" id="r_a5869c5befc93a78ad396fe03fd68c053"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a5869c5befc93a78ad396fe03fd68c053"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5869c5befc93a78ad396fe03fd68c053">alternativeDrivingRoute</a> (<a class="el" href="classGraph.html">Graph</a>&lt; T &gt; *g, int s, int t)</td></tr>
+<tr class="memdesc:a5869c5befc93a78ad396fe03fd68c053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes an alternative driving route avoiding the best route's edges.  <br /></td></tr>
 <tr class="separator:a5869c5befc93a78ad396fe03fd68c053"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8d589d949494404b355e005e9e78812" id="r_aa8d589d949494404b355e005e9e78812"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:aa8d589d949494404b355e005e9e78812"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa8d589d949494404b355e005e9e78812">bestAndAlternativeDrivingRoute</a> (<a class="el" href="classGraph.html">Graph</a>&lt; T &gt; *g, int s, int t)</td></tr>
-<tr class="separator:aa8d589d949494404b355e005e9e78812"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24bcedbd0c6163860251115767cb54d0" id="r_a24bcedbd0c6163860251115767cb54d0"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:a24bcedbd0c6163860251115767cb54d0"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a24bcedbd0c6163860251115767cb54d0">restrictedDrivingRoute</a> (<a class="el" href="classGraph.html">Graph</a>&lt; T &gt; *g, int s, int t, vector&lt; int &gt; avoidNodes, vector&lt; pair&lt; int, int &gt; &gt; avoidSegments, int includeNode)</td></tr>
-<tr class="separator:a24bcedbd0c6163860251115767cb54d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d24d6a07d6e8f5a5be53ce76de4a0ad" id="r_a4d24d6a07d6e8f5a5be53ce76de4a0ad"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a4d24d6a07d6e8f5a5be53ce76de4a0ad"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a4d24d6a07d6e8f5a5be53ce76de4a0ad">bestAndAlternativeDrivingRoute</a> (<a class="el" href="classGraph.html">Graph</a>&lt; T &gt; *g, int s, int t, vector&lt; int &gt; avoidNodes, vector&lt; pair&lt; int, int &gt; &gt; avoidSegments, int includeNode)</td></tr>
+<tr class="memdesc:a4d24d6a07d6e8f5a5be53ce76de4a0ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the best and second best driving routes.  <br /></td></tr>
+<tr class="separator:a4d24d6a07d6e8f5a5be53ce76de4a0ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b96325baa225a6df1b985fa04acb3ee" id="r_a9b96325baa225a6df1b985fa04acb3ee"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a9b96325baa225a6df1b985fa04acb3ee"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9b96325baa225a6df1b985fa04acb3ee">restrictedDrivingRoute</a> (<a class="el" href="classGraph.html">Graph</a>&lt; T &gt; *g, int s, int t, int includeNode)</td></tr>
+<tr class="memdesc:a9b96325baa225a6df1b985fa04acb3ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a restricted driving route considering specific nodes.  <br /></td></tr>
+<tr class="separator:a9b96325baa225a6df1b985fa04acb3ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1dab36a3833b3f0b1e578bdef35a1e0" id="r_aa1dab36a3833b3f0b1e578bdef35a1e0"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:aa1dab36a3833b3f0b1e578bdef35a1e0"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa1dab36a3833b3f0b1e578bdef35a1e0">relax_walking</a> (<a class="el" href="classEdge.html">Edge</a>&lt; T &gt; *edge)</td></tr>
+<tr class="memdesc:aa1dab36a3833b3f0b1e578bdef35a1e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relaxation function for walking distances.  <br /></td></tr>
 <tr class="separator:aa1dab36a3833b3f0b1e578bdef35a1e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56a6f3cff304c83a461eff536d8f91b8" id="r_a56a6f3cff304c83a461eff536d8f91b8"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a56a6f3cff304c83a461eff536d8f91b8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a56a6f3cff304c83a461eff536d8f91b8">dijkstra_walking</a> (<a class="el" href="classGraph.html">Graph</a>&lt; T &gt; *g, int origin)</td></tr>
+<tr class="memdesc:a56a6f3cff304c83a461eff536d8f91b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs Dijkstra's algorithm to compute shortest paths for walking.  <br /></td></tr>
 <tr class="separator:a56a6f3cff304c83a461eff536d8f91b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -172,10 +180,28 @@ template&lt;class T&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Computes an alternative driving route avoiding the best route's edges. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of vertex information. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Pointer to the graph. </td></tr>
+    <tr><td class="paramname">s</td><td>Source vertex. </td></tr>
+    <tr><td class="paramname">t</td><td>Destination vertex. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String representation of the alternative driving route. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>Time complexity</b> O((V + E) log V) for the first Dijkstra call + O(E) for edge removal + O((V + E) log V) for the second Dijkstra call. </dd></dl>
+
 </div>
 </div>
-<a id="aa8d589d949494404b355e005e9e78812" name="aa8d589d949494404b355e005e9e78812"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8d589d949494404b355e005e9e78812">&#9670;&#160;</a></span>bestAndAlternativeDrivingRoute()</h2>
+<a id="a4d24d6a07d6e8f5a5be53ce76de4a0ad" name="a4d24d6a07d6e8f5a5be53ce76de4a0ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d24d6a07d6e8f5a5be53ce76de4a0ad">&#9670;&#160;</a></span>bestAndAlternativeDrivingRoute()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,146 +210,6 @@ template&lt;class T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">std::string bestAndAlternativeDrivingRoute </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classGraph.html">Graph</a>&lt; T &gt; *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>t</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa10bd97713670c3bf2f6f14f19b2ac57" name="aa10bd97713670c3bf2f6f14f19b2ac57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa10bd97713670c3bf2f6f14f19b2ac57">&#9670;&#160;</a></span>bestDrivingRoute()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string bestDrivingRoute </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classGraph.html">Graph</a>&lt; T &gt; *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>t</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9d799af5f93fc7ff08f75e65b9df75f6" name="a9d799af5f93fc7ff08f75e65b9df75f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d799af5f93fc7ff08f75e65b9df75f6">&#9670;&#160;</a></span>dijkstra_driving()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void dijkstra_driving </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classGraph.html">Graph</a>&lt; T &gt; *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>origin</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a56a6f3cff304c83a461eff536d8f91b8" name="a56a6f3cff304c83a461eff536d8f91b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56a6f3cff304c83a461eff536d8f91b8">&#9670;&#160;</a></span>dijkstra_walking()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void dijkstra_walking </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classGraph.html">Graph</a>&lt; T &gt; *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>origin</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac6c9b9be80fd9b3831e06e4ebdf1d0e0" name="ac6c9b9be80fd9b3831e06e4ebdf1d0e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6c9b9be80fd9b3831e06e4ebdf1d0e0">&#9670;&#160;</a></span>relax_driving()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">bool relax_driving </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classEdge.html">Edge</a>&lt; T &gt; *</td>          <td class="paramname"><span class="paramname"><em>edge</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa1dab36a3833b3f0b1e578bdef35a1e0" name="aa1dab36a3833b3f0b1e578bdef35a1e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1dab36a3833b3f0b1e578bdef35a1e0">&#9670;&#160;</a></span>relax_walking()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">bool relax_walking </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classEdge.html">Edge</a>&lt; T &gt; *</td>          <td class="paramname"><span class="paramname"><em>edge</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a24bcedbd0c6163860251115767cb54d0" name="a24bcedbd0c6163860251115767cb54d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24bcedbd0c6163860251115767cb54d0">&#9670;&#160;</a></span>restrictedDrivingRoute()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string restrictedDrivingRoute </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classGraph.html">Graph</a>&lt; T &gt; *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
         </tr>
@@ -354,6 +240,272 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Computes the best and second best driving routes. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of vertex information. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Pointer to the graph. </td></tr>
+    <tr><td class="paramname">s</td><td>Source vertex. </td></tr>
+    <tr><td class="paramname">t</td><td>Destination vertex. </td></tr>
+    <tr><td class="paramname">avoidNodes</td><td>Nodes to avoid. </td></tr>
+    <tr><td class="paramname">avoidSegments</td><td>Edges to avoid. </td></tr>
+    <tr><td class="paramname">includeNode</td><td>Mandatory node to include in the path. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String representation of the routes. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>Time complexity</b> O((V + E) log V) for Dijkstra plus additional overhead for avoidance logic. </dd></dl>
+
+</div>
+</div>
+<a id="aa10bd97713670c3bf2f6f14f19b2ac57" name="aa10bd97713670c3bf2f6f14f19b2ac57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa10bd97713670c3bf2f6f14f19b2ac57">&#9670;&#160;</a></span>bestDrivingRoute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string bestDrivingRoute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGraph.html">Graph</a>&lt; T &gt; *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>t</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the best driving route from source to destination. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of vertex information. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Pointer to the graph. </td></tr>
+    <tr><td class="paramname">s</td><td>Source vertex. </td></tr>
+    <tr><td class="paramname">t</td><td>Destination vertex. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String representation of the best driving route. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>Time complexity</b> O((V + E) log V), due to Dijkstra's algorithm. </dd></dl>
+
+</div>
+</div>
+<a id="a9d799af5f93fc7ff08f75e65b9df75f6" name="a9d799af5f93fc7ff08f75e65b9df75f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d799af5f93fc7ff08f75e65b9df75f6">&#9670;&#160;</a></span>dijkstra_driving()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void dijkstra_driving </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGraph.html">Graph</a>&lt; T &gt; *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>origin</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dijkstra's algorithm to compute shortest paths when driving. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of vertex information. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Pointer to the graph. </td></tr>
+    <tr><td class="paramname">origin</td><td>Source vertex. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Shortest paths, when found. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>Time complexity</b> O((V + E) log V), where V is the number of vertices and E is the number of edges. </dd></dl>
+
+</div>
+</div>
+<a id="a56a6f3cff304c83a461eff536d8f91b8" name="a56a6f3cff304c83a461eff536d8f91b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56a6f3cff304c83a461eff536d8f91b8">&#9670;&#160;</a></span>dijkstra_walking()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void dijkstra_walking </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGraph.html">Graph</a>&lt; T &gt; *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>origin</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Runs Dijkstra's algorithm to compute shortest paths for walking. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of vertex information. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Pointer to the graph. </td></tr>
+    <tr><td class="paramname">origin</td><td>Source vertex. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd><b>Time complexity</b> O((V + E) log V), as it is based on Dijkstra's algorithm. </dd></dl>
+
+</div>
+</div>
+<a id="ac6c9b9be80fd9b3831e06e4ebdf1d0e0" name="ac6c9b9be80fd9b3831e06e4ebdf1d0e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6c9b9be80fd9b3831e06e4ebdf1d0e0">&#9670;&#160;</a></span>relax_driving()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool relax_driving </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEdge.html">Edge</a>&lt; T &gt; *</td>          <td class="paramname"><span class="paramname"><em>edge</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Relaxation function for driving distances. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of vertex information. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">edge</td><td>Pointer to the edge being relaxed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the edge was relaxed, false otherwise. Applies the edge relaxation principles taught in the course. </dd></dl>
+
+</div>
+</div>
+<a id="aa1dab36a3833b3f0b1e578bdef35a1e0" name="aa1dab36a3833b3f0b1e578bdef35a1e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1dab36a3833b3f0b1e578bdef35a1e0">&#9670;&#160;</a></span>relax_walking()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool relax_walking </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEdge.html">Edge</a>&lt; T &gt; *</td>          <td class="paramname"><span class="paramname"><em>edge</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Relaxation function for walking distances. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of vertex information. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">edge</td><td>Pointer to the edge being relaxed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the edge was relaxed, false otherwise. Applies the edge relaxation principles taught in the course. </dd></dl>
+
+</div>
+</div>
+<a id="a9b96325baa225a6df1b985fa04acb3ee" name="a9b96325baa225a6df1b985fa04acb3ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b96325baa225a6df1b985fa04acb3ee">&#9670;&#160;</a></span>restrictedDrivingRoute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string restrictedDrivingRoute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGraph.html">Graph</a>&lt; T &gt; *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>t</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>includeNode</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes a restricted driving route considering specific nodes. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of vertex information. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Pointer to the graph. </td></tr>
+    <tr><td class="paramname">s</td><td>Source vertex. </td></tr>
+    <tr><td class="paramname">t</td><td>Destination vertex. </td></tr>
+    <tr><td class="paramname">includeNode</td><td>Mandatory node to include. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String representation of the restricted driving route. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>Time complexity</b> O((V + E) log V) for each Dijkstra execution (up to 2 times if includeNode is used). </dd></dl>
 
 </div>
 </div>

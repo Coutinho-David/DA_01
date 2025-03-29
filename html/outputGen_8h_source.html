@@ -105,32 +105,29 @@ $(function(){initNavTree('outputGen_8h_source.html',''); initResizable(true); })
   <div class="headertitle"><div class="title">outputGen.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="outputGen_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by andre on 3/27/25.</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="outputGen_8h.html#a7bd5a92d4997dee23bef263309800f66">   14</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="outputGen_8h.html#a7bd5a92d4997dee23bef263309800f66">outputGen</a>(<span class="keywordtype">int</span> source, <span class="keywordtype">int</span> destination, <span class="keywordtype">string</span> res) {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    cout &lt;&lt; <span class="stringliteral">&quot;Source:&quot;</span> &lt;&lt; source &lt;&lt; endl;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    cout &lt;&lt; <span class="stringliteral">&quot;Destination:&quot;</span> &lt;&lt; destination &lt;&lt; endl;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    cout &lt;&lt; res &lt;&lt; endl;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    ofstream outputFile(<span class="stringliteral">&quot;output.txt&quot;</span>, std::ios::trunc);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    outputFile &lt;&lt; <span class="stringliteral">&quot;Source:&quot;</span> &lt;&lt; source &lt;&lt; endl;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    outputFile &lt;&lt; <span class="stringliteral">&quot;Destination:&quot;</span> &lt;&lt; destination &lt;&lt; endl;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    outputFile &lt;&lt; res &lt;&lt; endl;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    outputFile.close();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+<a href="outputGen_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="outputGen_8h.html#a7bd5a92d4997dee23bef263309800f66">   10</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="outputGen_8h.html#a7bd5a92d4997dee23bef263309800f66">outputGen</a>(<span class="keywordtype">int</span> source, <span class="keywordtype">int</span> destination, <span class="keywordtype">string</span> res) {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    cout &lt;&lt; <span class="stringliteral">&quot;\n\n&quot;</span>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    cout &lt;&lt; <span class="stringliteral">&quot;Source:&quot;</span> &lt;&lt; source &lt;&lt; endl;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    cout &lt;&lt; <span class="stringliteral">&quot;Destination:&quot;</span> &lt;&lt; destination &lt;&lt; endl;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    cout &lt;&lt; res &lt;&lt; endl;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    ofstream outputFile(<span class="stringliteral">&quot;output.txt&quot;</span>, std::ios::trunc);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    outputFile &lt;&lt; <span class="stringliteral">&quot;Source:&quot;</span> &lt;&lt; source &lt;&lt; endl;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    outputFile &lt;&lt; <span class="stringliteral">&quot;Destination:&quot;</span> &lt;&lt; destination &lt;&lt; endl;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    outputFile &lt;&lt; res &lt;&lt; endl;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    outputFile.close();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
 </div>
-<div class="ttc" id="aoutputGen_8h_html_a7bd5a92d4997dee23bef263309800f66"><div class="ttname"><a href="outputGen_8h.html#a7bd5a92d4997dee23bef263309800f66">outputGen</a></div><div class="ttdeci">void outputGen(int source, int destination, string res)</div><div class="ttdef"><b>Definition</b> outputGen.h:14</div></div>
+<div class="ttc" id="aoutputGen_8h_html_a7bd5a92d4997dee23bef263309800f66"><div class="ttname"><a href="outputGen_8h.html#a7bd5a92d4997dee23bef263309800f66">outputGen</a></div><div class="ttdeci">void outputGen(int source, int destination, string res)</div><div class="ttdef"><b>Definition</b> outputGen.h:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
