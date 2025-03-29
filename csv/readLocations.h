@@ -16,6 +16,17 @@ struct location {
     bool parking;
 };
 
+/**
+* @brief Reads locations data from a CSV file.
+*
+* This function parses a CSV file containing locations information and
+* stores it in a vector of `location` structures. Each row
+* in the file represents a locations along with their name, id and parking information.
+*
+* @param filename The name of the CSV file to read.
+*
+* @return A vector of `location` structures containing parsed locations information.
+*/
 std::vector<location> readLocations(const std::string &filename) {
         
     std::vector<location> data; 

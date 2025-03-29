@@ -16,7 +16,18 @@ struct DistanceData {
     int Walking;
 };
 
-
+/**
+* @brief Reads distances data from a CSV file.
+*
+* This function parses a CSV file containing distance information between
+* locations and stores it in a vector of `DistanceData` structures. Each row
+* in the file represents a pair of locations along with their driving and
+* walking distances.
+*
+* @param filename The name of the CSV file to read.
+*
+* @return A vector of `DistanceData` structures containing parsed distance information.
+*/
 std::vector<DistanceData> readDistances(const std::string &filename) {
         
     std::vector<DistanceData> data; 

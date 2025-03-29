@@ -18,6 +18,24 @@ struct route {
     int totalTime;
 };
 
+/**
+ * @brief Computes the optimal driving and walking route between two points.
+ *
+ * This function finds the best parking node along the way and determines the
+ * most efficient route by combining driving and walking segments. If no
+ * valid parking node is found within the maximum allowed walking time,
+ * an alternative approximate solution is attempted.
+ *
+ * @param graph A reference to the graph representing the map.
+ * @param s The starting node (source).
+ * @param t The destination node (target).
+ * @param maxWalkTime The maximum allowed walking time from parking to the destination.
+ *
+ * @return String containing the best or alternative route,
+ *         including driving paths, walking paths, parking nodes, and total times.
+ *
+ * @note **Time Complexity:** O(V^2 log V + E) when iterating over multiple parking options.
+*/
 std::string drivingAndWalkingRoute(Graph<int> &graph, int s, int t, int maxWalkTime) {
     
     int bestParkNode = -1;
